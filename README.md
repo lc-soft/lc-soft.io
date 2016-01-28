@@ -1,2 +1,2 @@
 # lc-soft.io
-website source for lc-soft.io
+website source files for lc-soft.io
