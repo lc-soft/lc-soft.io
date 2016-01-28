@@ -1,0 +1,29 @@
+defaults:
+  -
+    scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "log"
+      author: "Liu Chao"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+sass:
+  style: :compressed
+
+exclude: [".git",".sass-cache", "sass", "*.scss", "*.rb"]
+encoding: "utf-8"
+highlighter: pygments
+markdown: redcarpet
+redcarpet:
+  extensions:
+    - hard_wrap
+    - no_intra_emphasis
+    - autolink
+    - strikethrough
+    - fenced_code_blocks

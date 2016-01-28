@@ -1,0 +1,17 @@
+<div id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-4 text-left">
+        <span>© 2016 Liu Chao.</span>
+      </div>
+      <div class="col-xs-8 text-right">
+        <a href="http://jekyllcn.com/">Jekyll</a>
+        &nbsp;&nbsp;·&nbsp;&nbsp;
+        <a href="https://m.do.co/c/d01d1bd79d8e">DigitalOcean</a>
+        &nbsp;&nbsp;·&nbsp;&nbsp;
+        <span id="cnzz_stat_icon_4262888"></span>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_4262888'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/stat.php%3Fid%3D4262888' type='text/javascript'%3E%3C/script%3E"));</script>

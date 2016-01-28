@@ -1,0 +1,187 @@
+﻿.navbar-custom {
+	background-color: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    transition: background-color .3s ease-in-out, border .3s ease-in-out;
+    -moz-transition: background-color .3s ease-in-out, border .3s ease-in-out;
+    -webkit-transition: background-color .3s ease-in-out, border .3s ease-in-out;
+    -o-transition: background-color .3s ease-in-out, border .3s ease-in-out;
+
+	.nav>li>a, .nav .open>a {
+	    color: #333;
+		&:active, &:hover, &:focus {
+		    color: #6ba84b;
+	        background-color: #fafafa;
+		}
+	}
+	.navbar-brand {
+		color: #6ba84b;
+		font-size: 24px;
+		font-weight: bold;
+	}
+	.icon-bar {
+	    background-color: #333;
+	}
+	.navbar-toggle {
+		&:focus, &:hover {
+		    background-color: #f9f9f9;
+		    border-color: #f9f9f9;
+		}
+	}
+}
+.navbar-on-top {
+	color: #fff;
+	box-shadow: none;
+	background-color: rgba(124, 183, 94, 0.5);
+	.navbar-nav >li >a {
+	    color: #E5FFD8;
+	}
+	.nav>li>a, .nav .open>a {
+	    background-color: transparent;
+		&:active, &:hover, &:focus {
+		    color: #fff;
+		}
+		&:hover {
+	    	background-color: #8AC56B;
+		}
+		&:active, &:focus {
+	    	background-color: #6ba84b;
+		}
+	}
+	.navbar-brand {
+		color: #fff;
+	}
+	.icon-bar {
+	    background-color: #E5FFD8;
+	}
+	.navbar-toggle {
+		&:focus, &:hover {
+		    background-color: #8AC56B;
+		    border-color: #8AC56B;
+		}
+	}
+}
+.home-jumbotron {
+    color: #E5FFD8;
+	background-color: #7cb75e;
+	background-image: url("/files/images/pattern.png");
+	padding-top: 128px;
+    .logo {
+	    background-image: url('/files/images/lcui-logo-lg.png');
+	    width: 182px;
+	    height: 182px;
+	    margin: 34px auto;
+	    background-size: auto 100%;
+	    box-shadow: 0 0 24px rgba(0,0,0,0.4);
+	    background-repeat: no-repeat;
+    }
+    h1, h2 {
+    	color: #fff;
+    	font-family: Verdana, 'Microsoft YaHei', '微软雅黑';
+    	text-shadow: 4px 3px 0px #7cb75e, 9px 8px 0px rgba(0, 0, 0, 0.15);
+    }
+}
+.btn-outline-inverse {
+    color: #fff;
+    background-color: transparent;
+    border-color: #E5FFD8;
+	&:focus, &:hover {
+		color: #7cb75e;
+	    text-shadow: none;
+	    background-color: #fff;
+	    border-color: #fff;
+    }
+}
+.shameless-self-promotion {
+    margin-top: 22px;
+    font-size: 14px;
+    color: #C1E8AD;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+    a {
+        color: #E5FFD8;
+    }
+}
+.project-feature {
+	.project-feature-icon {
+		color: #7cb75e;
+	}
+}
+.project-faq {
+	.icon-question{
+	    color: #7cb75e;
+	    border: 2px solid #7cb75e;
+	    border-radius: 50%;
+	    width: 28px;
+	    height: 28px;
+	    display: inline-block;
+	    text-align: center;
+		&:after {
+			content: '?';
+		}
+	}
+}
+.thumbnail-empty {
+	text-align: center;
+	padding: 40px 0;
+}
+.has-fixed-top-navbar {
+    margin-top: 80px;
+}
+.article-card {
+	background-color: #fff;
+    position: relative;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    padding: 0 20px 20px 20px;
+
+	.time-label {
+	    display: block;
+	    position: absolute;
+	    left: -22px;
+	    width: 60px;
+	    line-height: 22px;
+	    padding-left: 26px;
+	    padding-top: 4px;
+	    height: 52px;
+	    background-color: #6ba84b;
+	    color: #fff;
+	    font-size: 24px;
+	    font-weight: bold;
+	    .year {
+		    font-size: 14px;
+		    display: block;
+		    position: absolute;
+		    left: -6px;
+		    top: 16px;
+		    -ms-transform: rotate(-90deg);
+		    -moz-transform: rotate(-90deg);
+		    -webkit-transform: rotate(-90deg);
+		    -o-transform: rotate(-90deg);
+		    transform: rotate(-90deg);
+	    }
+	    span {
+	    	display: block;
+	    }
+	}
+	.article-header {
+	    padding-left: 38px;
+	    height: 52px;
+	    padding-bottom: 5em;
+	    margin-bottom: 1em;
+	    border-bottom: 1px solid #eee;
+	}
+	.article-info {
+		color: #aaa;
+	}
+}
+#footer {
+    padding: 12px 0;
+	border-top: 1px solid #ddd;
+	margin-top: 40px;
+    line-height: 16px;
+    font-size: 12px;
+	background-color: #fafafa;
+}
+
+.article-content img {
+	max-width: 100%;
+}
