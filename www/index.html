@@ -20,7 +20,7 @@ is_home: true
     <div class="col-sm-4">
       <h3>动态</h3>
       <hr/>
-      <p class="text-muted text-center">暂无</p>
+      <div id="user-events"></div>
     </div>
     <div class="col-sm-4 text-center">
       <h3>作品</h3>
@@ -36,7 +36,14 @@ is_home: true
   </div>
 </div>
 </section>
+<script src="/static/js/moment-with-locales.min.js"></script>
+<script src="/static/js/jquery.userevents.js"></script>
 <script type="text/javascript">
+;(function () {
+
+var $myEvents = $('#user-events');
+moment.locale('zh-cn');
+$myEvents.userevents({username: 'lc-soft'});
 function updateNavbarStyle() {
   if( $(document).scrollTop() > 0 ) {
     $('.navbar').removeClass('navbar-on-top');
@@ -46,4 +53,6 @@ function updateNavbarStyle() {
 }
 updateNavbarStyle();
 $(document).on('scroll', updateNavbarStyle);
+
+})();
 </script>
