@@ -11,8 +11,8 @@ $.fn.userevents = function (options) {
   var defaults = {
     num: 4,
     username: 'test',
-    template: '<li><span class="time text-muted"></span><p class="title"></p>'+
-              '<div class="content"></div></li>'
+    template: '<li><p class="header"><span class="time text-muted"></span> '+
+              '<span class="title"></span></p><div class="body"></div></li>'
   };
 
   function setList(list) {
@@ -21,12 +21,27 @@ $.fn.userevents = function (options) {
       var item = list[i];
       var $item = $(options.template);
       var $title = $item.find('.title');
-      var $content = $item.find('.content');
+      var $body = $item.find('.body');
       var $time = $item.find('.time');
+      var repo_url = item.repo.url;
+      repo_url = repo_url.replace('api.github.com/repos', 'github.com')
       console.log(item);
       switch(item.type) {
-      case 'CommitCommentEvent':
+      case 'CommitCommentEvent':continue;
       case 'CreateEvent':
+        var text;
+        url = url;
+        if( item.payload.ref_type == 'repository' ) {
+          text = ['创建代码库 ', '<a href="', repo_url, 
+                  '" target="_blank">', item.repo.name, '</a>'];
+        } else {
+          text = ['为 ', '<a href="', repo_url, '" target="_blank">', 
+                  item.repo.name, '</a>', ' 创建 ', '<a href="', 
+                  repo_url, '/tree/', item.payload.ref, '" target="_blank">', 
+                  item.payload.ref, '</a> 分支'];
+        }
+        $title.html(text.join(''));
+        break;
       case 'DeleteEvent':
       case 'DeploymentEvent':
       case 'DeploymentStatusEvent':
@@ -35,8 +50,17 @@ $.fn.userevents = function (options) {
       case 'ForkEvent':
       case 'ForkApplyEvent':
       case 'GistEvent':
-      case 'GollumEvent':
+      case 'GollumEvent': continue;
       case 'IssueCommentEvent':
+        var issue = item.payload.issue;
+        var comment = item.payload.comment;
+        var text = ['发表评论在 ', '<a href="', issue.html_url, 
+                    '" target="_blank" title="', issue.title,'">', 
+                    item.repo.name, '#', issue.number, '</a>'];
+        $title.html(text.join(''));
+        var body = comment.body.split('\n')[0];
+        $body.append('<p class="issue-comment">'+ body +'</p>');
+        break;
       case 'IssuesEvent':
       case 'MemberEvent':
       case 'MembershipEvent':
@@ -46,21 +70,20 @@ $.fn.userevents = function (options) {
       case 'PullRequestReviewCommentEvent':
         continue;
       case 'PushEvent':
-        var url = item.repo.url;
         var commits = item.payload.commits;
-        url = url.replace('api.github.com/repos', 'github.com');
         var text = ['推送 ', commits.length, ' 个提交至 ',
-                    '<a href="', url, '" target="_blank">', 
+                    '<a href="', repo_url, '" target="_blank">', 
                     item.repo.name, '</a>'];
         $title.html(text.join(''));
         for( var j=0; j<commits.length; ++j ) {
           var cmt = commits[j];
-          url = cmt.url.replace('api.github.com/repos', 'github.com');
-          text = ['<p class="commit-message text-muted">', 
-                  '<a class="commit-url"  href="', url, 
-                  '" target="_blank">', cmt.sha.substr(0,7),
-                  '</a> ', cmt.message, '</p>'];
-          $content.append(text.join(''));
+          var url = cmt.url.replace('api.github.com/repos', 'github.com');
+          var msg = cmt.message.split('\n');
+          text = ['<p class="commit-message text-muted" title="',
+                  cmt.message, '">', '<a class="commit-url"  href="', 
+                  repo_url, '" target="_blank">', cmt.sha.substr(0,7),
+                  '</a> ', msg, '</p>'];
+          $body.append(text.join(''));
         }
         break;
       case 'ReleaseEvent':

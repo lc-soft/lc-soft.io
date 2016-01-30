@@ -1,14 +1,11 @@
 <div id="footer">
   <div class="container">
-    <div class="row">
-      <div class="col-xs-4 text-left">
-        <span>© 2016 Liu Chao.</span>
-      </div>
-      <div class="col-xs-8 text-right">
+      <span>© 2016 Liu Chao.</span>
+      <div class="pull-right">
         <a href="http://jekyllcn.com/">Jekyll</a>
-        &nbsp;&nbsp;·&nbsp;&nbsp;
+        &nbsp;·&nbsp;
         <a href="https://m.do.co/c/d01d1bd79d8e">DigitalOcean</a>
-        &nbsp;&nbsp;·&nbsp;&nbsp;
+        &nbsp;·&nbsp;
         <span id="cnzz_stat_icon_4262888"></span>
       </div>
     </div>

@@ -97,23 +97,19 @@ $brandColorDark: #2980b9;
 	max-width: 100%;
 }
 .user-event-list {
-    list-style-type: none;
-    position: relative;
-    padding: 0 0 0 54px;
+    padding: 0;
     min-height: 128px;
+    position: relative;
+    list-style-type: none;
     li {
     	margin-bottom: 10px;
     }
-    .time {
-    	left: 0;
-        position: absolute;
-    }
-    .content {
+    .body {
 	    border-left: 2px solid #eee;
 	    padding-left: 8px;
         margin-top: 4px;
     }
-    .title, .commit-message {
+    .header, .commit-message, .issue-comment {
     	margin: 0;
     	text-overflow: ellipsis;
 	    overflow: hidden;
