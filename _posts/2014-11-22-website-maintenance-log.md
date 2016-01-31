@@ -3,11 +3,14 @@ title: 网站维护日志
 ds_thread_key: devlog-webiste
 ---
 
+### 2016-01-31
+添加了网站主页和博客页，之前的 LCUI 项目的主页已经转移至 lcui.c-soft.io 域名下。主页是蓝色调，LCUI主页是绿色调。之前写的开发日志整理起来很麻烦，需要按时间拆分成多个文档以方便控制日志的排列顺序，现在打算让正在更新的日志按时间递增排序，而已经更新完的日志则按时间递增排序。
+
 ### 2016-01-23
-在 [DigitalOcean](https://m.do.co/c/d01d1bd79d8e) 上弄了个VPS，5美元一个月还算便宜。apt-get 安装好 nginx，改改配置，网站的文件不用从本地上传，直接用git从github仓库里下载，弄完后把 lc-soft.io 这个域名绑定到VPS的IP上。还弄了个SSL证书，现在，网站已经支持以HTTPS方式访问了，地址栏带绿色 https 看起来蛮有B格的。多说评论框依赖的头像及相关资源不支持HTTPS访问，参考相关文档在VPS上做了反向代理后问题解决。
+在 [DigitalOcean](https://m.do.co/c/d01d1bd79d8e) 上弄了个VPS，5美元一个月还算便宜。apt-get 安装好 nginx，改改配置，网站的文件不用从本地上传，直接用git从github仓库里下载，弄完后把 lc-soft.io 这个域名绑定到VPS的IP上。还弄了个SSL证书，现在，网站已经支持以HTTPS方式访问了，地址栏带绿色 https 看起来蛮有B格的。多说评论框依赖的头像及相关资源不支持HTTPS访问，参考相关文档在VPS上做了反向代理后解决头像问题。
 
 ### 2016-01-20
-在 gandi.net 上买了个 lc-soft.io 域名，才注意到可以用来做邮箱域名，嘛，用 leader@lc-soft.io、lc-soft@lc-soft.io、tech@lc-soft.io、boss@lc-soft.io 做邮箱地址看上去蛮有B格的。
+在 gandi.net 上买了个 lc-soft.io 域名，才注意到可以用来做邮箱域名，以后可以用 leader@lc-soft.io、lc-soft@lc-soft.io、tech@lc-soft.io、boss@lc-soft.io 做邮箱地址。
 
 ### 2015-10-30
 距离上次网站改动已经快1年了，卧槽，时间过得也太快了吧？现在准备修改首页，取消之前采用的`<iframe>`方式载入页面，日志改成用 markdown 语法写，日志的HTML页面交给 jekyll 生成，这样省的自己写HTML代码了。之前写的HTML版的日志，等以后有空再转成markdown版。
