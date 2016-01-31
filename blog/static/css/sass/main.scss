@@ -1,0 +1,143 @@
+﻿$brandColor: #3498db;
+$brandColorLight: #44ABF1;
+$brandColorDark: #2980b9;
+
+.navbar-custom {
+	background-color: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    transition: background-color .3s ease-in-out, border .3s ease-in-out;
+    -moz-transition: background-color .3s ease-in-out, border .3s ease-in-out;
+    -webkit-transition: background-color .3s ease-in-out, border .3s ease-in-out;
+    -o-transition: background-color .3s ease-in-out, border .3s ease-in-out;
+
+	.nav>li>a, .nav .open>a {
+	    color: #333;
+		&:active, &:hover, &:focus {
+		    color: $brandColorLight;
+	        background-color: #fafafa;
+		}
+	}
+	.navbar-brand {
+		color: $brandColor;
+		font-size: 24px;
+		font-weight: bold;
+	}
+	.icon-bar {
+	    background-color: #333;
+	}
+	.navbar-toggle {
+		&:hover {
+	        background-color: #fafafa;
+		}
+		&:active, &:focus {
+	        background-color: #f0f0f0;
+		}
+	}
+}
+.navbar-on-top {
+	color: #333;
+	box-shadow: none;
+	background-color: rgba(255, 255, 255, 0.5);
+	.navbar-nav >li >a {
+		color: #333;
+	}
+	.nav>li>a, .nav .open>a {
+	    background-color: transparent;
+		&:hover, &:active, &:focus {
+	    	background-color: transparent;
+		}
+	}
+	.navbar-brand {
+		color: $brandColor;
+	}
+}
+.home-jumbotron {
+    color: #000;
+	margin: 0;
+	background-color: #fff;
+	border-bottom: 1px solid #eee;
+	background-image: url("/static/images/background.png");
+	padding-top: 128px;
+    h2 {
+    	font-size: 48px;
+    }
+    p {
+		font-size: 14px;
+	    margin-top: 10px;
+	    margin-bottom: 30px;
+	    line-height: 24px;
+        text-shadow: 0 0 4px #fff;
+    }
+}
+.btn-outline-inverse {
+    color: #fff;
+    background-color: transparent;
+    border-color: #E5FFD8;
+	&:focus, &:hover {
+		color: #7cb75e;
+	    text-shadow: none;
+	    background-color: #fff;
+	    border-color: #fff;
+    }
+}
+#home-showcase {
+	h3 {
+		font-size: 16px;
+		text-align: center;
+	}
+}
+#footer {
+    padding: 12px 0;
+	border-top: 1px solid #eee;
+	margin-top: 20px;
+    line-height: 16px;
+    font-size: 12px;
+}
+.article-content img {
+	max-width: 100%;
+}
+.user-event-list {
+    padding: 0;
+    min-height: 128px;
+    position: relative;
+    list-style-type: none;
+    li {
+    	margin-bottom: 10px;
+    }
+    .body {
+	    border-left: 2px solid #eee;
+	    padding-left: 8px;
+        margin-top: 4px;
+    }
+    .header, .commit-message, .issue-comment {
+    	margin: 0;
+    	text-overflow: ellipsis;
+	    overflow: hidden;
+	    white-space: pre;
+    }
+    .commit-url {
+    	font-family: monospace;
+    }
+}
+.overlay {
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+    background: rgba(255,255,255,0.8);
+    .fa {
+    	top: 50%;
+	    font-size: 18px;
+    	position: absolute;
+    }
+}
+
+.pagination-number {
+	margin: 0 14px;	
+}
+.article-body img {
+	max-width: 100%;
+}

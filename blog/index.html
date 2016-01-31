@@ -1,0 +1,44 @@
+---
+layout: blog_default
+title: Blog | LC's Software
+---
+
+<div class="container">
+{% for post in paginator.posts %}
+  <div class="article-card">
+    <h3 class="article-card-title">
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </h3>
+    <div class="article-card-info">
+      <p class="text-muted">
+        发表于<span class="date">{{ post.date | date: "%Y年%m月%d日" }} &nbsp;•&nbsp; 
+        <span class="fa fa-comments-o"></span> <span class="ds-thread-count" data-thread-key="{{ post.ds_thread_key }}">无评论</span></span>
+      </p>
+    </div>
+    <div class="article-card-body">
+      {{ post.excerpt }}
+      <a href="{{ post.url | remove: '/blog' }}">阅读全文 <span class="fa fa-angle-double-right"></span></a>
+    </div>
+  </div>
+  <hr/>
+{% endfor %}
+
+<div class="text-center">
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+    <a class="btn btn-default" href="/">上一页</a>
+    {% else %}
+    <a class="btn btn-default" href="/page/{{ paginator.previous_page }}">上一页</a>
+    {% endif %}
+  {% else %}
+    <span class="btn btn-default disabled">上一页</span>
+  {% endif %}
+  <span class="pagination-number">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    <a class="btn btn-default" href="/page/{{ paginator.next_page }}">下一页</a>
+  {% else %}
+    <span class="btn btn-default disabled">下一页</span>
+  {% endif %}
+</div>
+</div>
+

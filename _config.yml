@@ -4,7 +4,7 @@ defaults:
       path: "_posts"
       type: "posts"
     values:
-      layout: "log"
+      layout: "blog_post"
       author: "Liu Chao"
   -
     scope:
@@ -15,7 +15,9 @@ defaults:
 
 sass:
   style: :compressed
-
+gems: [jekyll-paginate]
+paginate: 8
+paginate_path: "blog/page/:num"
 exclude: [".git",".sass-cache", "sass", "*.scss", "*.rb"]
 encoding: "utf-8"
 highlighter: pygments
