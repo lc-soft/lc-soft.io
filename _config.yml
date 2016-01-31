@@ -6,16 +6,11 @@ defaults:
     values:
       layout: "blog_post"
       author: "Liu Chao"
-  -
-    scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "default"
 
 sass:
   style: :compressed
 gems: [jekyll-paginate]
+permalink: /blog/posts/:categories/:title.html
 paginate: 8
 paginate_path: "blog/page/:num"
 exclude: [".git",".sass-cache", "sass", "*.scss", "*.rb"]

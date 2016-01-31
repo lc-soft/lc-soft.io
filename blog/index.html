@@ -5,9 +5,10 @@ title: Blog | LC's Software
 
 <div class="container">
 {% for post in paginator.posts %}
+  {% assign post_url = post.url | remove: '/blog' %}
   <div class="article-card">
     <h3 class="article-card-title">
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ post_url }}">{{ post.title }}</a>
     </h3>
     <div class="article-card-info">
       <p class="text-muted">
@@ -17,7 +18,7 @@ title: Blog | LC's Software
     </div>
     <div class="article-card-body">
       {{ post.excerpt }}
-      <a href="{{ post.url | remove: '/blog' }}">阅读全文 <span class="fa fa-angle-double-right"></span></a>
+      <a href="{{ post_url }}">阅读全文 <span class="fa fa-angle-double-right"></span></a>
     </div>
   </div>
   <hr/>
