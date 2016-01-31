@@ -134,3 +134,8 @@ $brandColorDark: #2980b9;
     	position: absolute;
     }
 }
+.text-ellipsis {
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}

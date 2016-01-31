@@ -19,7 +19,7 @@ is_home: true
       <hr/>
       <div id="user-events"></div>
     </div>
-    <div class="col-sm-4 text-center">
+    <div class="col-sm-4">
       <h3>作品</h3>
       <hr/>
       <p><a href="https://lcui.lc-soft.io">LCUI: 图形界面引擎</a></p>
@@ -28,7 +28,17 @@ is_home: true
     <div class="col-sm-4">
       <h3>博客</h3>
       <hr/>
+  {% if site.posts %}
+    {% for post in site.posts %}
+      {% assign post_url = post.url | remove: '/blog/' %}
+      <p class="text-ellipsis">
+        <span class="text-muted">{{ post.date | date: "%F" }}</span>
+        <a href="https://blog.lc-soft.io/{{ post_url }}">{{ post.title }}</a>
+      </p>
+    {% endfor %}
+  {% else %}
       <p class="text-muted text-center">暂无</p>
+  {% endif %}
     </div>
   </div>
 </div>
