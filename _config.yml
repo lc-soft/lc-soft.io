@@ -9,7 +9,8 @@ defaults:
 
 sass:
   style: :compressed
-gems: [jekyll-paginate]
+gems: 
+  - jekyll-paginate
 permalink: /blog/posts/:categories/:title.html
 paginate: 8
 paginate_path: "blog/page/:num"

@@ -1,0 +1,16 @@
+---
+title: sitemap
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{% for post in site.posts %}{% assign post_url = post.url | remove: '/blog' %}
+<url>
+  <loc>https://blog.lc-soft.io{{ post_url }}</loc>
+  <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+  <changefreq>weekly</changefreq>
+</url>{% endfor %}{% for page in site.pages %}
+<url>{% assign domain = page.url | split: '/' | slice: 1 | join: '' %}{% assign domain_dir = '/' | append: domain %}{% assign url = page.url | remove_first: domain_dir %}{% assign domain = domain | append: '.' %}{% if domain == 'www.' %}{% assign domain = '' %}{% endif %}
+  <loc>https://{{ domain }}lc-soft.io{{ url }}</loc>
+  <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+  <changefreq>weekly</changefreq>
+</url>{% endfor %}
+</urlset>
