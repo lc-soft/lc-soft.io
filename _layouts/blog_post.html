@@ -21,7 +21,7 @@
       <h2 style="font-size: 32px;">{{ page.title }}</h2>
       <p>
         发表于<span class="date">{{ page.date | date: "%Y年%m月%d日" }} &nbsp;•&nbsp; 
-        <span class="fa fa-comments-o"></span> <span class="ds-thread-count" data-thread-key="{{ page.ds_thread_key }}">无评论</span></span>
+        <a href="#comments"><span class="fa fa-comments-o"></span> <span class="ds-thread-count" data-thread-key="{{ page.ds_thread_key }}">无评论</span></span></a>
       </p>
     </div>
   </div>
@@ -32,7 +32,9 @@
   <div class="article-body">
 {{ content }}
   </div>
-  <div class="ds-thread" data-thread-key="{{ page.ds_thread_key }}" data-title="{{ page.title }}" data-url="http://blog.lc-soft.io/{{ page.url | remove: '/blog/' }}" data-form-position="top" data-order="desc"></div>
+  <div id="comments">
+    <div class="ds-thread" data-thread-key="{{ page.ds_thread_key }}" data-title="{{ page.title }}" data-url="http://blog.lc-soft.io/{{ page.url | remove: '/blog/' }}" data-form-position="top" data-order="desc"></div>
+  </div>
 </div>
 {% include comment.ext %}
 {% include www_footer.ext %}
