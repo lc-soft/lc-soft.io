@@ -15,18 +15,34 @@ is_home: true
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-      <h3>动态</h3>
+      <h3 class="title">动态</h3>
       <hr>
       <div id="user-events"></div>
     </div>
     <div class="col-sm-4">
-      <h3>作品</h3>
+      <h3 class="title">作品</h3>
       <hr>
-      <p><a href="https://lcui.lc-soft.io">LCUI: 图形界面引擎</a></p>
-      <p><a href="https://github.com/LC-Team/PunchAndKick">Punck &amp; Kick: 简单的2D动作游戏</a></p>
+      <div class="info-card info-card-lcui">
+        <div class="logo"></div>
+        <div class="content">
+          <div class="name">
+            <a href="https://lcui.lc-soft.io" target="_blank">LCUI</a>
+          </div>
+          <p class="description">简单的跨平台图形界面引擎</p>
+        </div>
+      </div>
+      <div class="info-card info-card-pk">
+        <div class="logo"></div>
+        <div class="content">
+          <div class="name">
+            <a href="https://github.com/LC-Team/PunchAndKick" target="_blank">Punck &amp; Kick</a>
+          </div>
+          <p class="description">仿《热血格斗》的2D横版格斗游戏</p>
+        </div>
+      </div>
     </div>
     <div class="col-sm-4">
-      <h3>博客</h3>
+      <h3 class="title">博客</h3>
       <hr>
   {% if site.posts %}
     {% for post in site.posts | slice: 0, 8 %}

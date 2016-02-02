@@ -82,7 +82,7 @@ $brandColorDark: #2980b9;
     }
 }
 #home-showcase {
-	h3 {
+	.title {
 		font-size: 16px;
 		text-align: center;
 	}
@@ -139,4 +139,32 @@ $brandColorDark: #2980b9;
 	text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+}
+.info-card {
+	margin-bottom: 15px;
+	h3, p {
+		margin: 0;
+	}
+}
+.info-card {
+	.logo {
+		float: left;
+		width: 40px;
+		height: 40px;
+		background-size: 100%;
+    	background-repeat: no-repeat;
+	}
+	.content {
+		margin-left: 52px;
+	}
+}
+.info-card-lcui {
+	.logo {
+		background-image: url('/static/images/logo-lcui.png');
+	}
+}
+.info-card-pk {
+	.logo {
+		background-image: url('/static/images/logo-pk.png');
+	}
 }
