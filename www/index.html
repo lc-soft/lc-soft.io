@@ -16,20 +16,20 @@ is_home: true
   <div class="row">
     <div class="col-sm-4">
       <h3>动态</h3>
-      <hr/>
+      <hr>
       <div id="user-events"></div>
     </div>
     <div class="col-sm-4">
       <h3>作品</h3>
-      <hr/>
+      <hr>
       <p><a href="https://lcui.lc-soft.io">LCUI: 图形界面引擎</a></p>
       <p><a href="https://github.com/LC-Team/PunchAndKick">Punck &amp; Kick: 简单的2D动作游戏</a></p>
     </div>
     <div class="col-sm-4">
       <h3>博客</h3>
-      <hr/>
+      <hr>
   {% if site.posts %}
-    {% for post in site.posts %}
+    {% for post in site.posts | slice: 0, 8 %}
       {% assign post_url = post.url | remove: '/blog/' %}
       <p class="text-ellipsis">
         <span class="text-muted">{{ post.date | date: "%F" }}</span>

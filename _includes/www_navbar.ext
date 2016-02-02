@@ -1,8 +1,4 @@
-{% if page.is_home %}
 <nav class="navbar navbar-fixed-top navbar-custom navbar-on-top">
-{% else %}
-<nav class="navbar navbar-fixed-top navbar-custom">
-{% endif %}
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
