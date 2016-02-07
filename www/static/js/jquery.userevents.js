@@ -58,8 +58,9 @@ $.fn.userevents = function (options) {
                     '" target="_blank" title="', issue.title,'">', 
                     item.repo.name, '#', issue.number, '</a>'];
         $title.html(text.join(''));
-        var body = comment.body.split('\n')[0];
-        $body.append('<p class="issue-comment">'+ body +'</p>');
+        var $comment = $('<p class="issue-comment"></p>');
+        $comment.text(comment.body.split('\n')[0]);
+        $body.append($comment);
         break;
       case 'IssuesEvent':
       case 'MemberEvent':
@@ -79,11 +80,13 @@ $.fn.userevents = function (options) {
           var cmt = commits[j];
           var url = cmt.url.replace('api.github.com/repos', 'github.com');
           var msg = cmt.message.split('\n');
+          var $msg = $('<span />').text(msg);
           text = ['<p class="commit-message text-muted" title="',
                   cmt.message, '">', '<a class="commit-url"  href="', 
                   repo_url, '" target="_blank">', cmt.sha.substr(0,7),
-                  '</a> ', msg, '</p>'];
-          $body.append(text.join(''));
+                  '</a> ', '</p>'];
+          var $cmt = $(text.join('')).append($msg);
+          $body.append($cmt);
         }
         break;
       case 'ReleaseEvent':
