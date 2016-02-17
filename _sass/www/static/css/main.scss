@@ -82,9 +82,14 @@ $brandColorDark: #2980b9;
     }
 }
 #home-showcase {
-	.showcase-title {
-		font-size: 16px;
-		text-align: center;
+	.showcase {
+		.showcase-title {
+			font-size: 16px;
+			margin: 15px 0 20px 0;
+			.icon {
+				margin-right: 8px;
+			}
+		}
 	}
 }
 #footer {
