@@ -7,7 +7,7 @@ app = Flask(__name__)
 def update():
     logs = []
     data = request.get_json()
-    cmds = ['git pull master', 'jekyll build']
+    cmds = ['git pull origin', 'jekyll build']
     if data['repository']['full_name'] != 'lc-soft/lc-soft.io':
         abort(400)
     for cmd in cmds:
