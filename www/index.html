@@ -76,15 +76,5 @@ is_home: true
 var $myEvents = $('#user-events');
 moment.locale('zh-cn');
 $myEvents.userevents({username: 'lc-soft'});
-function updateNavbarStyle() {
-  if( $(document).scrollTop() > 0 ) {
-    $('.navbar').removeClass('navbar-on-top');
-  } else {
-    $('.navbar').addClass('navbar-on-top');
-  }
-}
-updateNavbarStyle();
-$(document).on('scroll', updateNavbarStyle);
-
 })();
 </script>

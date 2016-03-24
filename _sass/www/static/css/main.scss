@@ -3,6 +3,10 @@ $brandColorLight: #44ABF1;
 $brandColorDark: #2980b9;
 
 .navbar-custom {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
 	background-color: #fff;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
     transition: background-color .3s ease-in-out, border .3s ease-in-out;
@@ -35,11 +39,18 @@ $brandColorDark: #2980b9;
 	}
 }
 .navbar-on-top {
-	color: #333;
+	color: #aaa;
 	box-shadow: none;
-	background-color: rgba(255, 255, 255, 0.5);
+    background: #333;
+    background: rgba(47,47,47,0.98);
 	.navbar-nav >li >a {
-		color: #333;
+		color: #aaa;
+		&:hover {
+			color: #ddd;
+		}
+		&:active, &:focus {
+			color: #fff;
+		}
 	}
 	.nav>li>a, .nav .open>a {
 	    background-color: transparent;
@@ -48,25 +59,25 @@ $brandColorDark: #2980b9;
 		}
 	}
 	.navbar-brand {
-		color: $brandColor;
+		color: #fff;
+		font-weight: normal;
 	}
 }
 .home-jumbotron {
-    color: #000;
+    color: #aaa;
 	margin: 0;
-	background-color: #fff;
+	background: #444;
 	border-bottom: 1px solid #eee;
-	background-image: url("/static/images/background.png");
-	padding-top: 128px;
+	padding-top: 108px;
     h1 {
+    	color: #fff;
     	font-size: 48px;
 	}
     p {
-		font-size: 14px;
+		font-size: 16px;
 	    margin-top: 10px;
 	    margin-bottom: 30px;
 	    line-height: 24px;
-        text-shadow: 0 0 4px #fff;
         font-weight: normal;
     }
 }
@@ -82,10 +93,22 @@ $brandColorDark: #2980b9;
     }
 }
 #home-showcase {
+	background: #f4f4f4;
+	padding: 20px 0;
 	.showcase {
+		padding: 10px;
+	    background: #fff;
+	    -webkit-border-radius: 2px;
+	    -moz-border-radius: 2px;
+	    border-radius: 2px;
+	    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+	    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+	    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
 		.showcase-title {
 			font-size: 16px;
-			margin: 15px 0 20px 0;
+		    padding: 2px 0 10px 0;
+		    margin: 0 0 8px 0;
+		    border-bottom: 1px dashed #eee;
 			.icon {
 				margin-right: 8px;
 			}
@@ -95,7 +118,6 @@ $brandColorDark: #2980b9;
 #footer {
     padding: 12px 0;
 	border-top: 1px solid #eee;
-	margin-top: 20px;
     line-height: 16px;
     font-size: 12px;
 }
