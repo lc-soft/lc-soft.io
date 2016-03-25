@@ -4,9 +4,9 @@
 
 $.fn.userevents = function (options) {
   var $self = $('<ul class="user-event-list"/>');
-  var $overlay = $(['<div class="overlay">',
+  var $overlay = $(['<div class="overlay"><div class="spinner-box">',
                     '<i class="fa fa-spinner fa-spin"></i>',
-                    '</div>'].join('') );
+                    '</div></div>'].join('') );
   var $this = $(this).css('position','relative').append($self, $overlay);
   var defaults = {
     num: 4,
