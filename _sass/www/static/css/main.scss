@@ -58,6 +58,11 @@ $brandColorDark: #2980b9;
 		&:hover, &:active, &:focus {
 	    	background-color: rgba(255,255,255,0.1);
 		}
+		@media (min-width: 768px) {
+			&:hover, &:active, &:focus {
+		    	background-color: transparent;
+			}
+		}
 	}
 	.navbar-brand {
 		color: #fff;
