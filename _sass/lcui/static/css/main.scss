@@ -35,7 +35,23 @@
 	.navbar-nav >li >a {
 	    color: #E5FFD8;
 	}
+	@media (max-width: 768px) {
+		.dropdown-menu>li>a {
+			color: #E5FFD8;
+		    background-color: transparent;
+			&:active, &:hover, &:focus {
+			    color: #fff;
+			}
+			&:hover {
+		    	background-color: #8AC56B;
+			}
+			&:active, &:focus {
+		    	background-color: #6ba84b;
+			}
+		}
+	}
 	.nav>li>a, .nav .open>a {
+		color: #E5FFD8;
 	    background-color: transparent;
 		&:active, &:hover, &:focus {
 		    color: #fff;
