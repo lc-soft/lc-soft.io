@@ -4,6 +4,7 @@ title: LC-Soft | LC's Software
 is_home: true
 ---
 <div class="jumbotron home-jumbotron">
+  <div id="home-jumbotron-particles" class="jumbotron-particles"></div>
   <div class="container">
     <div class="col-xs-12 text-center">
       <h1>欢迎</h1>
@@ -80,11 +81,20 @@ is_home: true
 <script src="/static/js/moment.min.js"></script>
 <script src="/static/js/moment.locale.zh-cn.js"></script>
 <script src="/static/js/jquery.userevents.js"></script>
+<script src="/static/js/jquery.particleground.min.js"></script>
 <script type="text/javascript">
 ;(function () {
+
+$('#home-jumbotron-particles').particleground({
+  dotColor: '#555',
+  lineColor: '#666',
+  proximity: 80,
+  density: 4000
+});
 
 var $myEvents = $('#user-events');
 moment.locale('zh-cn');
 $myEvents.userevents({username: 'lc-soft'});
+
 })();
 </script>
