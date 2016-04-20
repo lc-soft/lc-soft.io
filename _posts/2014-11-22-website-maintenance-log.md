@@ -3,6 +3,9 @@ title: 网站维护日志
 ds_thread_key: devlog-webiste
 ---
 
+## 2016-04-20
+新建了个仓库，用来放自己写的 Github 相关 jQuery 插件，比如现在主页上用到的用户近期动态列表。之前在上一版本的主页里写了个仿 Github Contributions 的贡献日历，但这个日历的实现代码早就被我连同代码库删除了，现在觉得有些浪费，以后要用的话又要重写，真麻烦。
+
 ## 2016-04-15
 在 Conoha 上的 VPS 居然无法访问，上管理页面查看后发现CPU和传送量莫名飙满，难不成是遭受DDOS攻击了？现在连新建个服务器也不行，看上去是整个账号都被 conoha 封掉了，还有 1000 多日元没用呢，算了，改用 [vultr](http://www.vultr.com/?ref=6890184)。
 [![](/static/images/devlog/2016-04-16-09-07-08.png "VPS 状态截图")](/static/images/devlog/2016-04-16-09-07-08.png)
