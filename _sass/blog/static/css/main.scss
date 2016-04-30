@@ -68,12 +68,12 @@ $brandColorDark: #2980b9;
 	background-image: url("/static/images/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-	padding: 100px 0;
+    padding-top: 100px;
     h1 {
     	font-size: 48px;
     }
     p {
-		font-size: 14px;
+		font-size: 16px;
 	    margin-top: 10px;
 	    margin-bottom: 30px;
 	    line-height: 24px;
@@ -169,4 +169,7 @@ $brandColorDark: #2980b9;
 }
 .article-card .article-card-body p {
     word-break: break-all;	
+}
+.article-body {
+	padding-top: 40px;
 }
