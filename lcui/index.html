@@ -58,24 +58,24 @@ is_home: true
     </div>
     <div class="row">
       <div class="col-xs-6 col-md-3">
-        <a class="thumbnail">
-          <img src="/static/images/game/game-main-menu-effect-demo-02.gif" />
+        <a class="thumbnail" href="/static/images/showcase/punckandkick-001.gif">
+          <img src="/static/images/showcase/punckandkick-001.gif" />
         </a>
       </div>
       <div class="col-xs-6 col-md-3">
-        <a class="thumbnail">
-          <img src="/static/images/game/value-tip-effect.gif" />
+        <a class="thumbnail" href="/static/images/showcase/punckandkick-002.gif">
+          <img src="/static/images/showcase/punckandkick-002.gif" />
         </a>
       </div>
       <div class="col-xs-6 col-md-3">
-        <div class="thumbnail thumbnail-empty">
-          待添加...
-        </div>
+        <a class="thumbnail" href="/static/images/showcase/lcfinder-001.png">
+          <img src="/static/images/showcase/lcfinder-001.png" />
+        </a>
       </div>
       <div class="col-xs-6 col-md-3">
-        <div class="thumbnail thumbnail-empty">
-          待添加...
-        </div>
+        <a class="thumbnail" href="/static/images/showcase/lcfinder-002.png">
+          <img src="/static/images/showcase/lcfinder-002.png" />
+        </a>
       </div>
     </div>
   </section>
@@ -146,6 +146,7 @@ is_home: true
     </div>
   </section>
 </div>
+<script src="/static/js/abigimage.jquery.min.js"></script>
 <script type="text/javascript">
 function updateNavbarStyle() {
   if( $(document).scrollTop() > 0 ) {
@@ -156,4 +157,5 @@ function updateNavbarStyle() {
 }
 updateNavbarStyle();
 $(document).on('scroll', updateNavbarStyle);
+$('.thumbnail').abigimage();
 </script>
