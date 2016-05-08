@@ -59,22 +59,22 @@ is_home: true
     <div class="row">
       <div class="col-xs-6 col-md-3">
         <a class="thumbnail" href="/static/images/showcase/punckandkick-001.gif">
-          <img src="/static/images/showcase/punckandkick-001.gif" />
+          <img src="/static/images/showcase/punckandkick-001.gif" alt="PunckAndKick 效果图-002"/>
         </a>
       </div>
       <div class="col-xs-6 col-md-3">
         <a class="thumbnail" href="/static/images/showcase/punckandkick-002.gif">
-          <img src="/static/images/showcase/punckandkick-002.gif" />
+          <img src="/static/images/showcase/punckandkick-002.gif" alt="PunckAndKick 效果图-002"/>
         </a>
       </div>
       <div class="col-xs-6 col-md-3">
         <a class="thumbnail" href="/static/images/showcase/lcfinder-001.png">
-          <img src="/static/images/showcase/lcfinder-001.png" />
+          <img src="/static/images/showcase/lcfinder-001.png" alt="LC-Finder 效果图-002"/>
         </a>
       </div>
       <div class="col-xs-6 col-md-3">
         <a class="thumbnail" href="/static/images/showcase/lcfinder-002.png">
-          <img src="/static/images/showcase/lcfinder-002.png" />
+          <img src="/static/images/showcase/lcfinder-002.png" alt="LC-Finder 效果图-002" />
         </a>
       </div>
     </div>
@@ -157,5 +157,9 @@ function updateNavbarStyle() {
 }
 updateNavbarStyle();
 $(document).on('scroll', updateNavbarStyle);
-$('.thumbnail').abigimage();
+$('.thumbnail').abigimage({
+  onopen: function(target) {
+    this.bottom.html($('img', target).attr('alt'));
+  }
+});
 </script>
