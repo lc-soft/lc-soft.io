@@ -16,7 +16,7 @@ $.fn.userevents = function (options) {
   };
 
   function setList(list) {
-    var count = list.length > options.num ? options.num:list.length;
+    var count = Math.max(list.length, options.num);
     for( var i=0; i<list.length && count > 0; ++i ) {
       var item = list[i];
       var $item = $(options.template);
@@ -24,13 +24,11 @@ $.fn.userevents = function (options) {
       var $body = $item.find('.body');
       var $time = $item.find('.time');
       var repo_url = item.repo.url;
-      repo_url = repo_url.replace('api.github.com/repos', 'github.com')
-      console.log(item);
+      repo_url = repo_url.replace('api.github.com/repos', 'github.com');
       switch(item.type) {
       case 'CommitCommentEvent':continue;
       case 'CreateEvent':
         var text;
-        url = url;
         if( item.payload.ref_type == 'repository' ) {
           text = ['创建代码库 ', '<a href="', repo_url, 
                   '" target="_blank">', item.repo.name, '</a>'];

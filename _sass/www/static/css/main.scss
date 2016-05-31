@@ -158,7 +158,7 @@ $brandColorDark: #2980b9;
     	margin: 0;
     	text-overflow: ellipsis;
 	    overflow: hidden;
-	    white-space: pre;
+	    white-space: nowrap;
     }
     .commit-url {
     	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;;
