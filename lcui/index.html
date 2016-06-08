@@ -3,6 +3,8 @@ layout: lcui_default
 title: LCUI | LC's Software
 is_home: true
 ---
+<link rel="stylesheet" type="text/css" href="/static/plugins/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="/static/plugins/slick/slick-theme.css"/>
 <div class="jumbotron home-jumbotron">
   <div class="container">
     <div class="col-xs-12">
@@ -26,40 +28,56 @@ is_home: true
 </div>
 <div class="container">
   <section id="features">
-    <div class="text-center">
+    <div class="section-header">
       <h2>主要特性</h3>
-      <p class="text-muted">（以下部分特性将在新版本中添加）</p>
-      <hr>
     </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-6 col-lg-3 project-feature">
-        <h3><span class="fa fa fa-pencil project-feature-icon"></span> C语言编写</h3>
+    <div class="project-feature-nav">
+      <div class="project-feature-nav-item">
+        <img src="/static/images/feature-screenshot-01.png">
+        <div class="project-feature-nav-item-cover"></div>
+      </div>
+      <div class="project-feature-nav-item">
+        <img src="/static/images/feature-screenshot-02.png">
+        <div class="project-feature-nav-item-cover"></div>
+      </div>
+      <div class="project-feature-nav-item">
+        <img src="/static/images/feature-screenshot-03.png">
+        <div class="project-feature-nav-item-cover"></div>
+      </div>
+      <div class="project-feature-nav-item">
+        <img src="/static/images/feature-screenshot-04.png">
+        <div class="project-feature-nav-item-cover"></div>
+      </div>
+    </div>
+    <div class="project-feature-group">
+      <div class="project-feature">
+        <h3><span class="fa fa fa-pencil project-feature-icon"></span> 主要代码使用C语言编写</h3>
         <p>适用于体积较小且主要使用C语言实现的应用程序，以及偏向使用C语言编写简单应用的开发者。</p>
       </div>
-      <div class="col-xs-12 col-md-6 col-lg-3 project-feature">
-        <h3><span class="fa fa-cogs project-feature-icon"></span> 跨平台</h3>
-        <p>LCUI 大部分时间是在 windows 系统环境下进行开发和测试的，虽然也支持 GNU/Linux 系统环境，但支持度并没有 windows 好。</p>
-      </div>
-      <div class="col-xs-12 col-md-6 col-lg-3 project-feature">
-        <h3><span class="fa fa-file-code-o project-feature-icon"></span> XML + CSS</h3>
+      <div class="project-feature">
+        <h3><span class="fa fa-file-code-o project-feature-icon"></span> 支持使用 XML 和 CSS 描述界面</h3>
         <p>觉得界面实现代码写起来麻烦，写出来还复杂啰嗦、可读性差、维护困难？LCUI 支持使用 XML 和 CSS 描述界面布局及样式，可节省界面开发时间和维护成本。</p>
       </div>
-      <div class="col-xs-12 col-md-6 col-lg-3 project-feature">
+      <div class="project-feature">
+        <h3><span class="fa fa-cogs project-feature-icon"></span> 跨平台</h3>
+        <p>支持 Windows 和 GNU/Linux 系统，但由于作者大部分时间是在 windows 系统环境下进行开发和测试的，因此目前仅完整支持 Windows 系统，而对 GNU/Linux 系统支持仅达到通过编译的程度。有计划在新版本中完善对其它系统的支持。</p>
+      </div>
+      <div class="project-feature">
         <h3><span class="fa fa-cubes project-feature-icon"></span> 轻量级，可裁剪</h3>
         <p>LCUI 的部分功能模块是可选的，例如：字体引擎、图像读写、UI组件等模块，如果对编译后的程序体积有要求，可修改编译配置，移除用不到的模块。</p>
       </div>
     </div>
   </section>
+  <hr>
   <section id="demo-screenshorts">
-    <div class="text-center">
+    <div class="section-header">
       <h2>样例展示</h2>
       <p class="text-muted">一些 LCUI 应用程序的效果图</p>
-      <hr>
     </div>
     <div class="row">
       <div class="col-xs-6 col-md-3">
         <a class="thumbnail" href="/static/images/showcase/punckandkick-001.gif">
-          <img src="/static/images/showcase/punckandkick-001.gif" alt="PunckAndKick 效果图-002"/>
+          <img src="/static/images/showcase/punckandkick-001.gif" alt="PunckAndKick 效果图-001"/>
         </a>
       </div>
       <div class="col-xs-6 col-md-3">
@@ -69,7 +87,7 @@ is_home: true
       </div>
       <div class="col-xs-6 col-md-3">
         <a class="thumbnail" href="/static/images/showcase/lcfinder-001.png">
-          <img src="/static/images/showcase/lcfinder-001.png" alt="LC-Finder 效果图-002"/>
+          <img src="/static/images/showcase/lcfinder-001.png" alt="LC-Finder 效果图-001"/>
         </a>
       </div>
       <div class="col-xs-6 col-md-3">
@@ -96,10 +114,10 @@ is_home: true
       </div>
     </div>
   </section>
+  <hr>
   <section id="faq">
-    <div class="text-center">
+    <div class="section-header">
       <h2>常见问题</h2>
-      <hr>
     </div>
     <div class="row">
       <div class="col-xs-12 col-md-6 project-faq">
@@ -143,16 +161,6 @@ is_home: true
     </div>
     <div class="row">
       <div class="col-xs-12 col-md-6 project-faq">
-        <h3><span class="icon-question"></span> 项目目前还处于活跃状态吗？</h3>
-        <p>现在已经不太活跃，毕竟作者空闲时间有限，只能断断续续、一点点的折腾。</p>
-      </div>
-      <div class="col-xs-12 col-md-6 project-faq">
-        <h3><span class="icon-question"></span> 以后会发展成什么样？</h3>
-        <p>LCUI 以后具备什么样的功能和特性，取决于作者在以后开发的 LCUI 应用程序所拥有的功能特性，如果是2D/3D游戏，那么可能会为 LCUI 添加OpenGL和Direct3D支持；做些优化，提升性能；如果是带图形界面的应用程序，那么可能会添加一些GUI部件(控件)，增加一些新功能及特性。</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-6 project-faq">
         <h3><span class="icon-question"></span> 为什么要开放源代码？</h3>
         <p>满足作者的展现欲，刷点知名度和存在感。</p>
       </div>
@@ -164,6 +172,7 @@ is_home: true
   </section>
 </div>
 <script src="/static/js/abigimage.jquery.min.js"></script>
+<script src="/static/plugins/slick/slick.min.js"></script>
 <script type="text/javascript">
 function updateNavbarStyle() {
   if( $(document).scrollTop() > 0 ) {
@@ -178,5 +187,52 @@ $('.thumbnail').abigimage({
   onopen: function(target) {
     this.bottom.html($('img', target).attr('alt'));
   }
+});
+
+$('.project-feature-group').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+  draggable: false,
+  asNavFor: '.project-feature-nav'
+});
+$('.project-feature-nav').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  asNavFor: '.project-feature-group',
+  centerPadding: '192px',
+  dots: true,
+  autoplay: true,
+  centerMode: true,
+  autoplaySpeed: 5000,
+  focusOnSelect: true,
+  prevArrow: '<button type="button" class="slick-prev fa fa-angle-left">Previous</button>',
+  nextArrow: '<button type="button" class="slick-next fa fa-angle-right">Next</button>',
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        centerMode: true,
+        centerPadding: '128px',
+        slidesToShow: 1
+      }
+    }, {
+      breakpoint: 992,
+      settings: {
+        centerMode: true,
+        centerPadding: '96px',
+        slidesToShow: 1
+      }
+    }, {
+      breakpoint: 768,
+      settings: {
+        centerMode: true,
+        centerPadding: '0px',
+        dots: false,
+        slidesToShow: 1
+      }
+    }
+  ]
 });
 </script>
