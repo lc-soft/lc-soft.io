@@ -17,25 +17,25 @@ $.fn.userevents = function (options) {
 
   function setList(list) {
     var count = Math.min(list.length, options.num);
-    for( var i=0; i<list.length && count > 0; ++i ) {
+    for( var i = 0; count > 0; ++i ) {
       var item = list[i];
       var $item = $(options.template);
       var $title = $item.find('.title');
       var $body = $item.find('.body');
       var $time = $item.find('.time');
-      var repo_url = item.repo.url;
-      repo_url = repo_url.replace('api.github.com/repos', 'github.com');
+      var repoUrl = item.repo.url;
+      repoUrl = repoUrl.replace('api.github.com/repos', 'github.com');
       switch(item.type) {
       case 'CommitCommentEvent':continue;
       case 'CreateEvent':
         var text;
         if( item.payload.ref_type == 'repository' ) {
-          text = ['创建代码库 ', '<a href="', repo_url, 
+          text = ['创建代码库 ', '<a href="', repoUrl, 
                   '" target="_blank">', item.repo.name, '</a>'];
         } else {
-          text = ['为 ', '<a href="', repo_url, '" target="_blank">', 
+          text = ['为 ', '<a href="', repoUrl, '" target="_blank">', 
                   item.repo.name, '</a>', ' 创建 ', '<a href="', 
-                  repo_url, '/tree/', item.payload.ref, '" target="_blank">', 
+                  repoUrl, '/tree/', item.payload.ref, '" target="_blank">', 
                   item.payload.ref, '</a> 分支'];
         }
         $title.html(text.join(''));
@@ -71,13 +71,13 @@ $.fn.userevents = function (options) {
       case 'PushEvent':
         var commits = item.payload.commits;
         var text = ['推送 ', commits.length, ' 个提交至 ',
-                    '<a href="', repo_url, '" target="_blank">', 
+                    '<a href="', repoUrl, '" target="_blank">', 
                     item.repo.name, '</a>'];
         $title.html(text.join(''));
         for( var j=0; j<commits.length; ++j ) {
           var cmt = commits[j];
           var url = cmt.url.replace('api.github.com/repos', 'github.com');
-          var msg = cmt.message.split('\n');
+          var msg = cmt.message.split('\n')[0];
           var $msg = $('<span />').text(msg);
           text = ['<p class="commit-message text-muted" title="',
                   cmt.message, '">', '<a class="commit-url"  href="', 
