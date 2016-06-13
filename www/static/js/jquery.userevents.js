@@ -17,7 +17,7 @@ $.fn.userevents = function (options) {
 
   function setList(list) {
     var count = Math.min(list.length, options.num);
-    for( var i = 0; count > 0; ++i ) {
+    for( var i = 0; i < list.length && count > 0; ++i ) {
       var item = list[i];
       var $item = $(options.template);
       var $title = $item.find('.title');
