@@ -52,7 +52,7 @@ $.fn.userevents = function (options) {
       case 'IssueCommentEvent':
         var issue = item.payload.issue;
         var comment = item.payload.comment;
-        var text = ['发表评论在 ', '<a href="', issue.html_url, 
+        var text = ['发表评论在 <a href="', issue.html_url, 
                     '" target="_blank" title="', issue.title,'">', 
                     item.repo.name, '#', issue.number, '</a>'];
         $title.html(text.join(''));
@@ -70,19 +70,17 @@ $.fn.userevents = function (options) {
         continue;
       case 'PushEvent':
         var commits = item.payload.commits;
-        var text = ['推送 ', commits.length, ' 个提交至 ',
-                    '<a href="', repoUrl, '" target="_blank">', 
-                    item.repo.name, '</a>'];
+          var url = 'https://github.com/' + item.repo.name + '/commit/';
+        var text = ['推送 ', commits.length, ' 个提交至 <a href="', 
+                    repoUrl, '" target="_blank">', item.repo.name, '</a>'];
         $title.html(text.join(''));
         for( var j=0; j<commits.length; ++j ) {
           var cmt = commits[j];
-          var url = cmt.url.replace('api.github.com/repos', 'github.com');
           var msg = cmt.message.split('\n')[0];
           var $msg = $('<span />').text(msg);
-          text = ['<p class="commit-message text-muted" title="',
-                  cmt.message, '">', '<a class="commit-url"  href="', 
-                  url, '" target="_blank">', cmt.sha.substr(0,7),
-                  '</a> ', '</p>'];
+          text = ['<p class="commit-message text-muted" title="', cmt.message, 
+                  '"><a class="commit-url"  href="', url, cmt.sha, 
+                  '" target="_blank">', cmt.sha.substr(0,7), '</a></p>'];
           var $cmt = $(text.join('')).append($msg);
           $body.append($cmt);
         }
