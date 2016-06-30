@@ -80,7 +80,7 @@ $.fn.userevents = function (options) {
           var $msg = $('<span />').text(msg);
           text = ['<p class="commit-message text-muted" title="', cmt.message, 
                   '"><a class="commit-url"  href="', url, cmt.sha, 
-                  '" target="_blank">', cmt.sha.substr(0,7), '</a></p>'];
+                  '" target="_blank">', cmt.sha.substr(0,7), '</a> </p>'];
           var $cmt = $(text.join('')).append($msg);
           $body.append($cmt);
         }
