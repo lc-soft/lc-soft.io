@@ -14,7 +14,8 @@ gems:
 permalink: /blog/posts/:categories/:title.html
 paginate: 8
 paginate_path: "blog/page/:num"
-exclude: [".git",".sass-cache", "sass", "*.scss", "*.rb"]
+exclude: [".git",".sass-cache", "sass", "*.scss", "*.rb", "node_modules",
+          "src", "webpack.config.js", "package.json"]
 encoding: "utf-8"
 highlighter: pygments
 markdown: redcarpet

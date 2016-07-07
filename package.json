@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "node-sass": "^3.8.0",
+    "sass-loader": "^4.0.0"
+  }
+}

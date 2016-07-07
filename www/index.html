@@ -16,11 +16,11 @@ is_home: true
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-      <div class="showcase clearfix">
+      <div  id="my-vue-app" class="showcase clearfix">
         <h3 class="showcase-title">
           <span class="icon octicon octicon-pulse"></span>动态
         </h3>
-        <div id="user-events"></div>
+        <userevents></userevents>
       </div>
     </div>
     <div class="col-sm-4">
@@ -80,21 +80,6 @@ is_home: true
 </section>
 <script src="/static/js/moment.min.js"></script>
 <script src="/static/js/moment.locale.zh-cn.js"></script>
-<script src="/static/js/jquery.userevents.js"></script>
 <script src="/static/js/jquery.particleground.min.js"></script>
-<script type="text/javascript">
-;(function () {
-
-$('#home-jumbotron-particles').particleground({
-  dotColor: '#555',
-  lineColor: '#666',
-  proximity: 80,
-  density: 4000
-});
-
-var $myEvents = $('#user-events');
-moment.locale('zh-cn');
-$myEvents.userevents({username: 'lc-soft', num: 6});
-
-})();
-</script>
+<script src="/static/js/vue.min.js"></script>
+<script src="/static/js/index.js"></script>
