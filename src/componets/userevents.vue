@@ -27,7 +27,7 @@
             <span class="title">推送 {{ event.payload.commits.length }} 个提交至 <a v-bind:href="'https://github.com/' + event.repo.name" target="_blank">{{ event.repo.name }}</a></span>
           </p>
           <div class="body">
-            <p v-for="cmt in event.payload.commits" class="commit-message text-muted" v:title="cmt.message"><a class="commit-url" v-bind:href="'https://github.com/' + event.repo.name + '/commit/' + cmt.sha" target="_blank">{{ cmt.sha.substr(0,7) }}</a> <span>{{ cmt.message.split('\n')[0] }}</span></p>
+            <p v-for="cmt in event.payload.commits" class="commit-message text-muted" v-bind:title="cmt.message"><a class="commit-url" v-bind:href="'https://github.com/' + event.repo.name + '/commit/' + cmt.sha" target="_blank">{{ cmt.sha.substr(0,7) }}</a> <span>{{ cmt.message.split('\n')[0] }}</span></p>
           </div>
         </template>
       </li>
