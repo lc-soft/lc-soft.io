@@ -5,11 +5,11 @@
         <template v-if="event.type == 'IssueCommentEvent'">
           <p class="header">
             <span class="time text-muted">{{ event.created_at | reltime }}</span>
-            <span class="title">发表评论在 <a v-bind:href="event.payload.issue.html_url" target="_blank" v-bind:title="event.payload.issue.title">{{ event.repo.name }} #{{ event.payload.issue.number }}</a>
+            <span class="title">发表评论在 <a v-bind:href="event.payload.comment.html_url" target="_blank" v-bind:title="event.payload.issue.title">{{ event.repo.name }} #{{ event.payload.issue.number }}</a>
             </span>
           </p>
           <div class="body">
-            <p class="issue-comment">{{ event.payload.comment.body.split('\n')[0]) }}</p>
+            <p class="issue-comment" v-bind:title="event.payload.comment.body">{{ event.payload.comment.body }}</p>
           </div>
         </template>
         <template v-if="event.type == 'CreateEvent'">
