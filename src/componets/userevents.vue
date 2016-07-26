@@ -12,6 +12,17 @@
             <p class="issue-comment" v-bind:title="event.payload.comment.body">{{ event.payload.comment.body }}</p>
           </div>
         </template>
+        <template v-if="event.type == 'PullRequestEvent'">
+          <p class="header">
+            <span class="time text-muted">{{ event.created_at | reltime }}</span>
+            <span class="title"><span v-if="event.payload.action == 'opened'">发起</span><span v-if="event.payload.action == 'closed'">关闭</span>合并请求 <a v-bind:href="event.payload.pull_request.html_url" target="_blank" v-bind:title="event.repo.name + '#' + event.payload.pull_request.number">{{ event.repo.name }} #{{ event.payload.pull_request.number }}</a>
+            </span>
+          </p>
+          <div class="body">
+            <p class="issue-comment" v-bind:title="event.payload.pull_request.title">{{ event.payload.pull_request.title }}</p>
+            <div class="pull-request-stats">包含 <em>{{ event.payload.pull_request.commits }}</em> 个提交，共新增 <em>{{ event.payload.pull_request.additions }}</em> 行，删除 <em>{{ event.payload.pull_request.deletions }}</em> 行</div>
+          </div>
+        </template>
         <template v-if="event.type == 'CreateEvent'">
           <span class="time text-muted">{{ event.created_at | reltime }}</span>
           <span v-if="event.payload.ref_type == 'repository'" class="title">
@@ -70,6 +81,18 @@
       .commit-url {
         font-family: Menlo, Monaco, Consolas, "Courier New", monospace;;
       }
+      .pull-request-stats {
+        padding: 2px 8px;
+        border-radius: 3px;
+        margin: 5px 0 2px 0;
+        display: inline-block;
+        color: rgba(0,0,0,0.5);
+        background-color: #f0f0f0;
+        em {
+          font-style: normal;
+          font-weight: bold;
+        }
+      }
   }
   .overlay {
       top: 0;
@@ -117,6 +140,7 @@ export default {
         for( var i = 0; i < list.length && count > 0; ++i ) {
           var e = list[i];
           switch(e.type) {
+          case 'PullRequestEvent':
           case 'IssueCommentEvent':
           case 'CreateEvent':
           case 'PushEvent':
@@ -138,7 +162,6 @@ export default {
           case 'MembershipEvent':
           case 'PageBuildEvent':
           case 'PublicEvent':
-          case 'PullRequestEvent':
           case 'PullRequestReviewCommentEvent':
           case 'ReleaseEvent':
           case 'RepositoryEvent':
