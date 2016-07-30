@@ -35,10 +35,11 @@
         <template v-if="event.type == 'PushEvent'">
           <p class="header">
             <span class="time text-muted">{{ event.created_at | reltime }}</span>
-            <span class="title">推送 {{ event.payload.commits.length }} 个提交至 <a v-bind:href="'https://github.com/' + event.repo.name" target="_blank">{{ event.repo.name }}</a></span>
+            <span class="title">推送 {{ event.payload.size }} 个提交至 <a v-bind:href="'https://github.com/' + event.repo.name" target="_blank">{{ event.repo.name }}</a></span>
           </p>
           <div class="body">
-            <p v-for="cmt in event.payload.commits" class="commit-message text-muted" v-bind:title="cmt.message"><a class="commit-url" v-bind:href="'https://github.com/' + event.repo.name + '/commit/' + cmt.sha" target="_blank">{{ cmt.sha.substr(0,7) }}</a> <span>{{ cmt.message.split('\n')[0] }}</span></p>
+            <p v-for="cmt in event.payload.commits.slice(0,2)" class="commit-message text-muted" v-bind:title="cmt.message"><a class="commit-url" v-bind:href="'https://github.com/' + event.repo.name + '/commit/' + cmt.sha" target="_blank">{{ cmt.sha.substr(0,7) }}</a> <span>{{ cmt.message.split('\n')[0] }}</span></p>
+            <p v-if="event.payload.commits.length > 1" ><a v-bind:href="'https://github.com/'+ event.repo.name + '/compare/' + event.payload.before.substr(0,10) + '...' + event.payload.head.substr(0,10)" target="_blank"><template v-if="event.payload.commits.length > 2">以及 {{ event.payload.size - 2 }} 个提交 »</template><template v-else>比较这 2 个提交 »</template></a></p>
           </div>
         </template>
       </li>
