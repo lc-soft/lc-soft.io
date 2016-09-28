@@ -34,77 +34,80 @@ $BrandColor:#7cb75e;
 .navbar-on-top {
 	color: #fff;
 	box-shadow: none;
-	background-color: rgba(124, 183, 94, 0.5);
+	background-color: rgba(0,0,0,0.1);
 	.navbar-nav >li >a {
 	    color: #E5FFD8;
 	}
 	@media (max-width: 768px) {
 		.dropdown-menu>li>a {
-			color: #E5FFD8;
+			color: rgba(255,255,255,0.8);
 		    background-color: transparent;
 			&:active, &:hover, &:focus {
 			    color: #fff;
 			}
 			&:hover {
-		    	background-color: #8AC56B;
+		    	background-color: rgba(0,0,0,0.1);
 			}
 			&:active, &:focus {
-		    	background-color: #6ba84b;
+		    	background-color: rgba(0,0,0,0.2);
 			}
 		}
 	}
 	.nav>li>a, .nav .open>a {
-		color: #E5FFD8;
+		color: rgba(255,255,255,0.8);
 	    background-color: transparent;
 		&:active, &:hover, &:focus {
 		    color: #fff;
 		}
 		&:hover {
-	    	background-color: #8AC56B;
+		    	background-color: rgba(0,0,0,0.1);
 		}
 		&:active, &:focus {
-	    	background-color: #6ba84b;
+		    	background-color: rgba(0,0,0,0.2);
 		}
 	}
 	.navbar-brand {
 		color: #fff;
 	}
 	.icon-bar {
-	    background-color: #E5FFD8;
+	    background-color: #fff;
 	}
 	.navbar-toggle {
 		&:focus, &:hover {
-		    background-color: #8AC56B;
-		    border-color: #8AC56B;
+		    background-color: rgba(138,197,107,0.3);
+		    border-color: #4e7b37;
 		}
 	}
 }
 .home-jumbotron {
-    color: #E5FFD8;
-	background-color: $BrandColor;
+    color: #fff;
+	background-color: #282e28;
 	background-image: url("/static/images/pattern.png");
 	padding-top: 128px;
     .logo {
-	    background-image: url('/static/images/lcui-logo-lg.png');
 	    width: 182px;
 	    height: 182px;
-	    margin: 34px auto;
+	    margin: 10px auto;
 	    background-size: auto 100%;
-	    box-shadow: 0 0 24px rgba(0,0,0,0.4);
 	    background-repeat: no-repeat;
+	    background-image: url('/static/images/lcui-logo-lg.png');
         font-weight: normal;
     }
     h1, h2 {
     	color: #fff;
-    	text-shadow: 4px 3px 0px $BrandColor, 9px 8px 0px rgba(0, 0, 0, 0.15);
+    	text-shadow: 4px 3px 0px #2b3b2b, 9px 8px 0px rgba(0, 0, 0, 0.15);
     }
+	.jumbotron-button-group {
+		margin-top: 60px;
+	}
 }
 .btn-outline-inverse {
     color: #fff;
     background-color: transparent;
-    border-color: #E5FFD8;
+	border-radius: 2px;
+    border-color: #fff;
 	&:focus, &:hover {
-		color: $BrandColor;
+		color: #333;
 	    text-shadow: none;
 	    background-color: #fff;
 	    border-color: #fff;
@@ -113,10 +116,11 @@ $BrandColor:#7cb75e;
 .shameless-self-promotion {
     margin-top: 22px;
     font-size: 14px;
-    color: #C1E8AD;
+    color: #fff;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
     a {
-        color: #E5FFD8;
+        color: #fff;
+		opacity: 0.8;
     }
 }
 .project-feature {
