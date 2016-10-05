@@ -15,7 +15,7 @@ is_home: true
 <section id="home-showcase">
 <div class="container">
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-md-4">
       <div  id="my-vue-app" class="showcase clearfix">
         <h3 class="showcase-title">
           <span class="icon octicon octicon-pulse"></span>动态
@@ -23,56 +23,47 @@ is_home: true
         <userevents></userevents>
       </div>
     </div>
-    <div class="col-sm-4">
+    <div class="col-md-8">
       <div class="showcase clearfix">
         <h3 class="showcase-title">
           <span class="icon octicon octicon-light-bulb"></span>作品
         </h3>
-        <div class="info-card info-card-lcfinder">
-          <div class="logo"></div>
-          <div class="content">
-            <div class="name">
-              <a href="https://github.com/lc-soft/LC-Finder" target="_blank">LCFinder</a>
-            </div>
-            <p class="description">简单的资源检索与管理工具</p>
+        <div class="media">
+          <a class="media-left media-middle" href="https://github.com/lc-soft/LC-Finder" target="_blank">
+            <span class="icon octicon octicon-repo"></span>
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading"><a href="https://github.com/lc-soft/LC-Finder" target="_blank">LCFinder</a></h4>
+            资源检索与管理工具，支持标签搜索、缩略图预览，可以对图片资源进行简单的管理。
           </div>
         </div>
-        <div class="info-card info-card-lcui">
-          <div class="logo"></div>
-          <div class="content">
-            <div class="name">
-              <a href="https://lcui.lc-soft.io" target="_blank">LCUI</a>
-            </div>
-            <p class="description">简单的跨平台图形界面引擎</p>
+        <div class="media">
+          <a class="media-left media-middle" href="https://lcui.lc-soft.io" target="_blank">
+            <img src="/static/images/logo-lcui.png" alt="LCUI Logo">
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading"><a href="https://lcui.lc-soft.io" target="_blank">LCUI</a></h4>
+            图形界面引擎，支持用 C、XML 和 CSS 来构建简单的跨平台桌面应用。
           </div>
         </div>
-        <div class="info-card info-card-pk">
-          <div class="logo"></div>
-          <div class="content">
-            <div class="name">
-              <a href="https://github.com/lc-soft/PunchAndKick" target="_blank">Punck &amp; Kick</a>
-            </div>
-            <p class="description">仿《热血格斗》的2D横版格斗游戏</p>
+        <div class="media">
+          <a class="media-left media-middle" href="https://docs.lcui.lc-soft.io/zh-cn/" target="_blank">
+            <span class="icon octicon octicon-book"></span>
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading"><a href="https://docs.lcui.lc-soft.io/zh-cn/" target="_blank">LCUI 编程指南</a></h4>
+            主要讲述了 LCUI 相关概念和知识，以及基本用法。（偶尔更新）
           </div>
         </div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="showcase clearfix">
-        <h3 class="showcase-title">
-          <span class="icon octicon octicon-book"></span>博客
-        </h3>
-  {% if site.posts %}
-    {% for post in site.posts | slice: 0, 8 %}
-      {% assign post_url = post.url | remove: '/blog/' %}
-        <p class="text-ellipsis">
-          <span class="text-muted">{{ post.date | date: "%F" }}</span>
-          <a href="https://blog.lc-soft.io/{{ post_url }}">{{ post.title }}</a>
-        </p>
-    {% endfor %}
-  {% else %}
-        <p class="text-muted text-center">暂无</p>
-  {% endif %}
+        <div class="media">
+          <a class="media-left media-middle" href="https://docs.lcui.lc-soft.io/zh-cn/" target="_blank">
+            <img src="/static/images/logo-pk.png" alt="PK Logo">
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading"><a href="https://github.com/lc-soft/PunchAndKick" target="_blank">Punck &amp; Kick</a></h4>
+            仿《热血格斗》的2D横版格斗游戏，共 5 个角色，支持 4v4 人机对战。
+          </div>
+        </div>
       </div>
     </div>
   </div>
