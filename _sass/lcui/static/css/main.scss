@@ -264,6 +264,21 @@ $BrandColor:#7cb75e;
 .project-feature-group .project-feature {
 	padding: 32px 0 62px 0;
 }
+
+
+@media screen and (max-width: 992px) {
+
+.project-contribute {
+	.card-container {
+		display: block;
+		.card {
+			display: block;
+		}
+	}
+}
+
+}
+
 @media screen and (min-width: 768px) {
 
 .project-feature-group .project-feature {
