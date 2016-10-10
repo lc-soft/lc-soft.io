@@ -137,6 +137,8 @@ $BrandColor:#7cb75e;
 		background-color: #fff;
 		border-radius: 4px;
     	box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
+	    transition-property: color,background-color,box-shadow,transform,-webkit-transform;
+	    transition-duration: .15s;
         position: relative;
 	    flex-direction: column;
 	    justify-content: center;
@@ -144,16 +146,14 @@ $BrandColor:#7cb75e;
         display: inline-flex;
         flex: 1;
         .icon {
-            display: block;
-		    position: absolute;
-		    font-size: 96px;
+		    top: 50%;
 		    left: -20px;
+            display: block;
+		    font-size: 96px;
+		    margin-top: -48px;
+		    position: absolute;
         }
 	}
-	.card, .icon {
-	    transition-property: color,background-color,box-shadow,transform,left,-webkit-transform;
-	    transition-duration: .15s;
-    }
 	.card-star {
 		.icon, h3 {
 			color: #3297d3;
@@ -187,7 +187,6 @@ $BrandColor:#7cb75e;
 	.card:hover {
 		.icon, h3 {
 			color: #32325d;
-			left: 10px;
 		}
 	    transform: translateY(-2px);
 	    box-shadow: 0 18px 35px rgba(50,50,93,.1),0 8px 15px rgba(0,0,0,.07);
