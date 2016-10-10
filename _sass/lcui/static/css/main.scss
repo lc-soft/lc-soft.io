@@ -1,5 +1,4 @@
-﻿@import "compass/css3";
-$BrandColor:#7cb75e;
+﻿$BrandColor:#7cb75e;
 
 .navbar-custom {
 	background-color: #fff;
@@ -124,6 +123,14 @@ $BrandColor:#7cb75e;
 		opacity: 0.8;
     }
 }
+
+.project-features {
+	.project-feature {
+		.project-feature-icon {
+			color: $BrandColor;
+		}
+	}
+}
 .project-contribute {
 	background-color: #f6f9fc;
 	.card-container {
@@ -208,8 +215,8 @@ $BrandColor:#7cb75e;
 		}
 	}
 }
-.proejct-features, .project-contribute, .project-faq-list, project-screenshorts {
-	border-top: 1px solid #ddd;
+.proejct-features, .project-contribute, .project-faq-list, .project-screenshorts {
+	border-top: 1px solid #eee;
     padding: 20px 0 40px 0;
 }
 .thumbnail-empty {
