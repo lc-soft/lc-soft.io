@@ -14,7 +14,7 @@ is_home: true
     <h1>LCUI</h1>
     <p>使用 C、XML 和 CSS 构建简单的跨平台桌面应用</p>
     <p class="jumbotron-button-group">
-		<a class="btn btn-outline-inverse btn-lg" href="https://lcui.lc-soft.io/guide/zh-cn/getting_started/"><span class="fa fa-book"></span> 快速上手</a>
+		<a class="btn btn-outline-inverse btn-lg" href="https://docs.lcui.lc-soft.io/zh-cn/getting_started/"><span class="fa fa-book"></span> 快速上手</a>
       <a class="btn btn-outline-inverse btn-lg" href="https://github.com/lc-soft/LCUI/releases"><span class="fa fa-download"></span> 下载</a>
     </p>
     <div class="shameless-self-promotion">
@@ -27,8 +27,8 @@ is_home: true
     </div>
   </div>
 </div>
-<div class="container">
-  <section id="features">
+<section id="features">
+  <div class="container">
     <div class="section-header">
       <h2>主要特性</h3>
     </div>
@@ -68,9 +68,10 @@ is_home: true
         <p>LCUI 的部分功能模块是可选的，例如：字体引擎、图像读写、UI组件等模块，如果对编译后的程序体积有要求，可修改编译配置，移除用不到的模块。</p>
       </div>
     </div>
-  </section>
-  <hr>
-  <section id="demo-screenshorts">
+  </div>
+</section>
+<section id="demo-screenshorts" class="project-screenshorts">
+  <div class="container">
     <div class="section-header">
       <h2>样例展示</h2>
       <p class="text-muted">一些 LCUI 应用程序的效果图</p>
@@ -87,36 +88,81 @@ is_home: true
         </a>
       </div>
       <div class="col-xs-6 col-md-3">
-        <a class="thumbnail" href="/static/images/showcase/lcfinder-001.png">
-          <img src="/static/images/showcase/lcfinder-001.png" alt="LC-Finder 效果图-001"/>
+        <a class="thumbnail" href="/static/images/showcase/lcfinder-001.jpg">
+          <img src="/static/images/showcase/lcfinder-001.jpg" alt="LC-Finder 效果图-001"/>
         </a>
       </div>
       <div class="col-xs-6 col-md-3">
-        <a class="thumbnail" href="/static/images/showcase/lcfinder-002.png">
-          <img src="/static/images/showcase/lcfinder-002.png" alt="LC-Finder 效果图-002" />
+        <a class="thumbnail" href="/static/images/showcase/lcfinder-002.jpg">
+          <img src="/static/images/showcase/lcfinder-002.jpg" alt="LC-Finder 效果图-002" />
         </a>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-6 col-md-3">
-        <a class="thumbnail" href="/static/images/showcase/lcfinder-003.png">
-          <img src="/static/images/showcase/lcfinder-003.png" alt="LC-Finder 效果图-003"/>
+        <a class="thumbnail" href="/static/images/showcase/lcfinder-003.jpg">
+          <img src="/static/images/showcase/lcfinder-003.jpg" alt="LC-Finder 效果图-003"/>
         </a>
       </div>
       <div class="col-xs-6 col-md-3">
-        <a class="thumbnail" href="/static/images/showcase/lcfinder-004.png">
-          <img src="/static/images/showcase/lcfinder-004.png" alt="LC-Finder 效果图-004"/>
+        <a class="thumbnail" href="/static/images/showcase/lcfinder-004.jpg">
+          <img src="/static/images/showcase/lcfinder-004.jpg" alt="LC-Finder 效果图-004"/>
         </a>
       </div>
       <div class="col-xs-6 col-md-3">
-        <a class="thumbnail" href="/static/images/showcase/lcfinder-005.png">
-          <img src="/static/images/showcase/lcfinder-005.png" alt="LC-Finder 效果图-005"/>
+        <a class="thumbnail" href="/static/images/showcase/lcfinder-005.jpg">
+          <img src="/static/images/showcase/lcfinder-005.jpg" alt="LC-Finder 效果图-005"/>
         </a>
       </div>
     </div>
-  </section>
-  <hr>
-  <section id="faq">
+  </div>
+</section>
+<section id="contribute" class="project-contribute">
+  <div class="container">
+    <div class="section-header">
+      <h2>参与贡献</h2>
+      <p class="text-muted">你可以通过以下几种方式参与贡献本项目</p>
+    </div>
+    <div class="card-container">
+      <div class="card card-star">
+        <span class="icon fa fa-thumbs-o-up"></span>
+        <h3>默默点赞</h3>
+        <p>你可以访问 LCUI 项目的 <a href="https://github.com/lc-soft/LCUI">GitHub 页面</a>，为 LCUI 贡献一个 Star，虽然这样做看上去作用很小，但或许能够给作者以后的职业生涯提供无形的价值。</p>
+      </div>
+      <div class="card card-bug">
+        <span class="icon fa fa-bug"></span>
+        <h3>反馈问题</h3>
+        <p>测试是最容易参与 LCUI 开发活动的一种方式，帮助作者测试 LCUI 功能和相关应用程序，以便作者及早发现 LCUI 中的缺陷。</p>
+      </div>
+    </div>
+    <div class="card-container">
+      <div class="card card-watch">
+        <span class="icon fa fa-eye"></span>
+        <h3>关注进展</h3>
+        <p>你可以在 Github 上<a href="https://github.com/lc-soft/LCUI/watchers">关注 LCUI 项目</a>，每当项目有新的动态都能够及时收到通知，或许你能够帮助那些在 <a href="https://github.com/lc-soft/LCUI/issues">Issues 页面</a>中提问的用户。如果你是程序员，或许能够帮助审查<a href="https://github.com/lc-soft/LCUI/commits/develop">新提交的代码</a>、发现潜在的 BUG。</p>
+      </div>
+      <div class="card card-code">
+        <span class="icon fa fa-code"></span>
+        <h3>贡献代码</h3>
+        <p>LCUI 的代码托管在 GitHub 上，你可以通过 GitHub 的 Pull Reqeusts 功能向 LCUI 提交你的代码。</p>
+      </div>
+    </div>
+    <div class="card-container">
+      <div class="card card-document">
+        <span class="icon fa fa-book"></span> 
+        <h3>撰写文档</h3>
+        <p>现有的 LCUI 相关文档还很少，你可以通过撰写新内容、帮助完善已有内容，或者将现有的文档翻译为新语种以改进 <a href="https://lcui.lc-soft.io/guide/">LCUI 的文档</a>。</p>
+      </div>
+      <div class="card card-donate">
+        <span class="icon fa fa-heart"></span>
+        <h3>捐赠</h3>
+        <p>没有什么问题是钱解决不了的，如果你想通过捐赠来让作者能够花费更多的时间来改进该项目，可以访问作者在 <a href="https://www.patreon.com/lcsoft">Patreon 上设立的页面</a>，或者直接<a href="https://www.paypal.me/lcsoft">使用 PayPal 捐赠</a>。</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="faq" class="project-faq-list">
+  <div class="container">
     <div class="section-header">
       <h2>常见问题</h2>
     </div>
@@ -170,8 +216,8 @@ is_home: true
         <p>LCUI 是一个自由软件项目，基于 <a href="http://www.gnu.org/licenses/">GNU通用公共许可协议</a> 发布，该许可协议要求 LCUI 及 LCUI 衍生软件无论以何种形式发布，都必须确保收受者能收到或得到源码。</p>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
 <script src="/static/js/abigimage.jquery.min.js"></script>
 <script src="/static/plugins/slick/slick.min.js"></script>
 <script type="text/javascript">
