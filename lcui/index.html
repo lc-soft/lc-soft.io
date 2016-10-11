@@ -124,40 +124,40 @@ is_home: true
       <p class="text-muted">你可以通过以下几种方式参与贡献本项目</p>
     </div>
     <div class="card-container">
-      <div class="card card-star">
-        <span class="icon fa fa-thumbs-o-up"></span>
+      <a class="card card-star" href="https://github.com/lc-soft/LCUI/stargazers">
+        <span class="icon fa fa-thumbs-o-up"><span class="count"></span></span>
         <h3>默默点赞</h3>
-        <p>你可以访问 LCUI 项目的 <a href="https://github.com/lc-soft/LCUI">GitHub 页面</a>，为 LCUI 贡献一个 Star，虽然这样做看上去作用很小，但或许能够给作者以后的职业生涯提供无形的价值。</p>
-      </div>
-      <div class="card card-bug">
-        <span class="icon fa fa-bug"></span>
+        <p>你可以访问 LCUI 项目的 GitHub 页面为 LCUI 贡献一个 Star，虽然这样做看上去没多大作用，但或许在以后能够为 LCUI 带来无形的价值。</p>
+      </a>
+      <a class="card card-bug" href="https://github.com/lc-soft/LCUI/issues">
+        <span class="icon fa fa-bug"><span class="count"></span></span>
         <h3>反馈问题</h3>
         <p>测试是最容易参与 LCUI 开发活动的一种方式，帮助作者测试 LCUI 功能和相关应用程序，以便作者及早发现 LCUI 中的缺陷。</p>
-      </div>
+      </a>
     </div>
     <div class="card-container">
-      <div class="card card-watch">
-        <span class="icon fa fa-eye"></span>
+      <a class="card card-watch" href="https://github.com/lc-soft/LCUI/watchers">
+        <span class="icon fa fa-eye"><span class="count"></span></span>
         <h3>关注进展</h3>
-        <p>你可以在 Github 上<a href="https://github.com/lc-soft/LCUI/watchers">关注 LCUI 项目</a>，每当项目有新的动态都能够及时收到通知，或许你能够帮助那些在 <a href="https://github.com/lc-soft/LCUI/issues">Issues 页面</a>中提问的用户。如果你是程序员，或许能够帮助审查<a href="https://github.com/lc-soft/LCUI/commits/develop">新提交的代码</a>、发现潜在的 BUG。</p>
-      </div>
-      <div class="card card-code">
+        <p>你可以在 Github 上关注 LCUI 项目，每当项目有新的动态都能够及时收到通知，或许你能够帮助那些在 Issues 页面中提问的用户。如果你是开发者，或许能够帮助审查新提交的代码、发现潜在的 BUG。</p>
+      </a>
+      <a class="card card-code" href="https://github.com/lc-soft/LCUI/pulls">
         <span class="icon fa fa-code"></span>
         <h3>贡献代码</h3>
-        <p>LCUI 的代码托管在 GitHub 上，你可以通过 GitHub 的 Pull Reqeusts 功能向 LCUI 提交你的代码。</p>
-      </div>
+        <p>一个处于开发状态的项目，肯定会有各种各样的新功能需求，而在新功能的实现代码中也会隐藏着一些新的 BUG，如果你恰好发现某个功能需求或 BUG 是你能够轻松解决的，可以通过 GitHub 的 Pull Reqeusts 功能向 LCUI 提交你的代码。</p>
+      </a>
     </div>
     <div class="card-container">
-      <div class="card card-document">
+      <a class="card card-document" href="https://github.com/lc-soft/LCUI-ProgrammingGuide">
         <span class="icon fa fa-book"></span> 
-        <h3>撰写文档</h3>
-        <p>现有的 LCUI 相关文档还很少，你可以通过撰写新内容、帮助完善已有内容，或者将现有的文档翻译为新语种以改进 <a href="https://lcui.lc-soft.io/guide/">LCUI 的文档</a>。</p>
-      </div>
-      <div class="card card-donate">
+        <h3>完善文档</h3>
+        <p>现有的 LCUI 相关文档还很少，你可以通过撰写新内容、帮助完善已有内容，或者将现有的文档翻译为新语种以完善 LCUI 的文档。</p>
+      </a>
+      <a class="card card-donate" href="https://www.patreon.com/lcsoft">
         <span class="icon fa fa-heart"></span>
         <h3>捐赠</h3>
-        <p>没有什么问题是钱解决不了的，如果你想通过捐赠来让作者能够花费更多的时间来改进该项目，可以访问作者在 <a href="https://www.patreon.com/lcsoft">Patreon 上设立的页面</a>，或者直接<a href="https://www.paypal.me/lcsoft">使用 PayPal 捐赠</a>。</p>
-      </div>
+        <p>没有什么问题是钱解决不了的，如果你想通过捐赠来让作者能够花费更多的时间来改进该项目，可以访问作者在 Patreon 上设立的页面。</p>
+      </a>
     </div>
   </div>
 </section>
@@ -281,5 +281,12 @@ $('.project-feature-nav').slick({
       }
     }
   ]
+});
+$.getJSON('https://api.github.com/repos/lc-soft/LCUI', function (data) {
+  $('.card.card-star .count').text(data.stargazers_count).css('opacity', 1);
+  $('.card.card-watch .count').text(data.subscribers_count).css('opacity', 1);
+  if( data.open_issues_count > 0 ) {
+    $('.card.card-bug .count').text(data.open_issues_count).css('opacity', 1);
+  }
 });
 </script>

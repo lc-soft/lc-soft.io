@@ -132,13 +132,13 @@
 	}
 }
 .project-contribute {
-	background-color: #f6f9fc;
+	background-color: #fcfcfc;
 	.card-container {
     	display: flex;
 	    flex-wrap: wrap;
     	padding: 0 5px;
 	}
-	.card {
+	a.card {
 		margin: 15px;
 		padding: 40px 40px 40px 120px;
 		background-color: #fff;
@@ -152,6 +152,7 @@
 	    overflow: hidden;
         display: inline-flex;
         flex: 1;
+		text-decoration: none;
         .icon {
 		    top: 50%;
 		    left: -20px;
@@ -159,44 +160,83 @@
 		    font-size: 96px;
 		    margin-top: -48px;
 		    position: absolute;
+		    .count {
+			    bottom: 10px;
+			    right: -15px;
+			    position: absolute;
+			    font-size: 18px;
+			    padding: 2px 4px;
+			    border: 2px solid;
+			    border-radius: 8px;
+			    background: #fff;
+			    opacity: 0;
+			    font-family: "Helvetica Neue",Helvetica,Verdana,'Microsoft YaHei','微软雅黑',sans-serif;
+	    		transition: opacity .5s;
+		    }
+        }
+        p {
+        	margin: 5px 0 0;
+    	    font-weight: 400;
+		    color: #888;
+        }
+        &:after {
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			content: '';
+			opacity: 0;
+			position: absolute;
+			background: #aab7c4;
+			pointer-events: none;
+			-webkit-transition: opacity .15s;
+			transition: opacity .15s
         }
 	}
-	.card-star {
+	a.card-star {
 		.icon, h3 {
 			color: #3297d3;
 		}
 	}
-	.card-watch {
+	a.card-watch {
 		.icon, h3 {
 			color: #24b47e;
 		}
 	}
-	.card-donate {
+	a.card-donate {
 		.icon, h3 {
 			color: #e25950;
 		}
 	}
-	.card-bug {
+	a.card-bug {
 		.icon, h3 {
 			color: #e39f48;
 		}
 	}
-	.card-document {
+	a.card-document {
 		.icon, h3 {
 			color: #b76ac4;
 		}
 	}
-	.card-code {
+	a.card-code {
 		.icon, h3 {
 			color: #6772e5;
 		}
 	}
-	.card:hover {
+	a.card:hover {
 		.icon, h3 {
-			color: #32325d;
+			color: #325d32;
 		}
 	    transform: translateY(-2px);
 	    box-shadow: 0 18px 35px rgba(50,50,93,.1),0 8px 15px rgba(0,0,0,.07);
+	}
+	a.card:active {
+		transform: translateY(2px);
+		box-shadow: 0 11px 20px rgba(50,50,93,.1),0 6px 11px rgba(0,0,0,.08);
+
+		&:after {
+			opacity: .15;
+		}
 	}
 }
 .project-faq-list {
@@ -279,6 +319,8 @@
 		display: block;
 		.card {
 			display: block;
+			margin-left: 0;
+			margin-right: 0;
 		}
 	}
 }
