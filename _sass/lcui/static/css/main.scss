@@ -153,6 +153,9 @@
         display: inline-flex;
         flex: 1;
 		text-decoration: none;
+		h3 {
+			margin-top: 0;
+		}
         .icon {
 		    top: 50%;
 		    left: -20px;
