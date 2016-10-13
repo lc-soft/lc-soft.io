@@ -27,6 +27,20 @@ is_home: true
     </div>
   </div>
 </div>
+<div class="subtron" style="display: none;">
+  <div class="container">
+    <div id="lcui-milestone" class="lcui-milestone">
+      <span class="lcui-milestone-main">LCUI: <strong class="version"></strong></span>
+      <span class="lcui-milestone-completion">
+        <strong class="completion"></strong> 完成度
+      </span>
+      <span>
+        本月累计推送 <strong class="commits"></strong> 次提交，代码共增加 <strong class="addtions"></strong> 行，删除 <strong class="deletions"></strong> 行
+      </span>
+      <a id="btn-contribute" class="btn btn-primary" href="#contribute"><span class="fa fa-bolt"></span> 充电</a>
+    </div>
+  </div>
+</div>
 <section id="features" class="project-features">
   <div class="container">
     <div class="section-header">
@@ -288,5 +302,57 @@ $.getJSON('https://api.github.com/repos/lc-soft/LCUI', function (data) {
   if( data.open_issues_count > 0 ) {
     $('.card.card-bug .count').text(data.open_issues_count).css('opacity', 1);
   }
+});
+
+function formatNumber(number) {
+  return number.toString().replace(/\B(?=(?:\d{3})+\b)/g, ',');
+}
+
+$.when(
+  $.getJSON('https://api.github.com/repos/lc-soft/LCUI/milestones'),
+  $.getJSON('https://api.github.com/repos/lc-soft/LCUI/stats/code_frequency'),
+  $.getJSON('https://api.github.com/repos/lc-soft/LCUI/stats/participation')
+).done(function (data1, data2, data3) {
+  if( data2[1] !== 'success' || data1[0].length == 0 ) {
+    return;
+  }
+  var milestone = data1[0][0];
+  var commits, addtions, deletions;
+  var $milestone = $('#lcui-milestone');
+  var total_issues = milestone.open_issues + milestone.closed_issues;
+  var completion = parseInt(milestone.open_issues / total_issues * 100);
+
+  commits = addtions = deletions = 0;
+  $milestone.find('.version').text(milestone.title);
+  $milestone.find('.completion').text(completion + '%');
+  if( data2[1] === 'success' ) {
+    for( var i = data2[0].length - 1; i >= data2[0].length - 4; --i ) {
+      addtions += data2[0][i][1];
+      deletions -= data2[0][i][2];
+    }
+  }
+  if( data3[1] == 'success' ) {
+    var list = data3[0]['all'];
+    for( var i = list.length - 1; i >= list.length - 4; --i ) {
+      commits += list[i];
+    }
+  }
+  $milestone.find('.addtions').text(formatNumber(addtions));
+  $milestone.find('.deletions').text(formatNumber(deletions));
+  $milestone.find('.commits').text(formatNumber(commits));
+  $milestone.parents('.subtron').slideDown();
+});
+
+$(document).ready(function() {
+  $('#btn-contribute').click(function() {
+    $('html, body').animate({
+      scrollTop: $($(this).attr('href')).offset().top + 'px'
+    }, {
+      duration: 500,
+      easing: 'swing'
+    });
+    window.location.hash = $(this).attr('href');
+    return false;
+  });
 });
 </script>
