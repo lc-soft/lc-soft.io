@@ -30,61 +30,41 @@ is_home: true
 <div class="subtron" style="display: none;">
   <div class="container">
     <div id="lcui-milestone" class="lcui-milestone">
-      <span class="lcui-milestone-main">LCUI: <strong class="version"></strong></span>
-      <span class="lcui-milestone-completion">
-        <strong class="completion"></strong> 完成度
-      </span>
-      <span>
-        本月累计推送 <strong class="commits"></strong> 次提交，代码共增加 <strong class="addtions"></strong> 行，删除 <strong class="deletions"></strong> 行
-      </span>
-      <a id="btn-contribute" class="btn btn-primary" href="#contribute"><span class="fa fa-bolt"></span> 充电</a>
+      <div class="lcui-milestore-progress">
+        <span class="percent"></span>
+      </div>
+      <div class="lcui-milestone-main">
+        <a class="link">LCUI: <span class="version"></pan></a>
+        <p class="text-muted">
+          本月累计推送 <strong class="commits"></strong> 次提交，代码共增加 <strong class="addtions"></strong> 行，删除 <strong class="deletions"></strong> 行
+        </p>
+      </div>
+      <a id="btn-contribute" class="btn btn-primary btn-lg" href="#contribute"><span class="fa fa-bolt"></span> 充电</a>
     </div>
   </div>
 </div>
-<section id="features" class="project-features">
+<section id="features" class="section project-features">
   <div class="container">
-    <div class="section-header">
-      <h2>主要特性</h3>
-    </div>
-    <div class="project-feature-nav">
-      <div class="project-feature-nav-item">
-        <img src="/static/images/feature-screenshot-01.png">
-        <div class="project-feature-nav-item-cover"></div>
-      </div>
-      <div class="project-feature-nav-item">
-        <img src="/static/images/feature-screenshot-02.png">
-        <div class="project-feature-nav-item-cover"></div>
-      </div>
-      <div class="project-feature-nav-item">
-        <img src="/static/images/feature-screenshot-03.png">
-        <div class="project-feature-nav-item-cover"></div>
-      </div>
-      <div class="project-feature-nav-item">
-        <img src="/static/images/feature-screenshot-04.png">
-        <div class="project-feature-nav-item-cover"></div>
-      </div>
-    </div>
-    <div class="project-feature-group">
-      <div class="project-feature">
+    <div class="row">
+      <div class="project-feature col-xs-12 col-sm-4">
+        <span class="fa fa fa-pencil project-feature-icon"></span>
         <h3><span class="fa fa fa-pencil project-feature-icon"></span> C语言编写</h3>
-        <p>适用于体积较小且主要使用C语言实现的应用程序，以及偏向使用C语言编写简单应用的开发者。</p>
+        <p class="text-muted">适用于体积较小且主要使用C语言实现的应用程序，以及偏向使用C语言编写简单应用的开发者。</p>
       </div>
-      <div class="project-feature">
+      <div class="project-feature col-xs-12 col-sm-4">
+        <span class="fa fa-file-code-o project-feature-icon"></span>
         <h3><span class="fa fa-file-code-o project-feature-icon"></span> XML + CSS</h3>
-        <p>觉得界面实现代码写起来麻烦，写出来还复杂啰嗦、可读性差、维护困难？LCUI 支持使用 XML 和 CSS 描述界面布局及样式，可节省界面开发时间和维护成本。</p>
+        <p class="text-muted">支持使用 XML 和 CSS 描述界面布局及样式，节省界面开发时间和维护成本。</p>
       </div>
-      <div class="project-feature">
+      <div class="project-feature col-xs-12 col-sm-4">
+        <span class="fa fa-cogs project-feature-icon"></span> 
         <h3><span class="fa fa-cogs project-feature-icon"></span> 跨平台</h3>
-        <p>支持 Windows 和 GNU/Linux 系统，但由于作者大部分时间是在 windows 系统环境下进行开发和测试的，因此目前仅完整支持 Windows 系统，而对 GNU/Linux 系统支持仅达到通过编译的程度。有计划在新版本中完善对其它系统的支持。</p>
-      </div>
-      <div class="project-feature">
-        <h3><span class="fa fa-cubes project-feature-icon"></span> 轻量级，可裁剪</h3>
-        <p>LCUI 的部分功能模块是可选的，例如：字体引擎、图像读写、UI组件等模块，如果对编译后的程序体积有要求，可修改编译配置，移除用不到的模块。</p>
+        <p class="text-muted">支持 Windows 和 GNU/Linux 系统，但目前对 GNU/Linux 系统的支持还不够完备。</p>
       </div>
     </div>
   </div>
 </section>
-<section id="demo-screenshorts" class="project-screenshorts">
+<section id="demo-screenshorts" class="section project-screenshorts">
   <div class="container">
     <div class="section-header">
       <h2>样例展示</h2>
@@ -131,7 +111,7 @@ is_home: true
     </div>
   </div>
 </section>
-<section id="contribute" class="project-contribute">
+<section id="contribute" class="section project-contribute">
   <div class="container">
     <div class="section-header">
       <h2>参与贡献</h2>
@@ -175,7 +155,7 @@ is_home: true
     </div>
   </div>
 </section>
-<section id="faq" class="project-faq-list">
+<section id="faq" class="section project-faq-list">
   <div class="container">
     <div class="section-header">
       <h2>常见问题</h2>
@@ -233,7 +213,7 @@ is_home: true
   </div>
 </section>
 <script src="/static/js/abigimage.jquery.min.js"></script>
-<script src="/static/plugins/slick/slick.min.js"></script>
+<script src="/static/js/circle-progress.min.js"></script>
 <script type="text/javascript">
 function updateNavbarStyle() {
   if( $(document).scrollTop() > 0 ) {
@@ -250,52 +230,6 @@ $('.thumbnail').abigimage({
   }
 });
 
-$('.project-feature-group').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-  fade: true,
-  draggable: false,
-  asNavFor: '.project-feature-nav'
-});
-$('.project-feature-nav').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  asNavFor: '.project-feature-group',
-  centerPadding: '192px',
-  dots: true,
-  autoplay: true,
-  centerMode: true,
-  autoplaySpeed: 5000,
-  focusOnSelect: true,
-  prevArrow: '<button type="button" class="slick-prev fa fa-angle-left">Previous</button>',
-  nextArrow: '<button type="button" class="slick-next fa fa-angle-right">Next</button>',
-  responsive: [
-    {
-      breakpoint: 1200,
-      settings: {
-        centerMode: true,
-        centerPadding: '128px',
-        slidesToShow: 1
-      }
-    }, {
-      breakpoint: 992,
-      settings: {
-        centerMode: true,
-        centerPadding: '96px',
-        slidesToShow: 1
-      }
-    }, {
-      breakpoint: 768,
-      settings: {
-        centerMode: true,
-        centerPadding: '0px',
-        dots: false,
-        slidesToShow: 1
-      }
-    }
-  ]
-});
 $.getJSON('https://api.github.com/repos/lc-soft/LCUI', function (data) {
   $('.card.card-star .count').text(data.stargazers_count).css('opacity', 1);
   $('.card.card-watch .count').text(data.subscribers_count).css('opacity', 1);
@@ -320,11 +254,9 @@ $.when(
   var commits, addtions, deletions;
   var $milestone = $('#lcui-milestone');
   var total_issues = milestone.open_issues + milestone.closed_issues;
-  var completion = parseInt(milestone.open_issues / total_issues * 100);
+  var completion = milestone.open_issues / total_issues;
 
   commits = addtions = deletions = 0;
-  $milestone.find('.version').text(milestone.title);
-  $milestone.find('.completion').text(completion + '%');
   if( data2[1] === 'success' ) {
     for( var i = data2[0].length - 1; i >= data2[0].length - 4; --i ) {
       addtions += data2[0][i][1];
@@ -337,10 +269,22 @@ $.when(
       commits += list[i];
     }
   }
+  $milestone.find('.version').text(milestone.title);
   $milestone.find('.addtions').text(formatNumber(addtions));
   $milestone.find('.deletions').text(formatNumber(deletions));
   $milestone.find('.commits').text(formatNumber(commits));
+  $milestone.find('.link').attr('href', milestone.html_url);
   $milestone.parents('.subtron').slideDown();
+  $('.lcui-milestore-progress').circleProgress({
+    value: completion,
+    size: 48,
+    fill: {
+      gradient: ['#7cb75e', '#54853c']
+    }
+  }).on('circle-animation-progress', function(event, progress) {
+    var percent = parseInt(completion * progress * 100);
+    $(this).find('.percent').html(percent + '<i>%</i>');
+  });
 });
 
 $(document).ready(function() {
