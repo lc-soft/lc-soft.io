@@ -1,7 +1,9 @@
 {% if page.is_home %}
 <nav class="navbar navbar-fixed-top navbar-custom navbar-on-top">
-{% else %}
+{% elsif page.navbar_fixed_top %}
 <nav class="navbar navbar-fixed-top navbar-custom">
+{% else %}
+<nav class="navbar navbar-custom">
 {% endif %}
   <div class="container">
     <div class="navbar-header">

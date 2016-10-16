@@ -1,0 +1,28 @@
+---
+layout: lcui_default
+title: LCUI - 捐赠支持
+is_home: false
+ds_thread_key: lcui-donate
+---
+
+<div class="donate-page">
+  <div class="container">
+    <div class="page-header text-center">
+      <span class="icon fa fa-heart"></span>
+      <h2>捐赠支持</h2>
+    </div>
+    <p>LCUI 是采用 GPLv2 许可的自由软件项目，按GPLv2许可的约定，你可以免费使用，不过，如果你想把自己开发的 LCUI 衍生软件发布给用户，则必须公开该软件的源代码，毕竟 LCUI 在没有稳定的资金支持的情况下，维护和开发新功能是不可能持续的，依靠其它衍生软件源代码的推广或许能成为 LCUI 持续维护下去的动力。</p>
+
+    <p><strong>持续捐赠：</strong></p>
+    <p><a href="https://www.patreon.com/lcsoft" target="_blank" class="donate-button patreon-donate-button"><span class="donate-button-logo"></span>Patreon</a>
+    <a class="donate-button gumroad-donate-button" target="_blank" href="https://gum.co/the-lcui-project"><span class="donate-button-logo"></span>Gumroad</a></p>
+
+    <p><strong>一次性捐赠：</strong></p>
+    <p><a href="https://www.paypal.me/lcsoft" target="_blank" class="donate-button paypal-donate-button"><img src="/static/images/paypal-logo.png" height="22"></a></p>
+    <p>捐赠后你可以在此页面留言，作者将选取一些合适的留言放在首页上展示。</p>
+    <div id="comments">
+      <div class="ds-thread" data-thread-key="{{ page.ds_thread_key }}" data-title="{{ page.title }}" data-url="http://blog.lc-soft.io/{{ page.url | remove: '/blog/' }}" data-form-position="top" data-order="desc"></div>
+    </div>
+  </div>
+</div>
+{% include comment.ext %}
