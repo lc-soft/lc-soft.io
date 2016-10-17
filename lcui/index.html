@@ -242,29 +242,32 @@ function formatNumber(number) {
 
 $.when(
   $.getJSON('https://api.github.com/repos/lc-soft/LCUI/milestones'),
-  $.getJSON('https://api.github.com/repos/lc-soft/LCUI/stats/code_frequency'),
-  $.getJSON('https://api.github.com/repos/lc-soft/LCUI/stats/participation')
-).done(function (data1, data2, data3) {
+  $.getJSON('https://api.github.com/repos/lc-soft/LCUI/stats/contributors')
+).done(function (data1, data2) {
   if( data2[1] !== 'success' || data1[0].length == 0 ) {
     return;
   }
   var milestone = data1[0][0];
-  var commits, addtions, deletions;
   var $milestone = $('#lcui-milestone');
   var total_issues = milestone.open_issues + milestone.closed_issues;
-  var completion = milestone.open_issues / total_issues;
+  var completion = 1.0 - milestone.open_issues / total_issues;
+  var commits = 0, addtions = 0, deletions = 0;
 
-  commits = addtions = deletions = 0;
   if( data2[1] === 'success' ) {
-    for( var i = data2[0].length - 1; i >= data2[0].length - 4; --i ) {
-      addtions += data2[0][i][1];
-      deletions -= data2[0][i][2];
-    }
-  }
-  if( data3[1] == 'success' ) {
-    var list = data3[0]['all'];
-    for( var i = list.length - 1; i >= list.length - 4; --i ) {
-      commits += list[i];
+    var contributors = data2[0];
+    for( var i = 0; i < contributors.length; ++i ) {
+      var weeks = contributors[i].weeks;
+      var curtime = new Date(weeks[weeks.length - 1].w * 1000);
+      for( var j = weeks.length - 1; j >= weeks.length - 5; --j ) {
+        var week = weeks[j];
+        var time = new Date(week.w * 1000);
+        if( time.getMonth() < curtime.getMonth() ) {
+          break;
+        }
+        addtions += week.a;
+        deletions += week.d;
+        commits += week.c;
+      }
     }
   }
   $milestone.find('.version').text(milestone.title);
