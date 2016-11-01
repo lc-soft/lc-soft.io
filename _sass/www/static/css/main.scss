@@ -2,11 +2,10 @@
 $brandColorLight: #44ABF1;
 $brandColorDark: #2980b9;
 
+body {
+	background: #f4f4f4;
+}
 .navbar-custom {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
 	background-color: #fff;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
     transition: background-color .3s ease-in-out, border .3s ease-in-out;
@@ -37,6 +36,10 @@ $brandColorDark: #2980b9;
 	        background-color: #f0f0f0;
 		}
 	}
+}
+.navbar-custom.navbar-fixed-top {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    border-bottom: 0;
 }
 .navbar-on-top {
 	color: #aaa;
@@ -108,30 +111,6 @@ $brandColorDark: #2980b9;
 	    border-color: #fff;
     }
 }
-#home-showcase {
-	background: #f4f4f4;
-	padding: 20px 0 0 0;
-	.showcase {
-		padding: 10px;
-		margin-bottom: 20px;
-	    background: #fff;
-	    -webkit-border-radius: 2px;
-	    -moz-border-radius: 2px;
-	    border-radius: 2px;
-	    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-	    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-	    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-		.showcase-title {
-			font-size: 16px;
-		    padding: 2px 0 10px 0;
-		    margin: 0 0 8px 0;
-		    border-bottom: 1px dashed #eee;
-			.icon {
-				margin-right: 8px;
-			}
-		}
-	}
-}
 #footer {
     padding: 12px 0;
 	border-top: 1px solid #eee;
@@ -152,18 +131,66 @@ $brandColorDark: #2980b9;
     position: absolute;
     top: 0;
 }
-.showcase {
-	.media {
-		img {
-			width: 48px;
-			height: 48px;
-		}
+
+.card {
+	padding: 10px;
+	margin-bottom: 20px;
+    background: #fff;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+	.card-title {
+		font-size: 16px;
+	    padding: 2px 0 10px 0;
+	    margin: 0 0 8px 0;
+	    border-bottom: 1px dashed #eee;
 		.icon {
-			width: 48px;
+			margin-right: 8px;
+		}
+	}
+}
+.user-profile {
+	overflow: hidden;
+    position: relative;
+	text-align: center;
+    padding: 40px 20px 0 20px;
+
+	.name {
+	    font-size: 24px;
+	}
+	.job {
+		color: #21d571;
+	}
+	> .avatar {
+	    width: 80px;
+	    height: 80px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+	}
+	.links {
+		padding: 20px 0;
+    	margin: 0 -20px;
+    	border-top: 1px solid #eee;
+		a {
+			color: #888;
+			font-size: 24px;
+			margin: 5px;
+		}
+		a.email:hover, a.github:hover {
 			color: #333;
-			font-size: 40px;
-			text-align: center;
-			display: inline-block;
+		}
+		a.steam:hover {
+			color: #116594;
+		}
+	}
+	.skills {
+		.skill {
+			border: 1px solid #ddd;
+		    border-radius: 20px;
+		    padding: 5px 10px;
+		    display: inline-block;
 		}
 	}
 }
