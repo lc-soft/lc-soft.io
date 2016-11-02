@@ -60,10 +60,12 @@
 }
 .user-event-list-box {
   position: relative;
+
   .user-event-list {
       padding: 0;
       min-height: 128px;
       position: relative;
+      transition: height, .5s;
       list-style-type: none;
       li {
         margin-bottom: 10px;

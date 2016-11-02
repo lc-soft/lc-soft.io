@@ -1,6 +1,6 @@
 <template>
   <div class="user-followers">
-    <a v-for="follower in followers" v-bind:href="follower.html_url" target="_blank" class="user-follower" v-bind:title="follower.login" data-toggle="tooltip" data-placement="bottom" v-bind:data-title="follower.login">
+    <a v-for="follower in followers" transition="bounce" stagger="100" v-bind:href="follower.html_url" target="_blank" class="user-follower animated" v-bind:title="follower.login" data-toggle="tooltip" data-placement="bottom" v-bind:data-title="follower.login">
       <img class="avatar img-circle" v-bind:src="follower.avatar_url">
     </a>
     <a v-bind:href="followers_url" target="_blank" class="btn-more-followers">
@@ -12,10 +12,12 @@
 .user-followers {
   text-align: center;
   margin: 20px 0;
-  
+  transition: all, .2s;
+
   .user-follower {
     margin: 0 4px 4px 0;
     display: inline-block;
+
     .avatar {
       width: 40px;
       height: 40px;
@@ -58,6 +60,10 @@ export default {
     var ctx = this;
     var url = 'https://api.github.com/users/';
     var userUrl = url + ctx.username;
+    Vue.transition('bounce', {
+      enterClass: 'bounceIn',
+      leaveClass: 'bounceOut'
+    })
     ctx.followers_url = 'https://github.com/'+ ctx.username +'/followers';
     $.getJSON( userUrl, function (user) {
       ctx.followers_count = user.followers;
