@@ -57,14 +57,18 @@ export default {
   created () {
     var ctx = this;
     var url = 'https://api.github.com/users/';
+    var userUrl = url + ctx.username;
     ctx.followers_url = 'https://github.com/'+ ctx.username +'/followers';
-    $.getJSON( url + ctx.username +'/followers', function (followers) {
-      var count = Math.min(followers.length, ctx.maxnum);
-      ctx.followers_count = followers.length;
-      ctx.followers = followers.slice(0, ctx.maxnum);
-      ctx.loaded = true;
-      Vue.nextTick(function () {
-        $('.user-followers .user-follower').tooltip();
+    $.getJSON( userUrl, function (user) {
+      ctx.followers_count = user.followers;
+      var page = Math.ceil(user.followers / 30);
+      $.getJSON( userUrl +'/followers?page=' + page, function (followers) {
+        var count = Math.min(followers.length, ctx.maxnum);
+        ctx.followers = followers.reverse().slice(0, count);
+        ctx.loaded = true;
+        Vue.nextTick(function () {
+          $('.user-followers .user-follower').tooltip();
+        });
       });
     });
   }
