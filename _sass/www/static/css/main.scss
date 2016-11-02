@@ -3,7 +3,7 @@ $brandColorLight: #44ABF1;
 $brandColorDark: #2980b9;
 
 body {
-	background: #f4f4f4;
+	background: #fff;
 }
 .navbar-custom {
 	background-color: #fff;
@@ -150,6 +150,12 @@ body {
 		.icon {
 			margin-right: 8px;
 		}
+	}
+}
+.user-activity {
+	.user-activity-title {
+		font-size: 16px;
+		margin: 0 0 12px 0;
 	}
 }
 .user-profile {

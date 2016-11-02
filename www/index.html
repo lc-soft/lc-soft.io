@@ -18,7 +18,7 @@ profile:
 <div class="container">
   <div class="row">
     <div class="col-md-4 col-sm-6 col-xs-12">
-      <div class="user-profile card">
+      <div class="user-profile">
         <img class="avatar img-circle" src="{{ page.profile.avatar_url }}" alt="avatar">
         <h2 class="name">{{ page.profile.name }}</h2>
         <p class="bio text-muted">{{ page.profile.bio }}</p>
@@ -39,8 +39,8 @@ profile:
       </div>
     </div>
     <div class="col-md-8 col-sm-6 col-xs-12">
-      <div class="card">
-        <h3 class="card-title">
+      <div class="user-activity">
+        <h3 class="user-activity-title">
           <span class="icon octicon octicon-pulse"></span>近期动态
         </h3>
         <userevents></userevents>
