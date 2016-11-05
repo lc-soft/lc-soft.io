@@ -3,12 +3,12 @@ from flask import Flask, jsonify, request, abort
 
 app = Flask(__name__)
 
-@app.route('/update', methods=['POST'])
+@app.route('/build', methods=['POST'])
 def update():
     data = request.get_json()
     if data['repository']['full_name'] != 'lc-soft/lc-soft.io':
         abort(400)
-    log = os.popen('su lc-soft -c "sh ./api/update.sh"')
+    log = os.popen('su liuchao -c "sh ./api/build.sh"')
     return jsonify({'log': log})
 
 if __name__ == '__main__':
