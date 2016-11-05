@@ -4,7 +4,7 @@
       <img class="avatar img-circle" v-bind:src="follower.avatar_url">
     </a>
     <a v-bind:href="followers_url" target="_blank" class="btn-more-followers" v-bind:data-title="followers_tip" data-toggle="tooltip" data-placement="bottom">
-      {{ followers_count > 0 ? '+ ' + (followers_count - followers.length) : '...' }}
+      {{ followers_count > 0 ? '+' + (followers_count - followers.length) : '...' }}
     </a>
   </div>
 </template>
