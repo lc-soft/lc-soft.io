@@ -3,8 +3,8 @@
     <a v-for="follower in followers" transition="bounce" stagger="100" v-bind:href="follower.html_url" target="_blank" class="user-follower animated" v-bind:title="follower.login" data-toggle="tooltip" data-placement="bottom" v-bind:data-title="follower.login">
       <img class="avatar img-circle" v-bind:src="follower.avatar_url">
     </a>
-    <a v-bind:href="followers_url" target="_blank" class="btn-more-followers">
-      +{{ followers_count - followers.length }}
+    <a v-bind:href="followers_url" target="_blank" class="btn-more-followers" v-bind:data-title="followers_tip" data-toggle="tooltip" data-placement="bottom">
+      {{ followers_count > 0 ? '+ ' + (followers_count - followers.length) : '...' }}
     </a>
   </div>
 </template>
@@ -50,8 +50,9 @@ export default {
         maxnum: 4,
         loaded: false,
         followers: [],
-        followers_count: 0,
+        followers_count: -1,
         followers_url: '',
+        followers_tip: '',
         username: 'lc-soft'
     }
   },
@@ -67,14 +68,15 @@ export default {
     ctx.followers_url = 'https://github.com/'+ ctx.username +'/followers';
     $.getJSON( userUrl, function (user) {
       ctx.followers_count = user.followers;
+      ctx.followers_tip = '共有 ' + user.followers + ' 位粉丝';
       var page = Math.ceil(user.followers / 30);
       $.getJSON( userUrl +'/followers?page=' + page, function (followers) {
         var count = Math.min(followers.length, ctx.maxnum);
         ctx.followers = followers.reverse().slice(0, count);
         ctx.loaded = true;
-        Vue.nextTick(function () {
-          $('.user-followers .user-follower').tooltip();
-        });
+        setTimeout(function () {
+          $('.user-followers a[data-toggle="tooltip"]').tooltip();
+        }, 1000);
       });
     });
   }

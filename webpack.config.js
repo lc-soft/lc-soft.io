@@ -1,12 +1,15 @@
-var webpack = require('webpack')
+var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
-  entry: [
-    './src/www_index.js'
-  ],
+  context: path.join(__dirname, 'app'),
+  entry: {
+    index: './www_index.js',
+    common: './common.js'
+  },
   output: {
     path: './www/static/js/',
-    filename: 'index.js'
+    filename: '[name].js'
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
@@ -20,8 +23,7 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue'
-      },
-      {
+      }, {
         // edit this for additional asset file types
         test: /\.(png|jpg|gif)$/,
         loader: 'file?name=[name].[ext]?[hash]'
