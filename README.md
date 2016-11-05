@@ -21,9 +21,9 @@ lc-sft.io 网站源代码，基于 jekyll，纯静态页面。
 
 将 nodejs 环境的 bin 目录添加到 PATH 环境变量中：
 
-	sudo vim /etc/profile
+	sudo vim ~/.bashrc
 	export PATH=$PATH:/home/liuchao/tools/node-v6.9.1-linux-x64/bin
-	source /etc/profile
+	source ~/.bashrc
 
 ## 使用方法
 
