@@ -2,3 +2,7 @@ _site/
 .sass-cache/
 .jekyll-metadata
 node_modules
+www/static/css
+www/static/js
+lcui/static/css/main.css
+blog/static/css/main.css

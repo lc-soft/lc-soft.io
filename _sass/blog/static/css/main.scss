@@ -2,6 +2,9 @@
 $brandColorLight: #44ABF1;
 $brandColorDark: #2980b9;
 
+body {
+	background: #fafafa;
+}
 .navbar-custom {
 	background-color: #fff;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
@@ -100,41 +103,12 @@ $brandColorDark: #2980b9;
 	    border-color: #fff;
     }
 }
-#home-showcase {
-	h3 {
-		font-size: 16px;
-		text-align: center;
-	}
-}
 #footer {
     padding: 12px 0;
 	border-top: 1px solid #eee;
 	margin-top: 20px;
     line-height: 16px;
     font-size: 12px;
-}
-.user-event-list {
-    padding: 0;
-    min-height: 128px;
-    position: relative;
-    list-style-type: none;
-    li {
-    	margin-bottom: 10px;
-    }
-    .body {
-	    border-left: 2px solid #eee;
-	    padding-left: 8px;
-        margin-top: 4px;
-    }
-    .header, .commit-message, .issue-comment {
-    	margin: 0;
-    	text-overflow: ellipsis;
-	    overflow: hidden;
-	    white-space: pre;
-    }
-    .commit-url {
-    	font-family: monospace;
-    }
 }
 .overlay {
     top: 0;
@@ -158,18 +132,88 @@ $brandColorDark: #2980b9;
 .article-body img {
 	max-width: 100%;
 }
-.article-body p {
-    word-break: break-all;
+.article-cards {
+	column-count: 1;
+    padding-top: 20px;
 }
-.article-card img {
-	max-width: 100%;
+.article-card-wrapper {
+    padding: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    column-break-inside: avoid;
+    -webkit-column-break-inside: avoid;
 }
-.article-card .article-card-body h2 {
-	display: none;
+@media (max-width: 768px) {
+	.article-cards {
+	    column-count: 1;
+	    .article-card-wrapper {
+	    	padding: 0;
+	    }
+	}
 }
-.article-card .article-card-body p {
-    word-break: break-all;	
+@media (min-width: 992px) {
+	.article-cards {
+	    column-count: 2;
+	}
 }
-.article-body {
-	padding-top: 40px;
+@media (min-width: 1200px) {
+	.article-cards {
+	    column-count: 3;
+	}	
+}
+.article-card {
+	padding: 20px;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+
+    .article-card-title {
+    	margin-top: 10px;
+    	font-size: 18px;
+    }
+	.article-card-body {
+		p {
+	    	word-break: break-all;	
+		}
+		h2 {
+			display: none;
+		}
+		img {
+			max-width: 100%;
+		    padding: 5px;
+		    margin-top: 10px;
+			border: 1px solid #eee;
+		}
+	}
+}
+.post {
+	background-color: #fff;
+	.container {
+	    max-width: 720px;
+	    margin-left: auto;
+	    margin-right: auto;
+	}
+	.article {
+	    margin-top: 30px;
+        color: #2f2f2f;
+	    font-size: 14px;
+	    font-weight: normal;
+	    line-height: 1.6;
+	    h2 {
+	    	font-size: 24px;
+	    }
+		p {
+	        text-align: justify;
+		    text-justify: inter-ideograph;
+		    word-break: initial;
+		    word-break: break-word;
+	        margin: 0 0 25px 0;
+		}
+		img {
+			max-width: 100%;
+		    padding: 5px;
+		    margin-top: 10px;
+			border: 1px solid #eee;
+		}
+	}
 }

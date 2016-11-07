@@ -23,7 +23,7 @@ profile:
         <h2 class="name">{{ page.profile.name }}</h2>
         <p class="bio text-muted">{{ page.profile.bio }}</p>
         <p class="job">
-          <i class="fa fa-briefcase"></i> {{ page.profile.job }}
+          <i class="icon-briefcase"></i> {{ page.profile.job }}
         </p>
         <p class="skills">
           {% for skill in page.profile.skills %}
@@ -32,9 +32,9 @@ profile:
         </p>
         <userfollowers></userfollowers>
         <div class="links">
-          <a class="email" href="mailto:{{ page.profile.email }}"><i class="fa fa-envelope-o"></i></a>
-          <a class="github" href="{{ page.profile.github }}" ><i class="fa fa-github"></i></a>
-          <a class="steam" href="{{ page.profile.steam }}" ><i class="fa fa-steam-square"></i></a>
+          <a class="email" href="mailto:{{ page.profile.email }}"><i class="icon-envelope-o"></i></a>
+          <a class="github" href="{{ page.profile.github }}" ><i class="icon-github"></i></a>
+          <a class="steam" href="{{ page.profile.steam }}" ><i class="icon-steam-square"></i></a>
         </div>
       </div>
     </div>

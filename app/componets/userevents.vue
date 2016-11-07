@@ -44,7 +44,7 @@
         </template>
       </li>
     </ul>
-    <div class="overlay" v-show="!loaded" transition="fade"><div class="spinner-box"><i class="fa fa-spinner fa-spin"></i></div></div>
+    <div class="overlay" v-show="!loaded" transition="fade"><div class="spinner-box"><i class="icon-spinner spin"></i></div></div>
   </div>
 </template>
 <style lang="sass">
@@ -112,7 +112,7 @@
         position: absolute;
         margin-top: -10px;
       }
-      .fa {
+      .icon-spinner {
         font-size: 18px;
       }
   }
