@@ -12,14 +12,28 @@
             <p class="issue-comment" v-bind:title="event.payload.comment.body">{{ event.payload.comment.body }}</p>
           </div>
         </template>
-        <template v-if="event.type == 'PullRequestEvent'">
+        <template v-if="event.type == 'IssuesEvent'">
           <p class="header">
             <span class="time text-muted">{{ event.created_at | reltime }}</span>
-            <span class="title"><span v-if="event.payload.action == 'opened'">发起</span><span v-if="event.payload.action == 'closed'">关闭</span>合并请求 <a v-bind:href="event.payload.pull_request.html_url" target="_blank" v-bind:title="event.repo.name + '#' + event.payload.pull_request.number">{{ event.repo.name }} #{{ event.payload.pull_request.number }}</a>
+            <span class="title"><span v-if="event.payload.action == 'opened'">反馈</span><span v-if="event.payload.action == 'closed'">关闭</span>了一个问题在 <a v-bind:href="https://github.com/' + event.repo.name" target="_blank" v-bind:title="event.repo.name">{{ event.repo.name }}</a>
             </span>
           </p>
           <div class="body">
-            <p class="issue-comment" v-bind:title="event.payload.pull_request.title">{{ event.payload.pull_request.title }}</p>
+            <p class="issue-title" v-bind:title="event.payload.issue.title">
+              <a v-bind:href="event.payload.issue.html_url" target="_blank" v-bind:title="'#' + event.payload.issue.number">#{{ event.payload.issue.number }}</a> {{ event.payload.issue.title }}
+            </p>
+          </div>
+        </template>
+        <template v-if="event.type == 'PullRequestEvent'">
+          <p class="header">
+            <span class="time text-muted">{{ event.created_at | reltime }}</span>
+            <span class="title"><span v-if="event.payload.action == 'opened'">发起</span><span v-if="event.payload.action == 'closed'">关闭</span>合并请求在 <a v-bind:href="https://github.com/' + event.repo.name" target="_blank" v-bind:title="event.repo.name">{{ event.repo.name }}</a>
+            </span>
+          </p>
+          <div class="body">
+            <p class="pull-request-title" v-bind:title="event.payload.pull_request.title">
+              <a v-bind:href="event.payload.pull_request.html_url" target="_blank" v-bind:title="'#' + event.payload.pull_request.number">#{{ event.payload.pull_request.number }}</a> {{ event.payload.pull_request.title }}
+            </p>
             <div class="pull-request-stats">包含 <em>{{ event.payload.pull_request.commits }}</em> 个提交，共新增 <em>{{ event.payload.pull_request.additions }}</em> 行，删除 <em>{{ event.payload.pull_request.deletions }}</em> 行</div>
           </div>
         </template>
@@ -75,7 +89,7 @@
         padding-left: 8px;
           margin-top: 4px;
       }
-      .header, .commit-message, .issue-comment {
+      .header, .commit-message, .issue-comment, .pull-request-title {
         margin: 0;
         text-overflow: ellipsis;
         overflow: hidden;
@@ -147,6 +161,7 @@ export default {
           case 'IssueCommentEvent':
           case 'CreateEvent':
           case 'PushEvent':
+          case 'IssuesEvent':
             events.push(e);
             --count;
             break;
@@ -160,7 +175,6 @@ export default {
           case 'ForkApplyEvent':
           case 'GistEvent':
           case 'GollumEvent':
-          case 'IssuesEvent':
           case 'MemberEvent':
           case 'MembershipEvent':
           case 'PageBuildEvent':

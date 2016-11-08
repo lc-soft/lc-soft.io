@@ -5,26 +5,121 @@ title: Blog | LC's Software
 
 <div class="container">
   <div class="article-cards">
-  {% for post in site.posts %}
-    {% assign post_url = post.url | remove: '/blog' %}
-    <div class="article-card-wrapper">
-      <div class="article-card">
-        <h3 class="article-card-title">
-          <a href="{{ post_url }}">{{ post.title }}</a>
-        </h3>
-        <div class="article-card-info">
-          <p class="text-muted">
-            更新于<span class="date">{{ post.last_modified_at | date: "%Y年%m月%d日" }} &nbsp;•&nbsp; 
-            <span class="fa fa-comments-o"></span> <span class="ds-thread-count" data-thread-key="{{ post.ds_thread_key }}">无评论</span></span>
-          </p>
-        </div>
-        <div class="article-card-body">
-          {{ post.excerpt }}
-          <a href="{{ post_url }}">阅读全文 <span class="fa fa-angle-double-right"></span></a>
-        </div>
-      </div>
-    </div>
-  {% endfor %}
+    <div class="row"></div>
   </div>
 </div>
+<script id="tmpl-card" type="text/template">
+  <div class="article-card">
+    <h3 class="article-card-title">
+      <a href="[[url]]">[[title]]</a>
+    </h3>
+    <div class="article-card-info">
+      <p class="text-muted">
+        更新于<span class="date">[[date]] &nbsp;•&nbsp; 
+        <span class="fa fa-comments-o"></span> <span class="ds-thread-count" data-thread-key="[[ds_thread_key]] }}">无评论</span></span>
+      </p>
+    </div>
+    <div class="article-card-body">
+      <div class="excerpt">[[excerpt]]</div>
+      <div class="images"></div>
+      <a href="[[url]]">阅读全文 <span class="fa fa-angle-double-right"></span></a>
+    </div>
+  </div>
+</script>
+<script>
+var posts = [
+{% for post in site.posts %}
+{% assign images_count = 0 %}
+{% assign images = post.content | split:"<img " %}
+{% assign post_url = post.url | remove: '/blog' %}
+  {
+    "title": "{{ post.title }}",
+    "date": "{{ post.last_modified_at | date: '%Y年%m月%d日' }}",
+    "ds_thread_key": "{{ post.ds_thread_key }}",
+    "excerpt": {{ post.excerpt | jsonify }},
+    "url": "{{ post.url }}",
+    "images": [
+    {% for image in images %}
+      {% if image contains 'src' %}
+        {% if images_count < 4 %}
+          {% assign html = image | split:">" | first %}
+          {% assign images_count = images_count | plus: 1 %}
+          {{ html | jsonify }}
+          {% unless forloop.last %},{% endunless %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    ]
+  }
+{% unless forloop.last %},{% endunless %}
+{% endfor %}
+];
 
+var columnsCount = 0;
+var $row = $('.article-cards .row');
+var template = $('#tmpl-card').html();
+
+function updateColumns() {
+  var i, pos, n, column, $column;
+  var columns = [], width = $(window).width();
+
+  if (width <= 768) {
+    n = 1;
+    column = '<div class="col-xs-12"></div>';
+  } else if (width < 992) {
+    n = 2;
+    column = '<div class="col-sm-6"></div>';
+  } else {
+    n = 3;
+    column = '<div class="col-sm-4"></div>';
+  }
+  if (columnsCount === n) {
+    return;
+  }
+  $row.empty();
+  columnsCount = n;
+  for (i = 0; i < n; ++i) {
+    $column = $(column);
+    columns.push($column);
+    $row.append($column);
+  }
+  for (i = 0; i < posts.length; ++i) {
+    var post = posts[i];
+    var card = template.substr();
+
+    $column = columns[0];
+    for (var attr in post) {
+      var reg = RegExp('\\[\\[' + attr + '\\]\\]', 'g');
+      card = card.replace(reg, post[attr]);
+    }
+    var $card = $(card);
+    var $images = $card.find('.images');
+    var images_count = Math.min(post.images.length, 4);
+    for( pos = 0; pos < images_count; ++pos) {
+      var src = post.images[pos];
+      src = src.substr(src.indexOf('src="') + 5);
+      src = src.substr(0, src.indexOf('"'));
+      $images.append('<div class="image-wrapper">' +
+                       '<div class="image" style="background-image: url('+ src +')">' +
+                     '</div>');
+    }
+    switch (images_count) {
+    case 0: $images.remove(); break;
+    case 1: $images.addClass('one'); break;
+    case 2: $images.addClass('two'); break;
+    case 3: $images.addClass('three'); break;
+    default: $images.addClass('four'); break; 
+    }
+    for (pos = 1; pos < n; ++pos) {
+      if ($column.height() > columns[pos].height() + 80) {
+        $column = columns[pos];
+      }
+    }
+    $column.append($card);
+  }
+  $row.empty().append(columns);
+}
+
+$(document).on('ready', updateColumns);
+$(window).on('resize', updateColumns);
+</script>

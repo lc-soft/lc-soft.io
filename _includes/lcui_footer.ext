@@ -27,8 +27,8 @@ function updateFooterPosition() {
     }
   }
 }
+$(document).on('ready', updateFooterPosition);
 $(window).on({
-  'ready': updateFooterPosition,
   'scroll': updateFooterPosition,
   'resize': updateFooterPosition
 });
