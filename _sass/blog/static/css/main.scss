@@ -3,7 +3,7 @@ $brandColorLight: #44ABF1;
 $brandColorDark: #2980b9;
 
 body {
-	background: #fafafa;
+	background: #f4f4f4;
 }
 .navbar-custom {
 	background-color: #fff;
@@ -170,6 +170,11 @@ body {
 			    background-repeat: no-repeat;
 			    background-position: center;
 				background-color: #fbfbfb;
+			    display: block;
+
+			    &:hover {
+		    		border-color: #ccc;
+			    }
 			}
 		}
 		.four.images {

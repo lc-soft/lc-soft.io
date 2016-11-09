@@ -100,7 +100,8 @@ function updateColumns() {
       src = src.substr(src.indexOf('src="') + 5);
       src = src.substr(0, src.indexOf('"'));
       $images.append('<div class="image-wrapper">' +
-                       '<div class="image" style="background-image: url('+ src +')">' +
+                       '<a class="image" style="background-image: url('+ 
+                        src +')" href="'+ src +'" target="_blank">' +
                      '</div>');
     }
     switch (images_count) {
