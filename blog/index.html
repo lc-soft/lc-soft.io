@@ -37,7 +37,7 @@ var posts = [
     "date": "{{ post.last_modified_at | date: '%Y年%m月%d日' }}",
     "ds_thread_key": "{{ post.ds_thread_key }}",
     "excerpt": {{ post.excerpt | jsonify }},
-    "url": "{{ post.url }}",
+    "url": "{{ post_url }}",
     "images": [
     {% for image in images %}
       {% if image contains 'src' %}
