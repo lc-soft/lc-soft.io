@@ -132,8 +132,7 @@ function updateColumns() {
 
 $(document).on('ready', function () {
   updateColumns();
-  $.getJSON('//api.duoshuo.com/threads/counts.json', {
-    short_name: 'lc-soft',
+  $.getJSON('//lc-soft-lcui.duoshuo.com/api/threads/counts.json', {
     threads: postKeys.join(',')
   }, function (res) {
     if (res.code !== 0) {
