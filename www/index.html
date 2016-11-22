@@ -13,6 +13,19 @@ profile:
     - C
     - JavaScript
     - Python
+projects:
+- title: LCUI
+  url: https://github.com/lc-soft/LCUI
+  text: C 语言编写的跨平台图形界面库
+  logo: /static/images/logo-lcui.png
+- title: LCFinder
+  url: https://github.com/lc-soft/LC-Finder
+  text: 可视化的图片资源管理工具
+  logo: /static/images/logo-lcfinder.png
+- title: LCUI Guide
+  url: https://github.com/lc-soft/LCUI-Guide
+  icon: icon-book
+  text: LCUI 编程指南
 ---
 
 <div class="container">
@@ -39,10 +52,27 @@ profile:
       </div>
     </div>
     <div class="col-md-8 col-sm-6 col-xs-12">
-      <div class="horiz-divider visible-xs-block"></div>
+      <h3 class="section-title">
+        <span class="icon icon-lightbulb-o"></span> 作品
+      </h3>
+      <div class="project-list row">
+          {% for project in page.projects %}
+            <div class="project-list-item col-lg-4 col-md-6 col-xs-6 text-center">
+              <a class="project-list-item-link" target="_blank" href="{{ project.url }}" title="{{ project.title }}">
+                {% if project.logo %}
+                  <img alt="{{ project.title }}" src="{{ project.logo }}" class="project-list-item-logo" height="64" width="64">
+                {% else %}
+                  <span class="project-list-item-logo {{ project.icon }}"></span>
+                {% endif %}
+                <h4 class="project-list-item-header">{{ project.title }}</h4>
+                <p class="project-list-item-description">{{ project.text }}</p>
+              </a>
+            </div>
+          {% endfor %}
+      </div>
       <div class="user-activity">
-        <h3 class="user-activity-title">
-          <span class="icon-pulse"></span> 近期动态
+        <h3 class="section-title">
+          <span class="icon icon-pulse"></span> 近期动态
         </h3>
         <userevents></userevents>
       </div>

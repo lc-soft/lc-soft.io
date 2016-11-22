@@ -24,6 +24,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-repo:before {
+  content: "\e902";
+}
+.icon-book:before {
+  content: "\e901";
+}
 .icon-pulse:before {
   content: "\e900";
 }
@@ -35,6 +41,9 @@
 }
 .icon-briefcase:before {
   content: "\f0b1";
+}
+.icon-lightbulb-o:before {
+  content: "\f0eb";
 }
 .icon-spinner:before {
   content: "\f110";
