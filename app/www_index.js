@@ -14,3 +14,5 @@ Vue.component('userfollowers', UserFollowers);
 new Vue({
   el: 'body'
 });
+
+$('.user-profile .links a[data-toggle="tooltip"]').tooltip();

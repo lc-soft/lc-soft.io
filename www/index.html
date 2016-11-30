@@ -9,6 +9,8 @@ profile:
   github: https://github.com/lc-soft
   steam: http://steamcommunity.com/id/lcsoft
   email: i@lc-soft.io
+  patreon: https://www.patreon.com/lcsoft
+  gumroad: https://gumroad.com/lcsoft
   skills:
     - C
     - JavaScript
@@ -45,9 +47,11 @@ projects:
         </p>
         <userfollowers></userfollowers>
         <div class="links">
-          <a class="email" href="mailto:{{ page.profile.email }}"><i class="icon-envelope-o"></i></a>
-          <a class="github" href="{{ page.profile.github }}" ><i class="icon-github"></i></a>
-          <a class="steam" href="{{ page.profile.steam }}" ><i class="icon-steam-square"></i></a>
+          <a class="email" href="mailto:{{ page.profile.email }}" data-title="Email" data-toggle="tooltip" data-placement="bottom"><i class="icon-envelope-o"></i></a>
+          <a class="github" href="{{ page.profile.github }}" data-title="GitHub" data-toggle="tooltip" data-placement="bottom"><i class="icon-github"></i></a>
+          <a class="steam" href="{{ page.profile.steam }}" data-title="Steam" data-toggle="tooltip" data-placement="bottom"><i class="icon-steam-square"></i></a>
+          <a class="patreon" href="{{ page.profile.patreon }}" data-title="Patreon" data-toggle="tooltip" data-placement="bottom"><img src="/static/images/patreon-logo.png" alt="patreon"></a>
+          <a class="gumroad" href="{{ page.profile.gumroad }}" data-title="Gumroad" data-toggle="tooltip" data-placement="bottom"><img src="/static/images/gumroad-logo.png" alt="gumroad"></a>
         </div>
       </div>
     </div>

@@ -164,7 +164,6 @@ body {
 	}
 }
 .user-profile {
-	overflow: hidden;
     position: relative;
 	text-align: center;
     padding: 40px 20px 0 20px;
@@ -195,6 +194,21 @@ body {
 		}
 		a.steam:hover {
 			color: #116594;
+		}
+		a.patreon, a.gumroad {
+			img {
+				height: 24px;
+			    max-width: 24px;
+				vertical-align: top;
+				filter: brightness(0);
+    			opacity: 0.5;
+			}
+			&:hover {
+				img {
+				filter: brightness(100%);
+    			opacity: 1;
+				}
+			}
 		}
 	}
 	.skills {
