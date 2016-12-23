@@ -27,7 +27,7 @@
         <template v-if="event.type == 'PullRequestEvent'">
           <p class="header">
             <span class="time text-muted">{{ event.created_at | reltime }}</span>
-            <span class="title"><span v-if="event.payload.action == 'opened'">发起</span><span v-if="event.payload.action == 'closed'">关闭</span>合并请求在 <a v-bind:href="https://github.com/' + event.repo.name" target="_blank" v-bind:title="event.repo.name">{{ event.repo.name }}</a>
+            <span class="title"><span v-if="event.payload.action == 'opened'">发起</span><span v-if="event.payload.action == 'closed'">关闭</span>合并请求在 <a v-bind:href="'https://github.com/' + event.repo.name" target="_blank" v-bind:title="event.repo.name">{{ event.repo.name }}</a>
             </span>
           </p>
           <div class="body">
