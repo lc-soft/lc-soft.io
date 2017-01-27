@@ -1,6 +1,6 @@
 <div id="footer">
   <div class="container">
-      <span>© 2016 Liu Chao.</span>
+      <span>© 2017 Liu Chao.</span>
       <div class="pull-right">
         <a href="http://jekyllcn.com/">Jekyll</a>
         &nbsp;·&nbsp;
@@ -21,7 +21,6 @@ function updateFooterPosition() {
       $footer.removeClass('fixed-bottom');
     }
   } else {
-    console.log(pageHeight < $(window).height());
     if (pageHeight < $(window).height()) {
       $footer.addClass('fixed-bottom');
     }
