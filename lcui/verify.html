@@ -13,12 +13,13 @@ ds_thread_key: lcui-donate
   <div class="container">
     <div class="page-header text-center">
       <h2>入群验证</h2>
-      <p>在申请加入QQ群之前，请先完成以下验证问题，填写完后将生成的验证码作为加群验证答案提交。</p>
+      <p>通常情况下，当你遇到一些问题时可以靠<a href="mailto:root@lc-soft.io">发送邮件</a>和<a href="https://github.com/lc-soft/LCUI/issues">提交 Issue</a> 这两种途径来寻求帮助。</p>
+      <p>如果确实需要加入QQ群的话，请先完成以下验证问题，填写完后将生成的验证码作为加群验证答案提交。</p>
     </div>
     <form id="form-verify">
       <ol>
         <li>
-          <p>GitHub 上的 LCUI 仓库创建于哪一年？</p>
+          <p><b>GitHub 上的 LCUI 仓库创建于哪一年？</b></p>
           <p>
             <label>
               <input type="radio" name="1" value="A">
@@ -43,11 +44,11 @@ ds_thread_key: lcui-donate
           </p>
         </li>
         <li>
-          <p>如何将 GitHub 上的 LCUI 仓库克隆到本地？</p>
+          <p><b>如何将 GitHub 上的 LCUI 仓库克隆到本地？</b></p>
           <p>
             <label>
               <input type="radio" name="2" value="A">
-              svn download github:lcui
+              svn checkout https://github.com/lc-soft/LCUI.svn
             </label>
           </p>
           <p>
@@ -76,7 +77,7 @@ ds_thread_key: lcui-donate
           </p>
         </li>
         <li>
-          <p>如何在 linux 环境中编译 LCUI 的源代码？</p>
+          <p><b>如何在 linux 环境中编译 LCUI 的源代码？</b></p>
           <p>
             <label>
               <input type="radio" name="3" value="A">
@@ -101,7 +102,7 @@ ds_thread_key: lcui-donate
           </p>
         </li>
         <li>
-          <p>LCUI 项目主页的网址是？</p>
+          <p><b>LCUI 项目主页的网址是？</b></p>
           <p>
             <label>
               <input type="radio" name="4" value="A">
@@ -122,7 +123,7 @@ ds_thread_key: lcui-donate
           </p>
         </li>
         <li>
-          <p>LCUI 代码库中的中文版说明文档是哪个文件？</p>
+          <p><b>LCUI 代码库中的中文版说明文档是哪个文件？</b></p>
           <p>
             <label>
               <input type="radio" name="5" value="A">
@@ -143,7 +144,7 @@ ds_thread_key: lcui-donate
           </p>
         </li>
         <li>
-          <p>LCUI 是用什么语言编写的？</p>
+          <p><b>LCUI 是用什么语言编写的？</b></p>
           <p>
             <label>
               <input type="radio" name="6" value="A">
@@ -180,7 +181,7 @@ ds_thread_key: lcui-donate
           </p>
         </li>
         <li>
-          <p>作者的职业是？</p>
+          <p><b>作者的职业是？</b></p>
           <p>
             <label>
               <input type="radio" name="7" value="A">
@@ -213,7 +214,7 @@ ds_thread_key: lcui-donate
           </p>
         </li>
         <li>
-          <p>LCUI 采用哪一款开源许可协议？</p>
+          <p><b>LCUI 采用哪一款开源许可协议？</b></p>
           <p>
             <label>
               <input type="radio" name="8" value="A">
@@ -225,12 +226,28 @@ ds_thread_key: lcui-donate
             </label>&emsp;
             <label>
               <input type="radio" name="8" value="C">
-              WTF
+              LGPL
+            </label>&emsp;
+            <label>
+              <input type="radio" name="8" value="D">
+              WTFPL
+            </label>&emsp;
+            <label>
+              <input type="radio" name="8" value="E">
+              BSD
+            </label>&emsp;
+            <label>
+              <input type="radio" name="8" value="F">
+              MPL
+            </label>&emsp;
+            <label>
+              <input type="radio" name="8" value="G">
+              Apache
             </label>
           </p>
         </li>
         <li>
-          <p>如果你编写了一款调用了 LCUI 部分功能的应用程序并要发布给其他人，该许可协议是否要求你向他们公开该应用程序及所有依赖库的源代码？</p>
+          <p><b>如果你编写了一款调用了 LCUI 部分功能的应用程序并要发布给其他人，该许可协议是否要求你向他们公开该应用程序及所有依赖库的源代码？</b></p>
           <p>
             <label>
               <input type="radio" name="9" value="A">
@@ -243,7 +260,7 @@ ds_thread_key: lcui-donate
           </p>
         </li>
         <li>
-          <p>GitHub 的 fork 按钮是用来干什么的？</p>
+          <p><b>GitHub 的 fork 按钮是用来干什么的？</b></p>
           <p>
             <label>
               <input type="radio" name="10" value="A">
@@ -252,25 +269,25 @@ ds_thread_key: lcui-donate
           </p>
           <p>
             <label>
-              <input type="radio" name="3" value="B">
+              <input type="radio" name="10" value="B">
               用来关注自己感兴趣的项目的进展。
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="3" value="C">
+              <input type="radio" name="10" value="C">
               用来收藏自己感兴趣的项目等以后有空再看。
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="3" value="D">
+              <input type="radio" name="10" value="D">
               用来收集各种不错的项目，虽然 fork 后的仓库万年不更新，但也能让其他人以为自己很厉害居然参与了这么多项目。
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="3" value="E">
+              <input type="radio" name="10" value="E">
               在发现该项目中存在 BUG 或改进之处的时候，可以用它创建一个自己的分支，这样在以后可以方便的向主干分支提交自己的改进方案。
             </label>
           </p>
