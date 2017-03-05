@@ -16,16 +16,17 @@ def get_data(username):
 			a = cols[0].find('a')
 			num = cols[1].find('strong')
 			if a:
-				href = 'http://git-awards.com' + a.attrs['href']
+				href = a.attrs['href']
+				if href.find('http') < 0:
+					href = 'http://git-awards.com' + href
 				field = a.get_text().lower()
 			else:
 				href = '#'
 				field = cols[0].get_text().lower()
-				field = field.replace(' ', '')
-				field = field.replace(':', '')
 			if not num:
 				num = cols[1]
 			num = num.get_text().replace(' ', '')
+			field = field.replace(' ', '').replace(':', '').strip()
 			ranking[field] = { 'value': int(num), 'url': href }
 		data[lang] = ranking
 	if not os.path.exists('_data'):
