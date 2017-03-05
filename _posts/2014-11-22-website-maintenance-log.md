@@ -2,6 +2,17 @@
 title: 网站维护日志
 ds_thread_key: devlog-webiste
 ---
+## 2017-03-05
+之前看到知乎个人主页改版后觉得那个“个人成就”板块不错，一直想在个人主页上添加类似板块，主要展示 GitHub 上的项目星星数、排名、issues 数、pr 数以及排名信息，刚好最近有了点时间就开始弄这个了。
+
+查阅了 GitHub API 文档，issues 和 pr 数量可以靠它的 search 接口直接获取，至于排名信息则需要从其它网站去获取，找了些统计 GitHub 用户排名信息的网站，貌似都不提供能直接获取信息的接口，于是就用 python 写了个页面内容抓取脚本，然而页面源代码中除去基本的 div、a之类的基础元素以及布局 class 外，就没有什么其它辨识度高特征了，感觉这页面的语义化做好点的话抓起来也更方便些。
+
+GitHub 接口响应时间比较长，不适合在前端用 javascript 调用，于是改用 python 脚本来获取。jekyll 支持从 _data 目录下的 YAML、JSON 和 CSV 文件载入数据，在页面中可以通过 site.data 访问它们，那么可以把 python 脚本取到的数据都存到 json 数据文件里，每次网站仓库有更新时执行一次脚本，就能更新数据。
+
+这两个脚本分别是 github.py 和 awards.py，可以在这里找到：https://github.com/lc-soft/lc-soft.io/tree/master/api ，以下是主页上的数据展示效果，计划以后再添加代码量展示。
+
+[![](/static/images/article/github-achievements.gif "GitHub 数据展示效果")](/static/images/article/github-achievements.gif)
+
 ## 2016-11-05
 更新了主页，设计参考自 [Dribbble](https://dribbble.com/shots/2622997-Browse-profiles)，效果如下图所示，展示的内容还很少，以后会考虑以合适的效果加入其它内容。接下来将重新调整博客页面。
 [![](/static/images/article/20161105221945.png "修改后的主页")](/static/images/article/20160607185804.jpg)
