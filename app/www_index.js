@@ -16,3 +16,4 @@ new Vue({
 });
 
 $('.user-profile .links a[data-toggle="tooltip"]').tooltip();
+$('.github-achievements a[data-toggle="tooltip"]').tooltip();

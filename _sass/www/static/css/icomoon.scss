@@ -9,6 +9,7 @@
   font-style: normal;
 }
 
+
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
@@ -24,6 +25,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-star:before {
+  content: "\e905";
+}
+.icon-comment-discussion:before {
+  content: "\e904";
+}
+.icon-light-bulb:before {
+  content: "\e903";
+}
 .icon-repo:before {
   content: "\e902";
 }
@@ -51,4 +61,3 @@
 .icon-steam-square:before {
   content: "\f1b7";
 }
-

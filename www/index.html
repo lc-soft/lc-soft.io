@@ -45,6 +45,24 @@ projects:
             <span class="skill">{{ skill }}</span>
           {% endfor %}
         </p>
+        <div class="github-achievements">
+          <div class="achievement">
+            <div class="achievement-title">
+              <i class="icon icon-star"></i> 获得 <a href="{{ page.profile.github }}?&amp;tab=repositories&amp;type=&amp;language=c" title="C 编程语言项目获得的总星数" data-toggle="tooltip" target="_blank">{{ site.data.awards.c.stars.value }}</a> 颗星
+            </div>
+            <div class="achievement-text">
+              全国排名第 <a href="{{ site.data.awards.c.China.url }}" title="数据来源于 git-awards.com" target="_blank" data-toggle="tooltip">{{ site.data.awards.c.china.value }}</a> 名，世界排名第 <a href="{{ site.data.awards.c.worldwide.url }}" title="数据来源于 git-awards.com" target="_blank" data-toggle="tooltip">{{ site.data.awards.c.worldwide.value }}</a> 名</a>
+            </div>
+          </div>
+          <div class="achievement">
+            <div class="achievement-title">
+              <i class="icon icon-comment-discussion"></i> 参与 <a href="{{ site.data.github.involves_url }}" target="_blank">{{ site.data.github.involves_count }}</a> 次社区交流
+            </div>
+            <div class="achievement-text">
+              反馈 <a href="{{ site.data.github.issues_url }}" target="_blank" title="向开源项目提交的 Issue 数" data-toggle="tooltip">{{ site.data.github.issues_count }}</a> 个问题，贡献 <a href="{{ site.data.github.pulls_url }}" target="_blank" title="向开源项目提交的 Pull Request 数" data-toggle="tooltip">{{ site.data.github.pulls_count }}</a> 次代码
+            </div>
+          </div>
+        </div>
         <userfollowers></userfollowers>
         <div class="links">
           <a class="email" href="mailto:{{ page.profile.email }}" data-title="Email" data-toggle="tooltip" data-placement="bottom"><i class="icon-envelope-o"></i></a>

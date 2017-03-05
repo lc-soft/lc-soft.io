@@ -363,3 +363,31 @@ span.project-list-item-logo {
     font-size: 13px;
     color: #767676;
 }
+.github-achievements {
+	text-align: left;
+    max-width: 340px;
+    margin: 20px auto;
+    padding: 5px 15px;
+    border-radius: 2px;
+    border: 1px solid #e7eaf1;
+
+	.achievement {
+	   padding: 10px 0;
+	}
+    .achievement-title {
+    	font-size: 15px;
+    	margin-bottom: 5px;
+
+    	.icon {
+		    width: 25px;
+		    color: #bdcadb;
+		    font-size: 18px;
+		    display: inline-block;
+		    vertical-align: top;
+    	}
+    }
+    .achievement-text {
+    	padding-left: 30px;
+    	color: #8590a6;
+    }
+}
