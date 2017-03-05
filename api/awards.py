@@ -16,7 +16,7 @@ def get_data(username):
 			a = cols[0].find('a')
 			num = cols[1].find('strong')
 			if a:
-				href = a.attrs['href']
+				href = 'http://git-awards.com' + a.attrs['href']
 				field = a.get_text().lower()
 			else:
 				href = '#'
