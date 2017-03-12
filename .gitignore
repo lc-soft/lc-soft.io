@@ -5,5 +5,7 @@ _data/
 node_modules
 www/static/css
 www/static/js
+lcui/static/css/horiz-split-box.css
+lcui/static/css/syntax.css
 lcui/static/css/main.css
 blog/static/css/main.css

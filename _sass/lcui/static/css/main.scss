@@ -132,10 +132,6 @@
 		}
 	}
     .lcui-milestone-main {
-	    //color: #3a585f;
-	    //border-radius: 3px;
-	    //border: 1px solid #d1d9db;
-	    //background-color: #fff;
 	    text-align: left;
 	    padding: 0 20px;
 	    p {
@@ -144,10 +140,6 @@
 	    .link {
 	    	font-size: 18px;
 	    }
-    }
-    > span {
-	    //padding: 0.6em 0.8em;
-	    //display: inline-block;
     }
     .btn {
 	    border-radius: 4px;
@@ -196,6 +188,21 @@
 			color: $BrandColor;
 		}
 	}
+}
+.flex-items-center {
+	-webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.project-overview {
+	font-size: 15px;
+	line-height: 1.8;
+	p {
+	    margin: 0 0 1em 0;
+	}
+}
+.proejct-overview-box {
+	margin-bottom: 50px;
 }
 .project-contribute {
 	background-color: #fcfcfc;
@@ -383,6 +390,15 @@
 }
 
 }
+
+@media screen and (min-width: 768px) {
+
+.md-flex {
+	display: flex;
+}
+
+}
+
 .section-header {
     margin: 32px 0;
     text-align: center;
@@ -449,6 +465,82 @@
 	    border-top: 2px solid #199ddb;
 	    &:hover, &:active {
 	    	border-top-color: #042467;
+		}
+	}
+}
+
+@import "horiz-split-box";
+@import "syntax";
+
+#lcui-example {
+	width: 100%;
+	height: 362px;
+	margin-bottom: 25px;
+	box-sizing: content-box;
+
+	.content {
+		width: 100%;
+		height: 362px;
+    	overflow: hidden;
+	}
+	.cover {
+		background: #fff;
+		.content {
+			min-width: 500px;
+		}
+	}
+	button, input {
+		border-radius: 0;
+    	box-shadow: none;
+	}
+	input {
+		width: 200px;
+	}
+	input:focus {
+		box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+	}
+    #text-hello {
+      color: #8cc63f;
+      padding: 25px;
+      border: 1px solid #000;
+      background-color: #fafafa;
+      display: inline-block;
+    }
+    #btn-hello, #input-hello, #text-hello {
+      margin: 25px 0 0 25px;
+    }
+	pre {
+    	border: 0;
+	    background: #fff;
+	    min-width: 500px;
+	}
+	.toggle-handle-button .fa {
+	    padding: 13px;
+	    text-align: center;
+	    color: #6ba84b;
+	    transform: rotate(90deg);
+	    -ms-transform: rotate(90deg);
+	    -moz-transform: rotate(90deg);
+	    -webkit-transform: rotate(90deg);
+	    -o-transform: rotate(90deg);
+	}
+	span.line {
+		display: block;
+	    padding: 12px 0 12px 55px;
+	    position: relative;
+		&:before {
+		    counter-increment: line;
+		    content: counter(line);
+		    display: block;
+		    color: #79a5f1;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    bottom: 0;
+		    width: 40px;
+		    text-align: right;
+		    padding-top: 12px;
+		    padding-right: 8px;
 		}
 	}
 }

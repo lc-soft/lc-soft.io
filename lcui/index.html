@@ -41,8 +41,59 @@ is_home: true
     </div>
   </div>
 </div>
+</section>
 <section id="features" class="section project-features">
   <div class="container">
+    <div class="row md-flex flex-items-center proejct-overview-box">
+      <div class="col-xs-12 col-sm-6">
+        <div id="lcui-example" class="horiz-split-box">
+          <div class="cover">
+            <div class="content">
+              <div>
+                <div id="text-hello">Hello, World!</div>
+              </div>
+              <div>
+              <input type="text" id="input-hello" class="form-control" value="Hello, World!">
+              </div>
+              <button id="btn-hello" class="btn btn-default">Submit</button>
+            </div>
+          </div>
+          <div class="content">
+<figure class="highlight">
+<pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
+<span class="nt">&lt;lcui-app&gt;</span>
+  <span class="nt">&lt;resource</span> <span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+    <span class="nf">#text-hello</span> <span class="p">{</span>
+      <span class="k">color</span><span class="o">:</span> <span class="m">#8cc63f</span><span class="p">;</span>
+      <span class="k">padding</span><span class="o">:</span> <span class="m">25px</span><span class="p">;</span>
+      <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#000</span><span class="p">;</span>
+      <span class="k">background-color</span><span class="o">:</span> <span class="m">#fafafa</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nf">#btn-hello</span><span class="o">,</span> <span class="nf">#input-hello</span><span class="o">,</span> <span class="nf">#text-hello</span> <span class="p">{</span>
+      <span class="k">margin</span><span class="o">:</span> <span class="m">25px</span> <span class="m">0</span> <span class="m">0</span> <span class="m">25px</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="nt">&lt;/resource&gt;</span>
+  <span class="nt">&lt;ui&gt;</span>
+    <span class="nt">&lt;widget</span> <span class="na">id=</span><span class="s">"text-hello"</span> <span class="na">type=</span><span class="s">"textview"</span><span class="nt">&gt;</span>Hello, World!<span class="nt">&lt;/widget&gt;</span>
+    <span class="nt">&lt;widget</span> <span class="na">id=</span><span class="s">"input-hello"</span> <span class="na">type=</span><span class="s">"textedit"</span><span class="nt">&gt;</span>Hello, World!<span class="nt">&lt;/widget&gt;</span>
+    <span class="nt">&lt;widget</span> <span class="na">id=</span><span class="s">"btn-hello"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/widget&gt;</span>
+  <span class="nt">&lt;/ui&gt;</span>
+<span class="nt">&lt;/lcui-app&gt;</span>
+</code></pre></figure>
+          </div>
+          <div class="toggle-handle">
+            <div class="toggle-handle-button">
+              <i class="fa fa-bars"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="project-overview col-xs-12 col-sm-6">
+        <h2>概述</h2>
+        <p>LCUI 是一个用 C 编写的图形界面开发库，你可以用 C、XML 和 CSS 创建简单的桌面应用，包括传统的 Win32 桌面应用、Windows 通用应用，目前主要支持 Windows 系统，后续版本将会完善对 Linux 系统的支持。</p>
+        <p>如果你在熟悉 C 语言的基础上还具备网页开发经验，那么在使用 LCUI 时会更容易上手，因为 LCUI 对 XML、CSS 以及元素布局等的处理方式和浏览器有一些相似的地方，你可以参考左侧的示例代码了解大致效果。</p>
+      </div>
+    </div>
     <div class="row">
       <div class="project-feature col-xs-12 col-sm-4">
         <span class="fa fa fa-pencil project-feature-icon"></span>
@@ -113,7 +164,7 @@ is_home: true
   <div class="container">
     <div class="section-header">
       <h2>参与贡献</h2>
-      <p class="text-muted">你可以通过以下几种方式参与贡献本项目</p>
+      <p class="text-muted">开源项目的可持续发展仅靠作者一个人是远远不够的，如果你有意向，可以通过以下几种方式参与本项目</p>
     </div>
     <div class="card-container">
       <a class="card card-star" href="https://github.com/lc-soft/LCUI/stargazers">
@@ -212,6 +263,7 @@ is_home: true
 </section>
 <script src="/static/js/abigimage.jquery.min.js"></script>
 <script src="/static/js/circle-progress.min.js"></script>
+<script src="/static/js/horiz-split-box.js"></script>
 <script type="text/javascript">
 function updateNavbarStyle() {
   if( $(document).scrollTop() > 0 ) {
@@ -220,7 +272,9 @@ function updateNavbarStyle() {
     $('.navbar').addClass('navbar-on-top');
   }
 }
+
 updateNavbarStyle();
+
 $(document).on('scroll', updateNavbarStyle);
 $('.thumbnail').abigimage({
   onopen: function(target) {
@@ -299,5 +353,10 @@ $(document).ready(function() {
     window.location.hash = $(this).attr('href');
     return false;
   });
+  $('#lcui-example').horizSplitBox();
+  $('#btn-hello').on('click', function () {
+    $('#text-hello').text($('#input-hello').val());
+  });
+
 });
 </script>
