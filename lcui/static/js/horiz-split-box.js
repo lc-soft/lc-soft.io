@@ -6,26 +6,32 @@ $.fn.horizSplitBox = function() {
   var $toggle = $box.find('.toggle-handle');
   var mouseX, toggleLeft, draggable = false;
 
-  $(document).on({
-    mousemove: function (e) {
-      if (!draggable) {
-        return;
-      }
-      var left = toggleLeft + e.pageX - mouseX;
-      var width = $toggle.parent().width() - $toggle.width();
-      left = Math.max(Math.min(left, width), 0);
-      $toggle.css('left', left);
-      $cover.css('width', left);
-    },
-    mouseup: function (e) {
-      draggable = false;
-      $box.css('user-select', '');
+  function getPageX(e) {
+    if (typeof e.pageX == 'undefined' ) {
+      return e.touches[0].pageX;
     }
+    return e.pageX;
+  }
+  
+  $(document).on('mousemove touchmove', function (e) {
+    if (!draggable) {
+      return;
+    }
+    var left = toggleLeft + getPageX(e) - mouseX;
+    var width = $toggle.parent().width() - $toggle.width();
+    left = Math.max(Math.min(left, width), 0);
+    $toggle.css('left', left);
+    $cover.css('width', left);
   });
 
-  $toggle.on('mousedown', function (e) {
-    mouseX = e.pageX;
+  $(document).on('mouseup touchend', function (e) {
+    draggable = false;
+    $box.css('user-select', '');
+  });
+
+  $toggle.on('mousedown touchstart', function (e) {
     draggable = true;
+    mouseX = getPageX(e);
     toggleLeft = $toggle.position().left;
     $box.css('user-select', 'none');
   });
