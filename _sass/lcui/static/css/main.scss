@@ -204,8 +204,109 @@
 .proejct-overview-box {
 	margin-bottom: 50px;
 }
+.loved-by {
+	text-align: center;
+
+	.fa.fa-heart {
+	    color: #e25950;
+	    display: block;
+	    font-size: 34px;
+	    padding-bottom: 24px;
+        text-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+	}
+	h3 {
+		margin-top: 125px;
+    	margin-bottom: 67px;
+	}
+	.quote {
+		margin: 0 auto;
+    	max-width: 800px;
+    	line-height: 2.2;
+    	position: relative;
+
+    	.fa-quote-left {
+    		top: 0;
+		    left: -40px;
+    	}
+    	.fa-quote-right {
+    		bottom: 0;
+    		right: -40px;
+    	}
+    	.fa-quote-left, .fa-quote-right {
+			display: none;
+		    color: #d8d8d8;
+		    font-size: 34px;
+		    position: absolute;
+    	}
+    	&.active {
+    		.fa-quote-left, .fa-quote-right {
+				display: inline;
+			}
+    	}
+	}
+	.quotees {
+		list-style: none;
+    	padding: 44px 0;
+
+    	li {
+		    display: inline-block;
+    		margin-right: 54px;
+
+		    &.unknown {
+			    padding: 20px 25px;
+			    border-radius: 4px;
+			    border: 4px dotted #eee;
+
+			    .fa {
+			        color: #ddd;
+				    font-size: 34px;
+				    vertical-align: middle;
+			    }
+			    &:hover {
+			    	border-color: #ccc;
+			    }
+		    }
+		    &:last-child {
+		    	margin-right: 0;
+		    }
+    	}
+    	.avatar-box {
+			position: relative;
+			display: inline-block;
+
+			.logo {
+			    top: -12px;
+    			right: -14px;
+				position: absolute;
+
+				img {
+					width: 34px;
+					height: 34px;
+				}
+			}
+    		.avatar {
+			    width: 64px;
+			    height: 64px;
+			    border-radius: 50%;
+			    border: 1px solid #eee;
+    		}
+    	}
+    	.content {
+    		margin-left: 24px;
+		    text-align: left;
+		    display: inline-block;
+		    vertical-align: middle;
+
+		    strong {
+		    	display: block;
+				font-size: 16px;
+		    }
+    	}
+	}
+}
 .project-contribute {
-	background-color: #fcfcfc;
+	background-color: #f6f8f8;
+
 	.card-container {
     	display: flex;
 	    flex-wrap: wrap;
