@@ -205,6 +205,7 @@
 	margin-bottom: 50px;
 }
 .loved-by {
+	padding: 0 64px;
 	text-align: center;
 
 	.fa.fa-heart {
@@ -245,12 +246,13 @@
     	}
 	}
 	.quotees {
-		list-style: none;
-    	padding: 44px 0;
+	    list-style: none;
+	    padding: 44px 0 34px 0;
+	    margin: 0;
 
     	li {
+		    margin: 15px 54px 15px 0;
 		    display: inline-block;
-    		margin-right: 54px;
 
 		    &.unknown {
 			    padding: 20px 25px;
@@ -487,6 +489,18 @@
 		h3 .project-feature-icon {
 			display: inline;
 		}
+	}
+}
+.loved-by {
+	.quotees li {
+		margin-right: 0;
+
+		&.unknown {
+			display: none;
+		}
+	}
+	h4.quote {
+    	font-size: 16px;
 	}
 }
 
