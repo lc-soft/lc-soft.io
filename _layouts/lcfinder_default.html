@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{{ page.title }}</title>
+<link rel="shortcut icon" href="/favicon.png" type="image/png">
+<meta name="keywords" content="lc-soft,liuchao,lc,刘超">
+<meta name="description" content="这是超哥的个人网站，在这里你可以看到他的动态和作品。">
+<meta name="robots" content="all">
+<meta name="author" content="Liu Chao">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/static/css/common.css">
+<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+</head>
+{% if page.navbar_fixed_top %}
+<body class="has-fixed-top-navbar">
+{% else %}
+<body>
+{% endif %}
+{% include www_navbar.ext %}
+{{ content }}
+{% include www_footer.ext %}
+</body>
+</html>

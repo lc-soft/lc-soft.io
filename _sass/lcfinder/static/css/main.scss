@@ -1,0 +1,160 @@
+.navbar {
+	margin: 0;
+	background-color: transparent;
+	border-color: transparent;
+}
+.container, .jumbotron .container {
+	max-width: 900px;
+}
+
+.lcfinder-jumbotron {
+    overflow: hidden;
+	background: #fff;
+
+	h1 {
+    	font-size: 48px;
+
+    	.title {
+    		position: relative;
+    		display: inline-block;
+    	}
+    	.version-badge {
+		    top: -10px;
+		    right: -64px;
+		    color: #3498db;
+		    font-size: 1rem;
+		    padding: 2px 4px;
+		    border-radius: 2px;
+		    border: 1px solid #3498db;
+		    position: absolute;
+    	}
+	}
+	.logo {
+		width: 96px;
+		height: 96px;
+		z-index: 10;
+		border-radius: 14px;
+	    box-shadow: 0 2px 6px rgba(1, 130, 216, 0.3);
+		position: relative;
+	}
+	.logo-wrapper {
+		text-align: center;
+		position: relative;
+		margin: 100px 0;
+	}
+	.logo-wrapper .mdi {
+	    top: 50%;
+	    left: 50%;
+		color: #ccc;
+		font-size: 34px;
+		display: block;
+	    position: absolute;
+	    margin: -12px 0 0 -12px;
+	    will-change: transform,opacity;
+	}
+	.btn .mdi-windows {
+		color: #3498db;
+	}
+	.version-support {
+		font-size: 1rem;
+	}
+	.screenshot {
+    	z-index: 10;
+    	max-width: 100%;
+    	position: relative;
+	    border: 1px solid #ddd;
+    	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    	margin: 64px 0 32px 0;
+	}
+}
+.btn {
+    border-radius: 2px;
+}
+.section {
+    font-size: 16px;
+	padding: 72px 0;
+}
+.features {
+	color: #6b7c93;
+	background: #f6f9fc;
+	
+	h2 {
+		color: #24b47e;
+		margin: 0 0 40px 0;
+	}
+	.feature {
+	    text-align: center;
+	    min-height: 240px;
+	    max-width: 280px;
+	    margin: 0 auto 24px auto;
+
+		h3 {
+			color: #1bb978;
+		    margin: 24px 0;
+		}
+	}
+	.feature-circle {
+		color: #1bb978;
+	
+		.mdi {
+		    width: 64px;
+		    height: 64px;
+			display: block;
+		    font-size: 40px;
+		    background: #B9F4BC;
+		    line-height: 64px;
+		    border-radius: 50%;
+	        margin: 0 auto;
+		}
+	}
+}
+.roadmap {
+	.description {
+	    max-width: 660px;
+	    margin: 0 auto 40px auto;
+	}
+
+	.feature {
+	    text-align: center;
+	    min-height: 240px;
+	    max-width: 280px;
+	    margin: 0 auto 24px auto;
+
+		h3 {
+		    margin: 24px 0;
+		}
+	}
+	.feature-circle {
+		color: #1b85b9;
+	
+		.mdi {
+		    width: 64px;
+		    height: 64px;
+			display: block;
+		    font-size: 40px;
+		    background: #b9e1f4;
+		    line-height: 64px;
+		    border-radius: 50%;
+	        margin: 0 auto;
+		}
+	}
+}
+#footer {
+    padding: 12px 0;
+    border-top: 1px solid #eee;
+    line-height: 16px;
+    font-size: 12px;
+}
+.flex-items-center {
+	-webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+
+.md-flex {
+	display: flex;
+}
+
+}
