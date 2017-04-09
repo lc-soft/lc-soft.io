@@ -1,6 +1,32 @@
 var IconsWall = require("./iconswall");
 
-function initAnimation() {
+function initScreenshotsAnimation() {
+  var index = 0;
+  var $images = $('#screenshots .screenshot');
+  var $image = $images.eq(0);
+
+  function switchNext() {
+    ++index;
+    $image.removeClass('active');
+    if (index >= $images.length) {
+      $images.removeClass('visible');
+      index = 0;
+    } else if (index === $images.length - 1) {
+      $image.siblings().removeClass('visible');
+    }
+    if(index > 0) {
+      $image = $images.eq(index);
+      $image.addClass('visible active');
+    }
+  }
+
+  setTimeout(function () {
+    setInterval(switchNext, 2000);  
+  }, 2000);
+  
+}
+
+function initLogoAnimation() {
   var options = {
     icons: [
       'sort',
@@ -39,4 +65,5 @@ function initAnimation() {
   animation.start();
 }
 
-initAnimation();
+initLogoAnimation();
+initScreenshotsAnimation();

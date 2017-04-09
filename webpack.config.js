@@ -41,7 +41,8 @@ var wwwConfig = {
 var lcfinderConfig = {
   context: path.join(__dirname, 'app'),
   entry: {
-    index: './lcfinder_index.js'
+    index: './lcfinder_index.js',
+    common: './common.js'
   },
   output: {
     path: './lcfinder/static/js/',
