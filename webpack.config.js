@@ -46,7 +46,14 @@ var lcfinderConfig = {
   output: {
     path: './lcfinder/static/js/',
     filename: '[name].js'
-  }
+  },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
+  ]
 }
 
 module.exports = [
