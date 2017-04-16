@@ -589,14 +589,14 @@
 
 #lcui-example {
 	width: 100%;
-	height: 362px;
+	height: initial;
 	margin-bottom: 25px;
 	box-sizing: content-box;
 
 	.content {
 		width: 100%;
-		height: 362px;
-    	overflow: hidden;
+		height: initial;
+    	overflow-y: hidden;
 	}
 	.cover {
 		background: #fff;
@@ -616,16 +616,19 @@
 	}
     #text-hello {
       color: #8cc63f;
+      margin: 25px;
       padding: 25px;
       border: 1px solid #000;
       background-color: #fafafa;
-      display: inline-block;
     }
-    #btn-hello, #input-hello, #text-hello {
-      margin: 25px 0 0 25px;
+    #input-hello, #btn-hello {
+		margin: 0 0 0 25px;
+		display: inline-block;
+		vertical-align: top;
     }
 	pre {
     	border: 0;
+    	margin: 0;
 	    background: #fff;
 	    min-width: 500px;
 	}

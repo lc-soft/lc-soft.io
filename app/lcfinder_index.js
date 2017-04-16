@@ -11,13 +11,14 @@ function initScreenshotsAnimation() {
     if (index >= $images.length) {
       $images.removeClass('visible');
       index = 0;
-    } else if (index === $images.length - 1) {
-      $image.siblings().removeClass('visible');
     }
-    if(index > 0) {
+    if (index > 0) {
       $image = $images.eq(index);
       $image.addClass('visible active');
     }
+    setTimeout(function () {
+      $image.siblings().removeClass('visible');
+    }, 500);
   }
 
   setTimeout(function () {
@@ -67,3 +68,7 @@ function initLogoAnimation() {
 
 initLogoAnimation();
 initScreenshotsAnimation();
+
+$('#btn-windows-store').on('click', function () {
+  alert('请等待后续版本更新');
+});

@@ -1,0 +1,202 @@
+---
+layout: lcui_en_default
+title: LCUI - Build simple desktop apps with C, XML and CSS
+is_home: true
+---
+<div class="jumbotron home-jumbotron">
+  <div class="container">
+    <div class="col-xs-12">
+      <div class="logo"></div>
+    </div>
+    <div class="col-xs-12 text-center">
+    <h1>LCUI</h1>
+    <p>Build simple desktop apps with C, XML and CSS</p>
+    <p class="jumbotron-button-group">
+		<a class="btn btn-outline-inverse btn-lg" href="https://docs.lcui.lc-soft.io/zh-cn/getting_started/"><span class="fa fa-book"></span> Getting started</a>
+      <a class="btn btn-outline-inverse btn-lg" href="https://github.com/lc-soft/LCUI/releases"><span class="fa fa-download"></span> Download</a>
+    </p>
+    <div class="shameless-self-promotion">
+      Version：0.15.0 &nbsp;&nbsp;·&nbsp;&nbsp;
+      Dete：2013-11-22 &nbsp;&nbsp;·&nbsp;&nbsp;
+      <a href="https://github.com/lc-soft/LCUI">
+        GitHub</a> &nbsp;&nbsp;·&nbsp;&nbsp;
+      Creator：<a href="http://github.com/lc-soft">lc-soft</a>
+    </div>
+    </div>
+  </div>
+</div>
+</section>
+<section id="features" class="section project-features">
+  <div class="container">
+    <div class="row md-flex flex-items-center proejct-overview-box">
+      <div class="col-xs-12 col-sm-6">
+        <div id="lcui-example" class="horiz-split-box">
+          <div class="cover">
+            <div class="content">
+              <div>
+                <div id="text-hello">Hello, World!</div>
+              </div>
+              <input type="text" id="input-hello" class="form-control" value="Hello, World!">
+              <button id="btn-hello" class="btn btn-default">Submit</button>
+            </div>
+          </div>
+          <div class="content">
+<figure class="highlight">
+<pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
+<span class="nt">&lt;lcui-app&gt;</span>
+  <span class="nt">&lt;resource</span> <span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+    <span class="nf">#text-hello</span> <span class="p">{</span>
+      <span class="k">color</span><span class="o">:</span> <span class="m">#8cc63f</span><span class="p">;</span>
+      <span class="k">padding</span><span class="o">:</span> <span class="m">25px</span><span class="p">;</span>
+      <span class="k">margin</span><span class="o">:</span> <span class="m">25px</span><span class="p">;</span>
+      <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#000</span><span class="p">;</span>
+      <span class="k">background-color</span><span class="o">:</span> <span class="m">#fafafa</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nf">#btn-hello</span><span class="o">,</span> <span class="nf">#input-hello</span> <span class="p">{</span>
+      <span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">25px</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="nt">&lt;/resource&gt;</span>
+  <span class="nt">&lt;ui&gt;</span>
+    <span class="nt">&lt;widget</span> <span class="na">id=</span><span class="s">"text-hello"</span> <span class="na">type=</span><span class="s">"textview"</span><span class="nt">&gt;</span>Hello, World!<span class="nt">&lt;/widget&gt;</span>
+    <span class="nt">&lt;widget</span> <span class="na">id=</span><span class="s">"input-hello"</span> <span class="na">type=</span><span class="s">"textedit"</span><span class="nt">&gt;</span>Hello, World!<span class="nt">&lt;/widget&gt;</span>
+    <span class="nt">&lt;widget</span> <span class="na">id=</span><span class="s">"btn-hello"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/widget&gt;</span>
+  <span class="nt">&lt;/ui&gt;</span>
+<span class="nt">&lt;/lcui-app&gt;</span>
+</code></pre></figure>
+          </div>
+          <div class="toggle-handle">
+            <div class="toggle-handle-button">
+              <i class="fa fa-bars"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="project-overview col-xs-12 col-sm-6">
+        <h2>Overview</h2>
+        <p>LCUI is a simple GUI library, it is written in C, support XML and CSS, you can use C, XML and CSS to build simple desktop applications, at present it is mainly supported Windows, subsequent versions will improve support for Linux.</p>
+        <p>If you have web development experience, then the use of LCUI will be easier to get started, because LCUI's XML, CSS, and element layout processing effect are similar to web browser, you can refer to the sample code on the left to learn about the effect.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="project-feature col-xs-12 col-sm-4">
+        <span class="fa fa fa-pencil project-feature-icon"></span>
+        <h3><span class="fa fa fa-pencil project-feature-icon"></span> written in C</h3>
+        <p class="text-muted">Suitable for applications that are smaller and are primarily written in C.</p>
+      </div>
+      <div class="project-feature col-xs-12 col-sm-4">
+        <span class="fa fa-file-code-o project-feature-icon"></span>
+        <h3><span class="fa fa-file-code-o project-feature-icon"></span> XML + CSS</h3>
+        <p class="text-muted">Support the use of XML and CSS to describe the GUI layout and style, saving interface development time and maintenance costs.</p>
+      </div>
+      <div class="project-feature col-xs-12 col-sm-4">
+        <span class="fa fa-cogs project-feature-icon"></span> 
+        <h3><span class="fa fa-cogs project-feature-icon"></span> Cross platform</h3>
+        <p class="text-muted">Support for Windows and Linux, but support for Linux is not yet complete.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="demo-screenshorts" class="section project-screenshorts">
+  <div class="container">
+    <div class="section-header">
+      <h2>Showcases</h2>
+      <p class="text-muted">Some screenshots of LCUI applications</p>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-md-3">
+        <a class="thumbnail" href="/static/images/showcase/punckandkick-001.gif">
+          <img src="/static/images/showcase/punckandkick-001.gif" alt="PunckAndKick screenshot-001"/>
+        </a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <a class="thumbnail" href="/static/images/showcase/punckandkick-002.gif">
+          <img src="/static/images/showcase/punckandkick-002.gif" alt="PunckAndKick screenshot-002"/>
+        </a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <a class="thumbnail" href="/static/images/showcase/lcfinder-001.jpg">
+          <img src="/static/images/showcase/lcfinder-001.jpg" alt="LC-Finder screenshot-001"/>
+        </a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <a class="thumbnail" href="/static/images/showcase/lcfinder-002.jpg">
+          <img src="/static/images/showcase/lcfinder-002.jpg" alt="LC-Finder screenshot-002" />
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-md-3">
+        <a class="thumbnail" href="/static/images/showcase/lcfinder-003.jpg">
+          <img src="/static/images/showcase/lcfinder-003.jpg" alt="LC-Finder screenshot-003"/>
+        </a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <a class="thumbnail" href="/static/images/showcase/lcfinder-004.jpg">
+          <img src="/static/images/showcase/lcfinder-004.jpg" alt="LC-Finder screenshot-004"/>
+        </a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <a class="thumbnail" href="/static/images/showcase/lcfinder-005.jpg">
+          <img src="/static/images/showcase/lcfinder-005.jpg" alt="LC-Finder screenshot-005"/>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="loved-by container">
+    <h3>
+      <span class="icon fa fa-heart"></span>
+      Loved by some of the people and companies on earth
+    </h3>
+    <h4 class="quote active text-muted">
+      <span class="fa fa-quote-left"></span>
+      LCUI solves many complex issues, it reduces the application UI development and maintenance costs, I only need to write a code for the UI will be able to make my application in a number of platforms to show a consistent UI effect.
+      <span class="fa fa-quote-right"></span>
+    </h4>
+    <ul class="quotees">
+      <li class="active">
+        <div class="avatar-box">
+          <a class="logo" href="https://github.com/lc-soft/LC-Finder">
+            <img alt="LC's Finder" src="/static/images/lc-finder-badge.png">
+          </a>
+          <img class="avatar" alt="Liu" src="https://avatars0.githubusercontent.com/u/1730073?v=3&amp;s=128">
+        </div>
+        <div class="content">
+          <strong>Liu Chao</strong>
+          <span class="text-muted">Creator of <a href="https://lcfinder.lc-soft.io">LC's Finder</a></span>
+        </div>
+      </li>
+      <li class="unknown">
+        <i class="fa fa-question"></i>
+        &emsp;<span class="text-muted">The next one ...</span>
+      </li>
+    </ul>
+  </div>
+</section>
+<script src="/static/js/abigimage.jquery.min.js"></script>
+<script src="/static/js/horiz-split-box.js"></script>
+<script type="text/javascript">
+function updateNavbarStyle() {
+  if( $(document).scrollTop() > 0 ) {
+    $('.navbar').removeClass('navbar-on-top');
+  } else {
+    $('.navbar').addClass('navbar-on-top');
+  }
+}
+
+updateNavbarStyle();
+
+$(document).on('scroll', updateNavbarStyle);
+$('.thumbnail').abigimage({
+  onopen: function(target) {
+    this.bottom.html($('img', target).attr('alt'));
+  }
+});
+
+$(document).ready(function() {
+  $('#lcui-example').horizSplitBox();
+  $('#btn-hello').on('click', function () {
+    $('#text-hello').text($('#input-hello').val());
+  });
+
+});
+</script>

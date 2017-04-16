@@ -1,0 +1,38 @@
+{% if page.is_home %}
+<nav class="navbar navbar-fixed-top navbar-custom navbar-on-top">
+{% elsif page.navbar_fixed_top %}
+<nav class="navbar navbar-fixed-top navbar-custom">
+{% else %}
+<nav class="navbar navbar-custom">
+{% endif %}
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+        <span class="sr-only"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://lc-soft.io">LC's Software</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://lcui.lc-soft.io">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Docs <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/guide/">Tutorial</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Community <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="https://github.com/lc-soft/LCUI">GitHub</a></li>
+            <li><a href="https://gitter.im/lc-soft/LCUI">Gitter.im</a></li>
+          </ul>
+        </li>
+        <li><a href="https://lcui.lc-soft.io">中文</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
