@@ -3,7 +3,7 @@ title: 网站维护日志
 ds_thread_key: devlog-webiste
 ---
 ## 2017-04-09
-新增了 LC's Finder 项目主页，最近也对 LCUI 主页的内容做了些补充，这两个页面的内容及样式主要参考了 [stripe.com](stripe.com) 和 [ionicframework.com](http://ionicframework.com/)。
+新增了 LC's Finder 项目主页，最近也对 LCUI 主页的内容做了些补充，这两个页面的内容及样式主要参考了 [stripe.com](stripe.com)、[ionicframework.com](http://ionicframework.com/) 以及 [atom.io](https://atom.io)。
 
 [![](/static/images/article/20170409223057.png "LC's Finder 主页效果图")](/static/images/article/20170409223057.png)
 
