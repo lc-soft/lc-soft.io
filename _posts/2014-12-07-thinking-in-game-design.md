@@ -1,6 +1,5 @@
 ---
 title: 游戏相关的想法与实现
-ds_thread_key: thinking-in-game-design
 ---
 
 ## 2016-07-25

@@ -14,10 +14,7 @@ title: Blog | LC's Software
       <a href="[[url]]">[[title]]</a>
     </h3>
     <div class="article-card-info">
-      <p class="text-muted">
-        更新于<span class="date">[[date]] &nbsp;•&nbsp; 
-        <span class="fa fa-comments-o"></span> <span class="ds-thread-count" data-thread-key="[[ds_thread_key]]">无评论</span></span>
-      </p>
+      <p class="text-muted">更新于<span class="date">[[date]]</p>
     </div>
     <div class="article-card-body">
       <div class="excerpt">[[excerpt]]</div>
@@ -103,7 +100,7 @@ function updateColumns() {
       src = src.substr(src.indexOf('src="') + 5);
       src = src.substr(0, src.indexOf('"'));
       $images.append('<div class="image-wrapper">' +
-                       '<a class="image" style="background-image: url('+ 
+                       '<a class="image" style="background-image: url('+
                         src +')" href="'+ src +'" target="_blank">' +
                      '</div>');
     }
@@ -112,15 +109,12 @@ function updateColumns() {
     case 1: $images.addClass('one'); break;
     case 2: $images.addClass('two'); break;
     case 3: $images.addClass('three'); break;
-    default: $images.addClass('four'); break; 
+    default: $images.addClass('four'); break;
     }
     for (pos = 1; pos < n; ++pos) {
       if ($column.height() > columns[pos].height() + 80) {
         $column = columns[pos];
       }
-    }
-    if (post.comments > 0) {
-      $card.find('.ds-thread-count').text('有 ' + post.comments + ' 条评论');
     }
     post.$card = $card;
     $column.append($card);
@@ -132,21 +126,6 @@ function updateColumns() {
 
 $(document).on('ready', function () {
   updateColumns();
-  $.getJSON('//lc-soft-lcui.duoshuo.com/api/threads/counts.json', {
-    threads: postKeys.join(',')
-  }, function (res) {
-    if (res.code !== 0) {
-      return;
-    }
-    for (var key in res.response) {
-      var post = postKeysMap[key];
-      post.comments = res.response[key].comments;
-      if (post.comments > 0) {
-        post.$card.find('.ds-thread-count')
-            .text('有 ' + post.comments + ' 条评论');
-      }
-    }
-  })
+  $(window).on('resize', updateColumns);
 });
-$(window).on('resize', updateColumns);
 </script>
