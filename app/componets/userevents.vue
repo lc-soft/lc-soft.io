@@ -49,7 +49,12 @@
         <template v-if="event.type == 'PushEvent'">
           <p class="header">
             <span class="time text-muted">{{ event.created_at | reltime }}</span>
-            <span class="title">推送 {{ event.payload.size }} 个提交至 <a v-bind:href="'https://github.com/' + event.repo.name" target="_blank">{{ event.repo.name }}</a></span>
+            <span class="title">
+              推送 {{ event.payload.size }} 个提交至
+              <a v-bind:href="'https://github.com/' + event.repo.name" target="_blank">
+                {{ event.repo.name }}
+              </a>
+              的 <a v-bind:href="'https://github.com/' + event.repo.name + '/tree/' + event.payload.ref.substr(11)" target="_blank">{{ event.payload.ref.substr(11) }}</a> 分支</span>
           </p>
           <div class="body">
             <p v-for="cmt in event.payload.commits.slice(0,2)" class="commit-message text-muted" v-bind:title="cmt.message"><a class="commit-url" v-bind:href="'https://github.com/' + event.repo.name + '/commit/' + cmt.sha" target="_blank">{{ cmt.sha.substr(0,7) }}</a> <span>{{ cmt.message.split('\n')[0] }}</span></p>
