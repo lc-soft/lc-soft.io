@@ -584,6 +584,68 @@
 	}
 }
 
+.pricing-panel {
+  border: 1px solid #eee;
+  border-top: 4px solid #eee;
+
+  ul {
+    line-height: 1.8;
+    margin-bottom: 0;
+  }
+  li > .fa-check {
+    color: #28a745;
+  }
+  .panel-heading {
+    padding: 20px 24px 0 24px;
+  }
+  .panel-title {
+    font-weight: bold;
+  }
+  .panel-body {
+    padding: 24px;
+  }
+  .price {
+    font-size: 32px;
+  }
+  .btn-outline {
+    color: #333;
+    border: 1px solid #eee;
+  }
+}
+@mixin pricing-panel($color) {
+  border-top-color: $color;
+
+  &:hover, &.active, .btn-outline {
+    border-color: $color;
+  }
+  .btn-outline, .price {
+    color: $color;
+  }
+  .btn-outline {
+    min-width: 128px;
+
+    &:hover {
+      background: rgba($color, .1);
+    }
+    &:active, &:active:hover {
+      background: $color;
+      color: #fff;
+    }
+  }
+}
+.pricing-panel-free {
+  @include pricing-panel(#5BCF9C);
+}
+.pricing-panel-basic {
+  @include pricing-panel(#A5C1CE);
+}
+.pricing-panel-standard {
+  @include pricing-panel(#26A2E1);
+}
+.pricing-panel-advance {
+  @include pricing-panel(#8a1ae7);
+}
+
 @import "horiz-split-box";
 @import "syntax";
 
