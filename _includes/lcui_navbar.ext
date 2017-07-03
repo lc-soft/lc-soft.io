@@ -30,6 +30,8 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">社区 <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="https://github.com/lc-soft/LCUI">GitHub</a></li>
+            <li><a href="https://www.oschina.net/question/tag/LCUI">开源中国社区</a></li>
+            <li><a href="https://segmentfault.com/search?type=question&amp;q=LCUI">SegmentFault</a></li>
             <li><a href="https://gitter.im/lc-soft/LCUI">聊天室</a></li>
           </ul>
         </li>
