@@ -2,7 +2,6 @@
 layout: lcui_default
 title: LCUI - 捐赠支持
 is_home: false
-ds_thread_key: lcui-donate
 ---
 
 <div class="donate-page">
@@ -19,10 +18,5 @@ ds_thread_key: lcui-donate
 
     <p><strong>一次性捐赠：</strong></p>
     <p><a href="https://www.paypal.me/lcsoft" target="_blank" class="donate-button paypal-donate-button"><img src="/static/images/paypal-logo.png" height="22"></a></p>
-    <p>捐赠后你可以在此页面留言，作者将选取一些合适的留言放在首页上展示。</p>
-    <div id="comments">
-      <div class="ds-thread" data-thread-key="{{ page.ds_thread_key }}" data-title="{{ page.title }}" data-url="http://blog.lc-soft.io/{{ page.url | remove: '/blog/' }}" data-form-position="top" data-order="desc"></div>
-    </div>
   </div>
 </div>
-{% include comment.ext %}
