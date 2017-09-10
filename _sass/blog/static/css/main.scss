@@ -141,75 +141,75 @@ body {
     border-radius: 2px;
     box-shadow: 0 1px 2px rgba(0,0,0,0.07);
     margin-bottom: 20px;
+}
 
-    .article-card-title {
-    	margin-top: 10px;
-    	font-size: 18px;
-    }
-	.article-card-body {
-		p {
-	    	word-break: break-all;
+.article-card-title {
+	margin-top: 10px;
+	font-size: 18px;
+}
+.article-card-body {
+	p {
+		word-break: break-all;
+	}
+	.excerpt{
+		h2, img {
+			display: none;
 		}
-		.excerpt{
-			h2, img {
-				display: none;
-			}
+	}
+	.images {
+		margin-bottom: 10px;
+		.image-wrapper {
+			padding: 2px;
+			width: 100%;
+			display: inline-block;
 		}
-		.images {
-		    margin-bottom: 10px;
-		    .image-wrapper {
-	    	    padding: 2px;
-	    	    width: 100%;
-				display: inline-block;
-		    }
-		    .image {
-		    	width: 100%;
-		    	height: 80px;
-				border: 1px solid #eee;
-			    background-size: contain;
-			    background-repeat: no-repeat;
-			    background-position: center;
-				background-color: #fbfbfb;
-			    display: block;
-
-			    &:hover {
-		    		border-color: #ccc;
-			    }
-			}
-		}
-		.four.images {
-			.image-wrapper {
-				width: 25%;
-			}
-		}
-		.three.images {
-			.image-wrapper {
-				width: 33.33%;
-		    }
-		    .image {
-		    	height: 100px;
-	    	}
-		}
-		.two.images {
-			.image-wrapper {
-				width: 50%;
-		    }
-		    .image {
-		    	height: 120px;
-	    	}
-		}
-		.one.images {
-		    .image {
-		    	width: 100%;
-		    	height: 160px;
-	    	}
-		}
-		img {
-			max-width: 100%;
-		    padding: 5px;
-		    margin-top: 10px;
+		.image {
+			width: 100%;
+			height: 80px;
 			border: 1px solid #eee;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-color: #fbfbfb;
+			display: block;
+
+			&:hover {
+				border-color: #ccc;
+			}
 		}
+	}
+	.four.images {
+		.image-wrapper {
+			width: 25%;
+		}
+	}
+	.three.images {
+		.image-wrapper {
+			width: 33.33%;
+		}
+		.image {
+			height: 100px;
+		}
+	}
+	.two.images {
+		.image-wrapper {
+			width: 50%;
+		}
+		.image {
+			height: 120px;
+		}
+	}
+	.one.images {
+		.image {
+			width: 100%;
+			height: 160px;
+		}
+	}
+	img {
+		max-width: 100%;
+		padding: 5px;
+		margin-top: 10px;
+		border: 1px solid #eee;
 	}
 }
 .post {
@@ -226,8 +226,15 @@ body {
 	    font-weight: normal;
 	    line-height: 1.6;
 	    h2 {
-	    	font-size: 24px;
-	    }
+			font-size: 1.5em;
+			font-weight: bold;
+			padding-bottom: 0.3em;
+			border-bottom: 1px solid #eee;
+		}
+		h3 {
+			font-size: 1.25em;
+			font-weight: bold;
+		}
 		p {
 	        text-align: justify;
 		    text-justify: inter-ideograph;
