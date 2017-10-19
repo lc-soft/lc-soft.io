@@ -19,59 +19,34 @@ ds_thread_key: lcui-donate
     <form id="form-verify">
       <ol>
         <li>
-          <p><b>GitHub 上的 LCUI 仓库创建于哪一年？</b></p>
-          <p>
-            <label>
-              <input type="radio" name="1" value="A">
-              2010
-            </label>&emsp;
-            <label>
-              <input type="radio" name="1" value="B">
-              2011
-            </label>&emsp;
-            <label>
-              <input type="radio" name="1" value="C">
-              2012
-            </label>&emsp;
-            <label>
-              <input type="radio" name="1" value="D">
-              2013
-            </label>&emsp;
-            <label>
-              <input type="radio" name="1" value="E">
-              2014
-            </label>
-          </p>
-        </li>
-        <li>
           <p><b>如何将 GitHub 上的 LCUI 仓库克隆到本地？</b></p>
           <p>
             <label>
-              <input type="radio" name="2" value="A">
+              <input type="radio" name="1" value="A">
               svn checkout https://github.com/lc-soft/LCUI.svn
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="2" value="B">
+              <input type="radio" name="1" value="B">
               git pull https://github.com/lc-soft/LCUI.git
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="2" value="C">
+              <input type="radio" name="1" value="C">
               git clone https://github.com/lc-soft/LCUI.git
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="2" value="D">
+              <input type="radio" name="1" value="D">
               wget https://github.com/lc-soft/LCUI.git
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="2" value="E">
+              <input type="radio" name="1" value="E">
               cp -rf https://github.com/lc-soft/LCUI.git
             </label>
           </p>
@@ -80,23 +55,23 @@ ds_thread_key: lcui-donate
           <p><b>如何在 linux 环境中编译 LCUI 的源代码？</b></p>
           <p>
             <label>
-              <input type="radio" name="3" value="A">
+              <input type="radio" name="2" value="A">
               gcc -c *.c
             </label>&emsp;
             <label>
-              <input type="radio" name="3" value="B">
+              <input type="radio" name="2" value="B">
               clang -c *.c
             </label>&emsp;
             <label>
-              <input type="radio" name="3" value="C">
+              <input type="radio" name="2" value="C">
               cmake
             </label>&emsp;
             <label>
-              <input type="radio" name="3" value="D">
+              <input type="radio" name="2" value="D">
               xmake
             </label>&emsp;
             <label>
-              <input type="radio" name="3" value="E">
+              <input type="radio" name="2" value="E">
               make
             </label>
           </p>
@@ -105,19 +80,19 @@ ds_thread_key: lcui-donate
           <p><b>LCUI 项目主页的网址是？</b></p>
           <p>
             <label>
-              <input type="radio" name="4" value="A">
+              <input type="radio" name="3" value="A">
               lcui.com
             </label>&emsp;
             <label>
-              <input type="radio" name="4" value="B">
+              <input type="radio" name="3" value="B">
               lcui.cn
             </label>&emsp;
             <label>
-              <input type="radio" name="4" value="C">
+              <input type="radio" name="3" value="C">
               lcui.io
             </label>&emsp;
             <label>
-              <input type="radio" name="4" value="D">
+              <input type="radio" name="3" value="D">
               lcui.org
             </label>
           </p>
@@ -126,19 +101,23 @@ ds_thread_key: lcui-donate
           <p><b>LCUI 代码库中的中文版说明文档是哪个文件？</b></p>
           <p>
             <label>
-              <input type="radio" name="5" value="A">
+              <input type="radio" name="4" value="A">
               说明文档.txt
             </label>&emsp;
             <label>
-              <input type="radio" name="5" value="B">
+              <input type="radio" name="4" value="B">
               读我.txt
             </label>&emsp;
             <label>
-              <input type="radio" name="5" value="C">
+              <input type="radio" name="4" value="C">
+              自述.txt
+            </label>&emsp;
+            <label>
+              <input type="radio" name="4" value="D">
               README.md
             </label>&emsp;
             <label>
-              <input type="radio" name="5" value="D">
+              <input type="radio" name="4" value="E">
               README.zh-cn.md
             </label>
           </p>
@@ -147,35 +126,47 @@ ds_thread_key: lcui-donate
           <p><b>LCUI 是用什么语言编写的？</b></p>
           <p>
             <label>
-              <input type="radio" name="6" value="A">
+              <input type="radio" name="5" value="A">
               汇编
             </label>&emsp;
             <label>
-              <input type="radio" name="6" value="B">
+              <input type="radio" name="5" value="B">
               Java
             </label>&emsp;
             <label>
-              <input type="radio" name="6" value="C">
+              <input type="radio" name="5" value="C">
               易语言
             </label>&emsp;
             <label>
-              <input type="radio" name="6" value="D">
+              <input type="radio" name="5" value="D">
               习语言
             </label>&emsp;
             <label>
-              <input type="radio" name="6" value="E">
+              <input type="radio" name="5" value="E">
+              Go
+            </label>&emsp;
+            <label>
+              <input type="radio" name="5" value="F">
+              Ruby
+            </label>&emsp;
+            <label>
+              <input type="radio" name="5" value="G">
               C
             </label>&emsp;
             <label>
-              <input type="radio" name="6" value="F">
+              <input type="radio" name="5" value="H">
               C++
             </label>&emsp;
             <label>
-              <input type="radio" name="6" value="G">
+              <input type="radio" name="5" value="I">
+              C#
+            </label>&emsp;
+            <label>
+              <input type="radio" name="5" value="J">
               Python
             </label>&emsp;
             <label>
-              <input type="radio" name="6" value="H">
+              <input type="radio" name="5" value="K">
               JavaScript
             </label>
           </p>
@@ -184,31 +175,31 @@ ds_thread_key: lcui-donate
           <p><b>作者的职业是？</b></p>
           <p>
             <label>
-              <input type="radio" name="7" value="A">
+              <input type="radio" name="6" value="A">
               C/C++ 程序员
             </label>&emsp;
             <label>
-              <input type="radio" name="7" value="B">
+              <input type="radio" name="6" value="B">
               Java 程序员
             </label>&emsp;
             <label>
-              <input type="radio" name="7" value="C">
+              <input type="radio" name="6" value="C">
               Python 后端程序员
             </label>&emsp;
             <label>
-              <input type="radio" name="7" value="D">
+              <input type="radio" name="6" value="D">
               Web 前端程序员
             </label>&emsp;
             <label>
-              <input type="radio" name="7" value="E">
+              <input type="radio" name="6" value="E">
               Java 程序员
             </label>&emsp;
             <label>
-              <input type="radio" name="7" value="F">
+              <input type="radio" name="6" value="F">
               Android 程序员
             </label>&emsp;
             <label>
-              <input type="radio" name="7" value="G">
+              <input type="radio" name="6" value="G">
               iOS 程序员
             </label>
           </p>
@@ -217,32 +208,58 @@ ds_thread_key: lcui-donate
           <p><b>LCUI 采用哪一款开源许可协议？</b></p>
           <p>
             <label>
-              <input type="radio" name="8" value="A">
+              <input type="radio" name="7" value="A">
               MIT
             </label>&emsp;
             <label>
-              <input type="radio" name="8" value="B">
+              <input type="radio" name="7" value="B">
               GPL
             </label>&emsp;
             <label>
-              <input type="radio" name="8" value="C">
+              <input type="radio" name="7" value="C">
               LGPL
             </label>&emsp;
             <label>
-              <input type="radio" name="8" value="D">
+              <input type="radio" name="7" value="D">
               WTFPL
             </label>&emsp;
             <label>
-              <input type="radio" name="8" value="E">
+              <input type="radio" name="7" value="E">
               BSD
             </label>&emsp;
             <label>
-              <input type="radio" name="8" value="F">
+              <input type="radio" name="7" value="F">
               MPL
             </label>&emsp;
             <label>
-              <input type="radio" name="8" value="G">
+              <input type="radio" name="7" value="G">
               Apache
+            </label>
+          </p>
+        </li>
+        <li>
+          <p><b>该许可协议是否允许他人在修改 LCUI 源代码后将其用于闭源软件？</b></p>
+          <p>
+            <label>
+              <input type="radio" name="8" value="A">
+              不允许
+            </label>&emsp;
+            <label>
+              <input type="radio" name="8" value="B">
+              允许
+            </label>
+          </p>
+        </li>
+        <li>
+          <p><b>该许可协议是否允许他人篡改 LCUI 源代码中的版权声明并作为自己的个人作品再次发布？</b></p>
+          <p>
+            <label>
+              <input type="radio" name="9" value="A">
+              不允许
+            </label>&emsp;
+            <label>
+              <input type="radio" name="9" value="B">
+              允许
             </label>
           </p>
         </li>
@@ -250,11 +267,11 @@ ds_thread_key: lcui-donate
           <p><b>如果你编写了一款调用了 LCUI 部分功能的应用程序并要发布给其他人，该许可协议是否要求你向他们公开该应用程序及所有依赖库的源代码？</b></p>
           <p>
             <label>
-              <input type="radio" name="9" value="A">
+              <input type="radio" name="10" value="A">
               需要公开
             </label>&emsp;
             <label>
-              <input type="radio" name="9" value="B">
+              <input type="radio" name="10" value="B">
               不需要公开
             </label>
           </p>
@@ -263,31 +280,31 @@ ds_thread_key: lcui-donate
           <p><b>GitHub 的 fork 按钮是用来干什么的？</b></p>
           <p>
             <label>
-              <input type="radio" name="10" value="A">
+              <input type="radio" name="11" value="A">
               用来为自己感觉不错的项目点个赞。
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="10" value="B">
+              <input type="radio" name="11" value="B">
               用来关注自己感兴趣的项目的进展。
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="10" value="C">
+              <input type="radio" name="11" value="C">
               用来收藏自己感兴趣的项目等以后有空再看。
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="10" value="D">
+              <input type="radio" name="11" value="D">
               用来收集各种不错的项目，虽然 fork 后的仓库万年不更新，但也能让其他人以为自己很厉害居然参与了这么多项目。
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="10" value="E">
+              <input type="radio" name="11" value="E">
               在发现该项目中存在 BUG 或改进之处的时候，可以用它创建一个自己的分支，这样在以后可以方便的向主干分支提交自己的改进方案。
             </label>
           </p>
