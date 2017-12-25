@@ -3,129 +3,37 @@ layout: blog_default
 title: Blog | LC's Software
 ---
 
-<div class="container">
-  <div class="article-cards">
-    <div class="row"></div>
+<div class="posts">
+  <div class="container">
+  {% for post in site.posts %}
+    {% assign images_count = 0 %}
+    {% assign images = post.content | split: "<img " %}
+    {% assign post_url = post.url | remove: '/blog' %}
+    <div class="article-card">
+      <h3 class="article-card-title">
+        <a href="{{ post_url }}">{{ post.title }}</a>
+      </h3>
+      <div class="article-card-info">
+        <p class="text-muted">更新于<span class="date">{{ post.last_modified_at | date: '%Y年%m月%d日' }}</p>
+      </div>
+      <div class="article-card-body">
+        <div class="excerpt">{{ post.excerpt }}</div>
+        <div class="images">
+        {% for image in images %}
+          {% if image contains 'src="' %}
+            {% if images_count < 4 %}
+              {% assign image_url = image | split: 'src="' | last | split: '"' | first  %}
+              {% assign images_count = images_count | plus: 1 %}
+              <div class="image-wrapper">
+                <a class="image" style="background-image: url({{ image_url }})" href="{{ image_url }}" target="_blank"></a>
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        </div>
+        <a href="{{ post_url }}">阅读全文 <span class="fa fa-angle-double-right"></span></a>
+      </div>
+    </div>
+  {% endfor %}    
   </div>
 </div>
-<script id="tmpl-card" type="text/template">
-  <div class="article-card">
-    <h3 class="article-card-title">
-      <a href="[[url]]">[[title]]</a>
-    </h3>
-    <div class="article-card-info">
-      <p class="text-muted">更新于<span class="date">[[date]]</p>
-    </div>
-    <div class="article-card-body">
-      <div class="excerpt">[[excerpt]]</div>
-      <div class="images"></div>
-      <a href="[[url]]">阅读全文 <span class="fa fa-angle-double-right"></span></a>
-    </div>
-  </div>
-</script>
-<script>
-var posts = [
-{% for post in site.posts %}
-{% assign images_count = 0 %}
-{% assign images = post.content | split:"<img " %}
-{% assign post_url = post.url | remove: '/blog' %}
-  {
-    "title": "{{ post.title }}",
-    "date": "{{ post.last_modified_at | date: '%Y年%m月%d日' }}",
-    "ds_thread_key": "{{ post.ds_thread_key }}",
-    "excerpt": {{ post.excerpt | jsonify }},
-    "url": "{{ post_url }}",
-    "comments": 0,
-    "images": [
-    {% for image in images %}
-      {% if image contains 'src' %}
-        {% if images_count < 4 %}
-          {% assign html = image | split:">" | first %}
-          {% assign images_count = images_count | plus: 1 %}
-          {{ html | jsonify }}
-          {% unless forloop.last %},{% endunless %}
-        {% endif %}
-      {% endif %}
-    {% endfor %}
-    ]
-  }
-{% unless forloop.last %},{% endunless %}
-{% endfor %}
-];
-
-var postKeys = [];
-var postKeysMap = {};
-var columnsCount = 0;
-var $row = $('.article-cards .row');
-var template = $('#tmpl-card').html();
-
-function updateColumns() {
-  var i, pos, n, column, $column;
-  var columns = [], width = $(window).width();
-
-  if (width <= 768) {
-    n = 1;
-    column = '<div class="col-xs-12"></div>';
-  } else if (width < 992) {
-    n = 2;
-    column = '<div class="col-sm-6"></div>';
-  } else {
-    n = 3;
-    column = '<div class="col-sm-4"></div>';
-  }
-  if (columnsCount === n) {
-    return;
-  }
-  $row.empty();
-  columnsCount = n;
-  for (i = 0; i < n; ++i) {
-    $column = $(column);
-    columns.push($column);
-    $row.append($column);
-  }
-  for (i = 0; i < posts.length; ++i) {
-    var post = posts[i];
-    var card = template.substr();
-
-    $column = columns[0];
-    for (var attr in post) {
-      var reg = RegExp('\\[\\[' + attr + '\\]\\]', 'g');
-      card = card.replace(reg, post[attr]);
-    }
-    var $card = $(card);
-    var $images = $card.find('.images');
-    var imagesCount = Math.min(post.images.length, 4);
-    for( pos = 0; pos < imagesCount; ++pos) {
-      var src = post.images[pos];
-      src = src.substr(src.indexOf('src="') + 5);
-      src = src.substr(0, src.indexOf('"'));
-      $images.append('<div class="image-wrapper">' +
-                       '<a class="image" style="background-image: url('+
-                        src +')" href="'+ src +'" target="_blank">' +
-                     '</div>');
-    }
-    switch (imagesCount) {
-    case 0: $images.remove(); break;
-    case 1: $images.addClass('one'); break;
-    case 2: $images.addClass('two'); break;
-    case 3: $images.addClass('three'); break;
-    default: $images.addClass('four'); break;
-    }
-    for (pos = 1; pos < n; ++pos) {
-      if ($column.height() > columns[pos].height() + 80) {
-        $column = columns[pos];
-      }
-    }
-    post.$card = $card;
-    $column.append($card);
-    postKeysMap[post.ds_thread_key] = post;
-    postKeys.push(post.ds_thread_key);
-  }
-  $row.empty().append(columns);
-}
-
-$(document).on('ready', function () {
-  updateColumns();
-  $(window).on('resize', updateColumns);
-});
-</script>
