@@ -1,5 +1,7 @@
 # lc-soft.io
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/lc-soft/lc-soft.io.svg)](https://greenkeeper.io/)
+
 lc-sft.io 网站源代码，基于 jekyll，纯静态页面。
 
 ## 搭建环境
