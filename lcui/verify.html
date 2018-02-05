@@ -205,41 +205,50 @@ ds_thread_key: lcui-donate
           </p>
         </li>
         <li>
-          <p><b>该许可协议是否允许他人在修改 LCUI 源代码后将其用于闭源软件？</b></p>
+          <p><b>如果要发布 LCUI 副本或基于 LCUI 开发的软件副本，该许可协议对此行为有何要求？</b></p>
           <p>
             <label>
               <input type="radio" name="7" value="A">
-              不允许
-            </label>&emsp;
+              无要求，发布者可以只提供已编译的可执行文件，无需提供源代码，可自由的应用在商业用途的闭源软件中。
+            </label>
+          </p>
+          <p>
             <label>
               <input type="radio" name="7" value="B">
-              允许
+              有要求，需要发布者无条件提供 LCUI 的源代码。
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="7" value="C">
+              有要求，需要发布者无条件提供与 LCUI 相关的源代码，其它无关的代码可以不提供，将代码封装到动态库中可最大限度的绕过此协议的限制。
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="7" value="D">
+              有要求，副本中必须包含许可协议和版权声明，并确保接收者能够获取到该副本的源代码，源代码包括生成、安装、运行（对可执行作品而言）目标码这几个阶段所需的依赖库、工具、脚本的源代码，但其中不包括系统库、通用工具。
             </label>
           </p>
         </li>
         <li>
-          <p><b>该许可协议是否允许他人篡改 LCUI 源代码中的版权声明并作为自己的个人作品再次发布？</b></p>
+          <p><b>以下问题/意见的反馈方式中哪一种是最为正确的？</b></p>
           <p>
             <label>
               <input type="radio" name="8" value="A">
-              不允许
-            </label>&emsp;
-            <label>
-              <input type="radio" name="8" value="B">
-              允许
+              提交一个标题为“有BUG啊”的 issue，等作者亲自来问清楚，省得自己浪费时间写一堆没用的内容。
             </label>
           </p>
-        </li>
-        <li>
-          <p><b>如果你编写了一款调用了 LCUI 部分功能的应用程序并要发布给其他人，该许可协议是否要求你向他们公开该应用程序及所有依赖库的源代码？</b></p>
           <p>
             <label>
-              <input type="radio" name="9" value="A">
-              需要公开
-            </label>&emsp;
+              <input type="radio" name="8" value="B">
+              新建一个标题为“我需要 XXXX 功能” 的 issue，然后简单写下要求，等作者接任务。毕竟做开源项目的人就应该放低姿态好好接受用户意见，用户用你项目是看得起你，要好好珍惜用户。
+            </label>
+          </p>
+          <p>
             <label>
-              <input type="radio" name="9" value="B">
-              不需要公开
+              <input type="radio" name="8" value="C">
+              新建一个 issue，标题简短描述主要问题，然后在描述里提供问题的详细现象、重现步骤、相关动图或截图，如果可行的话，再提供一个能够重现问题的最小示例。
             </label>
           </p>
         </li>
@@ -247,19 +256,19 @@ ds_thread_key: lcui-donate
           <p><b>GitHub 上的代码库主页中的 issues 是什么？</b></p>
           <p>
             <label>
-              <input type="radio" name="10" value="A">
+              <input type="radio" name="9" value="A">
               一个留言板，在上面可以发表自己的感想，让大家看看。
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="10" value="B">
+              <input type="radio" name="9" value="B">
               一个轻量级论坛，大家可以随意发帖，灌水，斗图，聊天，扯淡，活跃社区气氛。
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="10" value="C">
+              <input type="radio" name="9" value="C">
               一个轻量级的问题跟踪工具，可用于跟踪待办任务、缺陷、功能需求等一些与项目开发相关的事情。
             </label>
           </p>
@@ -268,31 +277,31 @@ ds_thread_key: lcui-donate
           <p><b>GitHub 上的代码库主页都会有 fork 按钮，那么以下哪一种才是 fork 按钮最为正确的用法？</b></p>
           <p>
             <label>
-              <input type="radio" name="11" value="A">
+              <input type="radio" name="10" value="A">
               为自己感觉不错的项目点个赞。
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="11" value="B">
+              <input type="radio" name="10" value="B">
               关注自己感兴趣的项目的进展。
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="11" value="C">
+              <input type="radio" name="10" value="C">
               收藏自己感兴趣的项目等以后有空再看。
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="11" value="D">
+              <input type="radio" name="10" value="D">
               收集各种不错的项目，虽然 fork 后的仓库万年不更新，但也能让其他人以为自己很厉害居然参与了这么多项目。
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="11" value="E">
+              <input type="radio" name="10" value="E">
               在发现该项目中存在 BUG 或改进之处的时候，可以用它创建一个自己的分支，这样在以后可以方便的向主干分支提交自己的改进方案。
             </label>
           </p>
@@ -301,31 +310,31 @@ ds_thread_key: lcui-donate
           <p><b>rgb(255,255,255) 表示的是哪种颜色？</b></p>
           <p>
             <label>
-              <input type="radio" name="12" value="A">
+              <input type="radio" name="11" value="A">
               黑色
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="12" value="B">
+              <input type="radio" name="11" value="B">
               白色
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="12" value="C">
+              <input type="radio" name="11" value="C">
               红色
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="12" value="D">
+              <input type="radio" name="11" value="D">
               绿色
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="12" value="E">
+              <input type="radio" name="11" value="E">
               蓝色
             </label>
           </p>
@@ -334,19 +343,19 @@ ds_thread_key: lcui-donate
           <p><b>以下对 sizeof 的解释中，哪一条是正确的？</b></p>
           <p>
             <label>
-              <input type="radio" name="13" value="A">
+              <input type="radio" name="12" value="A">
               sizeof 是个函数，能够在运行时得到表达式或类型的大小，返回值类型是 long int。
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="13" value="B">
+              <input type="radio" name="12" value="B">
               sizeof 是个运算符，能够在编译时得到表达式或类型的大小，返回值类型是 size_t。
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="13" value="C">
+              <input type="radio" name="12" value="C">
               sizeof 是个函数式宏，能够在编译时将代码块替换为传入表达式或类型的大小。
             </label>
           </p>
