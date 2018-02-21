@@ -9,16 +9,19 @@ GitDigger 是一个程序员社区，在这里你能从开源项目中挖掘有�
 （文档有待完善）
 
 ## 需求及目标
-作为普通开发者，平常无聊的时候会想看看其他人在干什么，长长见识，比如写了什么代码、都在讨论什么问题（Issue）、有哪些有意思的问题和问题评论、哪些项目发布了新版本等等。像 GitHub、Bitbucket、GitLab、Coding、码云这类代码平台都专注于源代码托管，用户的认知范围都仅限于自己的项目以及主动关注的项目，没有提供多少途径让用户去发现其它用户和开源项目的动态。
 
-作为开源项目作者或维护者，一个人的时间和精力都是有限的，平常列出的各种开发计划，无论是简单的还是复杂的，最终都是自己负责实现的，而那些代码改进方案、各种功能缺陷以及手误留下的错误代码，也大都是自己发现的。如果能有人能够关注开发动态并参与改进项目，那么对项目的发展将会带来很大的帮助，然而，不管项目的代码更新得有多频繁，也不会有人知道自己的项目，除非主动去推广。通常的推广手段是在各大平台发布版本更新资讯，但持续时间有限，过了一两周又会回到无人问津的状态。
+作为普通开发者，平常无聊的时候会想看看其他人在干什么，长长见识，比如写了什么代码、都在讨论什么问题（Issue）、有哪些有意思的问题和问题评论、哪些项目发布了新版本等等。对于在某些领域有丰富经验的人，可能还会想知道哪些项目正遇到自己擅长领域的问题，看看自己能不能帮上忙。像 GitHub、Bitbucket、GitLab、Coding、码云这类代码平台都专注于源代码托管，用户的认知范围都仅限于自己的项目，没有提供多少途径让用户去发现其它用户和开源项目的动态。
+
+作为开源项目作者或维护者，一个人的时间和精力都是有限的，有时会被一些琐碎的问题浪费很多时间，比如：各种小 bug，添加各种小功能。同类型的问题处理多了会很感到枯燥，但又不得不去做，做多了又会耽误主线任务开发进度，还会浪费动力。当遇到一些大点问题时，会希望有在这块领域的大佬来指点一二，比如：图形绘制算法如何优化、接口如何命名、Makefile 的正确使用方法、怎样写好 README.md、文档怎么组织等问题。自己搜索相关资料比较费时，可能会找不到答案，而去某些问答网站提问的话，需要写详尽的描述，还可能需要提供最小示例，比较麻烦也费时间，还很有可能得不到答案。这只是开发方面，对于普通开发者，不管项目的代码更新得有多频繁，也不会有人知道这个项目，除非主动去推广，通常的推广手段是在各大平台发布版本更新资讯，但持续时间有限，过了一两周又会回到无人问津的状态。
 
 要解决上述问题，需要有个平台能够：
 
 - 挖掘开源项目的各种信息，包括：问题（Issues）、拉取请求（Pull Requests）、评论、发行版（Releases），供用户浏览。
 - 展示开源项目及相关的动态，让用户能够方便的找到活跃度高的项目，也能够通过最近动态了解到大家都在干什么。
+- 支持让开源项目作者将一些问题（Issue）标记为“需要帮助”来获得更多的曝光，吸引更多有经验的人来向作者提供帮助。
 
 ## 运作原理
+
 开源项目作者从 GitHub 导入项目后，GitDigger 会收集这些项目的相关内容和动态并展示出来，其他用户如果觉得这些内容有帮助，可以投票，得票数越高的内容排名越靠前，排名受时间影响，原理和 Hacker News 大致一样，每次投票消耗 1 积分，积分为 0 时不可投票，每日登录奖励 2 积分。
 
 用户可以按话题（Topic）筛选感兴趣的内容，每个话题都有对应的主页，在这个主页可以找到相关的项目、开发者，以及各个项目的动态。
@@ -26,6 +29,7 @@ GitDigger 是一个程序员社区，在这里你能从开源项目中挖掘有�
 仓库和开发者都有一个主页，方便直接了解到他们的相关信息及近期动态。
 
 ## 技术
+
 - 后端：Python、Flask、PostgreSQL、Celery、Redis
 - 前端：Sass、CoffeeScript、Bootstrap、Webpack、Vue、jQuery
 - 特性：响应式布局、多语言
@@ -33,6 +37,7 @@ GitDigger 是一个程序员社区，在这里你能从开源项目中挖掘有�
 原计划加入多语言支持，但考虑到目标用户群是全球的开发者，最终决定先都用纯英文文本，毕竟源代码是开放的，算是为其他人多留了个参与开源项目的机会吧。
 
 ## 设计参考
+
 - 掘金（https://juejin.im/）
 - 知乎（https://www.zhihu.com/）
 - 简书（http://www.jianshu.com/）
@@ -41,6 +46,7 @@ GitDigger 是一个程序员社区，在这里你能从开源项目中挖掘有�
 - Ask Product Hunt（https://www.producthunt.com/）
 
 ## 技术文档
+
 - [快速入门 — Flask-SQLAlchemy 2.0 documentation](http://www.pythondoc.com/flask-sqlalchemy/quickstart.html)
 - [Using Flask Login · doobeh/scudbot Wiki](https://github.com/doobeh/scudbot/wiki/Using-Flask-Login)
 - [Salted Passwords | Flask (A Python Microframework)](http://flask.pocoo.org/snippets/54/)
@@ -165,29 +171,29 @@ Product Hunt 只允许用第三方账号注册和登录，不用验证用户邮�
 
 效果参考对象有如下几个：
 
-[![](/static/images/gitdigger/20170804205312.png "Google Plus")](/static/images/gitdigger/20170804205312.png)
+[![Google Plus](/static/images/gitdigger/20170804205312.png "Google Plus")](/static/images/gitdigger/20170804205312.png)
 
 **Google Plus：**头部一行显示该内容所在的圈子，底部一行动态显示随机评论，可以作为参考。考虑到一般的问题（Issue）评论内容都比较长，要么就是长串文字描述，要么就是文字 + 代码片段，不太适合在底部展示，需要做些调整。
 
-[![](/static/images/gitdigger/20170804205345.png "Product Hunt")](/static/images/gitdigger/20170804205345.png)
+[![]Product Hunt(/static/images/gitdigger/20170804205345.png "Product Hunt")](/static/images/gitdigger/20170804205345.png)
 
 **Product Hunt：**标签呈现方式比较独特，可以作为参考。
 
-[![](/static/images/gitdigger/20170804205438.png "Designer News")](/static/images/gitdigger/20170804205438.png)
+[![Designer News](/static/images/gitdigger/20170804205438.png "Designer News")](/static/images/gitdigger/20170804205438.png)
 
 **Designer News：**链接有下划线，时间有点状下划线，视觉特征明显，容易分辨，细节设计蛮好的。
 
-[![](/static/images/gitdigger/20170804205510.png "Flarum")](/static/images/gitdigger/20170804205510.png)
+[![Flarum](/static/images/gitdigger/20170804205510.png "Flarum")](/static/images/gitdigger/20170804205510.png)
 
 **Flarum：**头像右上角有小徽标，可以作为参考。
 
-[![](/static/images/gitdigger/20170804205540.png "Quora")](/static/images/gitdigger/20170804205540.png)
+[![Quora](/static/images/gitdigger/20170804205540.png "Quora")](/static/images/gitdigger/20170804205540.png)
 
 **Quora：**底部只有投票是按钮形式，其它都是文本形式。
 
 综合上面的参考对象，初步确定了大致效果，如下图所示，头部区域包含作者头像、名称、仓库名、操作、时间，头像右下角小徽标表示当前故事类型及状态；中间内容区域包含标题和摘要；底部区域包括投票按钮、评论数量、主题列表。
 
-[![](/static/images/gitdigger/20170826195826.png "GitDigger")](/static/images/gitdigger/20170826195826.png)
+[![GitDigger](/static/images/gitdigger/20170826195826.png "GitDigger")](/static/images/gitdigger/20170826195826.png)
 
 故事需要支持条件筛选，条件包括时间、话题、热门。在用户未登录的情况下，默认列出整站的故事，登录后，如果用户有关注话题，则列出这些话题下的故事。
 
@@ -205,7 +211,7 @@ Product Hunt 只允许用第三方账号注册和登录，不用验证用户邮�
 
 可参考的对象有：
 
-[![](/static/images/gitdigger/20170910191030.png "GitDigger")](/static/images/gitdigger/20170910191030.png)
+[![GitHub](/static/images/gitdigger/20170910191030.png "GitHub")](/static/images/gitdigger/20170910191030.png)
 
 ## 个人主页（Profile）
 
