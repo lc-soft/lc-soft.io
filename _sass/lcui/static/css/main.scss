@@ -432,22 +432,6 @@
     }
   }
 }
-.project-faq-list {
-  .project-faq {
-    .icon-question {
-        color: $BrandColor;
-        border: 2px solid $BrandColor;
-        border-radius: 50%;
-        width: 28px;
-        height: 28px;
-        display: inline-block;
-        text-align: center;
-      &:after {
-        content: '?';
-      }
-    }
-  }
-}
 .section {
     padding: 40px 0;
 }
@@ -600,14 +584,28 @@
 
 .pricing-panel {
   border: 1px solid #eee;
-  border-top: 4px solid #eee;
 
   ul {
     line-height: 1.8;
     margin-bottom: 0;
   }
-  li > .fa-check {
-    color: #28a745;
+  li {
+    padding-left: 20px;
+
+    &::before {
+      color: #28a745;
+      content: "\f046";
+      font: normal normal normal 14px/1 FontAwesome;
+      margin-right: .5em;
+      margin-left: -20px;
+    }
+    &.disabled {
+      color: #ddd;
+
+      &::before {
+        visibility: hidden;
+      }
+    }
   }
   .panel-heading {
     padding: 20px 24px 0 24px;
@@ -615,10 +613,18 @@
   .panel-title {
     font-weight: bold;
   }
+  .panel-logo {
+    top: 0;
+    right: 20px;
+    opacity: .04;
+    font-size: 128px;
+    position: absolute;
+  }
   .panel-body {
     padding: 24px;
+    position: relative;
   }
-  .price {
+  .price-text-focus {
     font-size: 32px;
   }
   .btn-outline {
@@ -627,12 +633,10 @@
   }
 }
 @mixin pricing-panel($color) {
-  border-top-color: $color;
-
   &:hover, &.active, .btn-outline {
     border-color: $color;
   }
-  .btn-outline, .price {
+  .btn-outline, .price-text-focus {
     color: $color;
   }
   .btn-outline {
@@ -646,18 +650,12 @@
       color: #fff;
     }
   }
+  .panel-logo {
+    color: $color;
+  }
 }
-.pricing-panel-free {
-  @include pricing-panel(#5BCF9C);
-}
-.pricing-panel-basic {
-  @include pricing-panel(#A5C1CE);
-}
-.pricing-panel-standard {
-  @include pricing-panel(#26A2E1);
-}
-.pricing-panel-advance {
-  @include pricing-panel(#8a1ae7);
+.pricing-panel {
+  @include pricing-panel(#28a745);
 }
 
 @import "horiz-split-box";
