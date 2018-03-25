@@ -41,12 +41,18 @@ ds_thread_key: lcui-donate
           <p>
             <label>
               <input type="radio" name="1" value="D">
-              wget https://github.com/lc-soft/LCUI.git
+              rm -rf https://github.com/lc-soft/LCUI
             </label>
           </p>
           <p>
             <label>
               <input type="radio" name="1" value="E">
+              wget https://github.com/lc-soft/LCUI.git
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="1" value="F">
               cp -rf https://github.com/lc-soft/LCUI.git
             </label>
           </p>
@@ -205,11 +211,11 @@ ds_thread_key: lcui-donate
           </p>
         </li>
         <li>
-          <p><b>如果要发布 LCUI 副本或基于 LCUI 开发的软件副本，该许可协议对此行为有何要求？</b></p>
+          <p><b>如果要发布 LCUI 副本或基于 LCUI 开发的应用软件副本，该许可协议对此行为有何要求？</b></p>
           <p>
             <label>
               <input type="radio" name="7" value="A">
-              无要求，发布者可以只提供已编译的可执行文件，无需提供源代码，可自由的应用在商业用途的闭源软件中。
+              无任何要求，发布者可以只提供已编译的可执行文件，无需提供源代码，可自由的应用在商业用途的闭源软件中，甚至可以篡改版权声明，作为“自主研发”的软件。
             </label>
           </p>
           <p>
@@ -221,7 +227,7 @@ ds_thread_key: lcui-donate
           <p>
             <label>
               <input type="radio" name="7" value="C">
-              有要求，在 LCUI 和 LCUI 的所有副本中都必须包含版权声明和许可声明。
+              有要求，在 LCUI 和 LCUI 的所有副本中都必须包含版权声明和许可声明，无论是以二进制发布的还是以源代码发布的。
             </label>
           </p>
           <p>
@@ -386,7 +392,7 @@ $('#btn-submit').on('click', function () {
   $.each($('#form-verify').serializeArray(), function(i, data) {
     list.push(data.value);
   });
-  if (list.length < 10) {
+  if (list.length < 12) {
     return alert('请先完成全部问题的答案');
   }
   $('#txt-result').text('验证码：' + list.join(''));
