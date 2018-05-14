@@ -169,32 +169,6 @@ Product Hunt 只允许用第三方账号注册和登录，不用验证用户邮�
 
 这是主要的展示方式，对于在项目页面里的故事列表，可以像知乎那样，当有评论时则将摘要内容替换为作者/成员/贡献者的评论，或 +1 数最多的评论。
 
-效果参考对象有如下几个：
-
-[![Google Plus](/static/images/gitdigger/20170804205312.png "Google Plus")](/static/images/gitdigger/20170804205312.png)
-
-**Google Plus：**头部一行显示该内容所在的圈子，底部一行动态显示随机评论，可以作为参考。考虑到一般的问题（Issue）评论内容都比较长，要么就是长串文字描述，要么就是文字 + 代码片段，不太适合在底部展示，需要做些调整。
-
-[![Product Hunt](/static/images/gitdigger/20170804205345.png "Product Hunt")](/static/images/gitdigger/20170804205345.png)
-
-**Product Hunt：**标签呈现方式比较独特，可以作为参考。
-
-[![Designer News](/static/images/gitdigger/20170804205438.png "Designer News")](/static/images/gitdigger/20170804205438.png)
-
-**Designer News：**链接有下划线，时间有点状下划线，视觉特征明显，容易分辨，细节设计蛮好的。
-
-[![Flarum](/static/images/gitdigger/20170804205510.png "Flarum")](/static/images/gitdigger/20170804205510.png)
-
-**Flarum：**头像右上角有小徽标，可以作为参考。
-
-[![Quora](/static/images/gitdigger/20170804205540.png "Quora")](/static/images/gitdigger/20170804205540.png)
-
-**Quora：**底部只有投票是按钮形式，其它都是文本形式。
-
-综合上面的参考对象，初步确定了大致效果，如下图所示，头部区域包含作者头像、名称、仓库名、操作、时间，头像右下角小徽标表示当前故事类型及状态；中间内容区域包含标题和摘要；底部区域包括投票按钮、评论数量、主题列表。
-
-[![GitDigger](/static/images/gitdigger/20170826195826.png "GitDigger")](/static/images/gitdigger/20170826195826.png)
-
 故事需要支持条件筛选，条件包括时间、话题、热门。在用户未登录的情况下，默认列出整站的故事，登录后，如果用户有关注话题，则列出这些话题下的故事。
 
 ## 仓库主页
@@ -221,11 +195,17 @@ Product Hunt 只允许用第三方账号注册和登录，不用验证用户邮�
 - 仓库（Repositories）
 - 拉取请求（PullRequests）
 - 个人成就
+  - 获得的星星数量
+  - 全国排名
+  - 世界排名
+  - 主要使用的编程语言
+  - 各个编程语言的代码量
+  - 近一年的编码量
 - 关注的话题
 - 近期动态
 - 投票记录
 
-可参考知乎的个人主页。
+可参考知乎、SegmentFault 的个人主页。
 
 ## 话题列表页（Topics）
 
