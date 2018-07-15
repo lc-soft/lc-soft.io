@@ -15,6 +15,7 @@ GitDigger 是一个为开源项目而生的社区，用于帮助开发者发现�
 - 知乎（https://www.zhihu.com/）
 - 简书（http://www.jianshu.com/）
 - GitHub（http://www.github.com/）
+- GitBook（https://www.gitbook.com/）
 - Quora（https://quora.com/）
 - SegmentFault（https://segmentfault.com/）
 - Designer News（https://www.designernews.co/）
