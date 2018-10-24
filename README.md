@@ -7,7 +7,7 @@ lc-sft.io 网站源代码，基于 jekyll，纯静态页面。
 安装必要依赖：
 
 	sudo apt install build-essential nginx ruby ruby-dev python python-dev python-pip
-	sudo gem install jekyll jekyll-paginate redcarpet pygments.rb compass
+	sudo gem install jekyll jekyll-paginate redcarpet pygments.rb compass jekyll-last-modified-at
 	pip install --upgrade pip
 	sudo pip install setuptools flask uwsgi pygments
 

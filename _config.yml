@@ -9,7 +9,7 @@ defaults:
 
 sass:
   style: :compressed
-gems: 
+plugins: 
   - jekyll-paginate
   - jekyll-last-modified-at
 permalink: /blog/posts/:categories/:title.html
