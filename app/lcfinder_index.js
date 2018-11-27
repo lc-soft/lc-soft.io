@@ -68,7 +68,3 @@ function initLogoAnimation() {
 
 initLogoAnimation();
 initScreenshotsAnimation();
-
-$('#btn-windows-store').on('click', function () {
-  alert('请等待后续版本更新');
-});

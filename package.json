@@ -27,7 +27,8 @@
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -42,5 +43,8 @@
   "bugs": {
     "url": "https://github.com/lc-soft/lc-soft.io/issues"
   },
-  "homepage": "https://github.com/lc-soft/lc-soft.io#readme"
+  "homepage": "https://github.com/lc-soft/lc-soft.io#readme",
+  "devDependencies": {
+    "webpack-cli": "^3.1.2"
+  }
 }

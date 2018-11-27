@@ -55,15 +55,14 @@
 	.btn .mdi-windows {
 		color: #3498db;
 	}
-	.version-support {
+	.terms {
 		font-size: 1rem;
 	}
 	.screenshots {
 	    z-index: 10;
-	    max-width: 865px;
+	    max-width: 862px;
 	    position: relative;
-	    border: 1px solid #ddd;
-	    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+		box-shadow: 0 2px 12px rgba(0,0,0,0.3);
 	    margin: 64px auto 32px auto;
 
     	.screenshot {
