@@ -9,8 +9,6 @@ profile:
   github: https://github.com/lc-soft
   steam: http://steamcommunity.com/id/lcsoft
   email: i@lc-soft.io
-  patreon: https://www.patreon.com/lcsoft
-  gumroad: https://gumroad.com/lcsoft
   skills:
     - C
     - JavaScript
@@ -18,23 +16,32 @@ profile:
 projects:
 - title: LCUI
   url: https://lcui.lc-soft.io
-  text: 跨平台图形界面库
+  text: 图形界面开发库
   logo: /static/images/logo-lcui.png
-- title: LCUI.css
-  url: https://github.com/lc-ui/lcui.css
-  text: 类 Bootstrap 的组件库
+- title: LCDesgin
+  url: https://github.com/lc-ui/lc-design
+  text: 组件库
   logo: /static/images/logo-lcui-css.png
 - title: LCFinder
   url: https://lcfinder.lc-soft.io
-  text: 图片资源管理工具
+  text: 图像标注与识别工具
   logo: /static/images/logo-lcfinder.png
-- title: LCUI Guide
-  url: https://github.com/lc-soft/LCUI-Guide
-  icon: icon-book
-  text: LCUI 编程指南
+- title: Trad
+  url: https://github.com/lc-soft/trad
+  text: 编程语言
+  icon: repo
+- title: LCPkg
+  url: https://github.com/lc-soft/lcpkg
+  text: C/C++ 包管理工具
+  icon: repo
 ---
 
-<div class="container">
+{% assign count_of_words = 0 %}
+{% for post in site.posts %}
+    {% assign single_count = post.content | strip_html | strip_newlines | remove: " " | size %}
+    {% assign count_of_words = count_of_words | plus: single_count %}
+{% endfor %}
+<div id="app" class="container">
   <div class="row">
     <div class="col-md-4 col-sm-6 col-xs-12">
       <div class="user-profile">
@@ -52,43 +59,84 @@ projects:
         <div class="github-achievements">
           <div class="achievement">
             <div class="achievement-title">
-              <i class="icon icon-star"></i> 获得 <a href="{{ site.data.awards.c.repos.url }}" title="C 编程语言项目获得的总星数" data-toggle="tooltip" target="_blank">{{ site.data.awards.c.stars.value }}</a> 颗星
+                {% octicon star %}
+              获得
+              <a href="{{ site.data.awards.c.repos.url }}" title="C 编程语言项目获得的总星数" data-toggle="tooltip" target="_blank">
+                {{ site.data.awards.c.stars.value }}
+              </a>
+              颗星
             </div>
             <div class="achievement-text">
-              全国排名第 <a href="{{ site.data.awards.c.china.url }}" title="数据来源于 git-awards.com" target="_blank" data-toggle="tooltip">{{ site.data.awards.c.china.value }}</a> 名，世界排名第 <a href="{{ site.data.awards.c.worldwide.url }}" title="数据来源于 git-awards.com" target="_blank" data-toggle="tooltip">{{ site.data.awards.c.worldwide.value }}</a> 名</a>
+              全国排名第
+              <a href="{{ site.data.awards.c.china.url }}" title="数据来源于 git-awards.com" target="_blank" data-toggle="tooltip">
+                {{ site.data.awards.c.china.value }}
+              </a>
+              名，世界排名第
+              <a href="{{ site.data.awards.c.worldwide.url }}" title="数据来源于 git-awards.com" target="_blank" data-toggle="tooltip">
+                {{ site.data.awards.c.worldwide.value }}
+              </a>
+              名
             </div>
           </div>
           <div class="achievement">
             <div class="achievement-title">
-              <i class="icon icon-comment-discussion"></i> 参与 <a href="{{ site.data.github.involves_url }}" target="_blank">{{ site.data.github.involves_count }}</a> 次社区交流
+              <i class="icon icon-comment-discussion"></i>
+              参与
+              <a href="{{ site.data.github.involves_url }}" target="_blank">
+                {{ site.data.github.involves_count }}
+              </a>
+              次社区交流
             </div>
             <div class="achievement-text">
-              反馈 <a href="{{ site.data.github.issues_url }}" target="_blank" title="向开源项目提交的 Issue 数" data-toggle="tooltip">{{ site.data.github.issues_count }}</a> 个问题，贡献 <a href="{{ site.data.github.pulls_url }}" target="_blank" title="向开源项目提交的 Pull Request 数" data-toggle="tooltip">{{ site.data.github.pulls_count }}</a> 次代码
+              反馈
+              <a href="{{ site.data.github.issues_url }}" target="_blank" title="向开源项目提交的 Issue 数" data-toggle="tooltip">{{ site.data.github.issues_count }}</a> 个问题，贡献 <a href="{{ site.data.github.pulls_url }}" target="_blank" title="向开源项目提交的 Pull Request 数" data-toggle="tooltip">
+                {{ site.data.github.pulls_count }}
+              </a>
+              次代码
+            </div>
+          </div>
+          <div class="achievement">
+            <div class="achievement-title">
+              {% octicon pencil %}
+              产出
+              <a href="https://blog.lc-soft.io" target="_blank">
+                {{ site.posts.size }}
+              </a>
+              篇文章
+            </div>
+            <div class="achievement-text">
+                写了 {{ count_of_words }} 字，总访客数
+                <span id="busuanzi_value_site_uv">0</span>
+                人次
             </div>
           </div>
         </div>
-        <userfollowers></userfollowers>
+        <user-followers></user-followers>
         <div class="links">
-          <a class="email" href="mailto:{{ page.profile.email }}" data-title="Email" data-toggle="tooltip" data-placement="bottom"><i class="icon-envelope-o"></i></a>
-          <a class="github" href="{{ page.profile.github }}" data-title="GitHub" data-toggle="tooltip" data-placement="bottom"><i class="icon-github"></i></a>
-          <a class="steam" href="{{ page.profile.steam }}" data-title="Steam" data-toggle="tooltip" data-placement="bottom"><i class="icon-steam-square"></i></a>
-          <a class="patreon" href="{{ page.profile.patreon }}" data-title="Patreon" data-toggle="tooltip" data-placement="bottom"><img src="/static/images/patreon-logo.png" alt="patreon"></a>
-          <a class="gumroad" href="{{ page.profile.gumroad }}" data-title="Gumroad" data-toggle="tooltip" data-placement="bottom"><img src="/static/images/gumroad-logo.png" alt="gumroad"></a>
+          <a class="email" href="mailto:{{ page.profile.email }}" data-title="Email" data-toggle="tooltip" data-placement="bottom">
+            <i class="icon-envelope-o"></i>
+          </a>
+          <a class="github" href="{{ page.profile.github }}" data-title="GitHub" data-toggle="tooltip" data-placement="bottom">
+            <i class="icon-github"></i>
+          </a>
+          <a class="steam" href="{{ page.profile.steam }}" data-title="Steam" data-toggle="tooltip" data-placement="bottom">
+            <i class="icon-steam-square"></i>
+          </a>
         </div>
       </div>
     </div>
     <div class="col-md-8 col-sm-6 col-xs-12">
       <h3 class="section-title">
-        <span class="icon icon-lightbulb-o"></span> 作品
+        {% octicon light-bulb %} 作品
       </h3>
       <div class="project-list row">
           {% for project in page.projects %}
             <div class="project-list-item col-lg-4 col-md-6 col-xs-6 text-center">
               <a class="project-list-item-link" target="_blank" href="{{ project.url }}" title="{{ project.title }}">
                 {% if project.logo %}
-                  <img alt="{{ project.title }}" src="{{ project.logo }}" class="project-list-item-logo" height="64" width="64">
+                  <img alt="{{ project.title }}" src="{{ project.logo }}" class="project-list-item-logo">
                 {% else %}
-                  <span class="project-list-item-logo {{ project.icon }}"></span>
+                  {% octicon {{ project.icon }} class: "project-list-item-logo" %}
                 {% endif %}
                 <h4 class="project-list-item-header">{{ project.title }}</h4>
                 <p class="project-list-item-description">{{ project.text }}</p>
@@ -98,12 +146,11 @@ projects:
       </div>
       <div class="user-activity">
         <h3 class="section-title">
-          <span class="icon icon-pulse"></span> 近期动态
+          {% octicon pulse %} 近期动态
         </h3>
-        <userevents></userevents>
+        <user-events></user-events>
       </div>
     </div>
   </div>
 </div>
-<script src="/static/js/common.js"></script>
 <script src="/static/js/index.js"></script>
