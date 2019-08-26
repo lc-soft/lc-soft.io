@@ -1,0 +1,6 @@
+gem 'jekyll'
+gem 'jekyll-octicons'
+gem 'jekyll-paginate'
+gem 'jekyll-last-modified-at'
+gem 'wdm'
+gem 'redcarpet'

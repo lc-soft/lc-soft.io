@@ -1,60 +1,51 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
-var wwwConfig = {
+const wwwConfig = {
+  mode: 'development',
   context: path.join(__dirname, 'app'),
   entry: {
-    index: './www_index.js',
-    common: './common.js'
+    index: './www_index.js'
   },
   output: {
-    path: './www/static/js/',
+    path: path.join(__dirname, 'www/static/js/'),
     filename: '[name].js'
   },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    })
-  ],
   module: {
-    loaders: [
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'style-loader' // creates style nodes from JS strings
+          }, {
+            loader: 'css-loader' // translates CSS into CommonJS
+          }, {
+            loader: 'sass-loader' // compiles Sass to CSS
+          }
+        ]
+      },
       {
         test: /\.vue$/,
-        loader: 'vue'
-      }, {
-        // edit this for additional asset file types
-        test: /\.(png|jpg|gif)$/,
-        loader: 'file?name=[name].[ext]?[hash]'
+        use: 'vue-loader'
       }
     ]
   },
-  // example: if you wish to apply custom babel options
-  // instead of using vue-loader's default:
-  babel: {
-    presets: ['es2015', 'stage-0'],
-    plugins: ['transform-runtime']
-  }
+  plugins: [
+    new VueLoaderPlugin()
+  ]
 };
 
-var lcfinderConfig = {
+const lcfinderConfig = {
+  mode: 'production',
   context: path.join(__dirname, 'app'),
   entry: {
-    index: './lcfinder_index.js',
-    common: './common.js'
+    index: './lcfinder_index.js'
   },
   output: {
-    path: './lcfinder/static/js/',
+    path: path.join(__dirname, 'lcfinder/static/js/'),
     filename: '[name].js'
-  },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    })
-  ]
+  }
 }
 
 module.exports = [

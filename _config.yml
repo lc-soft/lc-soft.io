@@ -9,7 +9,8 @@ defaults:
 
 sass:
   style: :compressed
-plugins: 
+plugins:
+  - jekyll-octicons
   - jekyll-paginate
   - jekyll-last-modified-at
 permalink: /blog/posts/:categories/:title.html
@@ -18,7 +19,7 @@ paginate_path: "blog/page/:num"
 exclude: [".git",".sass-cache", "sass", "*.scss", "*.rb", "node_modules",
           "src", "webpack.config.js", "package.json"]
 encoding: "utf-8"
-highlighter: pygments
+highlighter: rouge
 markdown: redcarpet
 redcarpet:
   extensions:

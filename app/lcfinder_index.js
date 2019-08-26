@@ -1,4 +1,4 @@
-var IconsWall = require("./iconswall");
+var IconsWall = require('./iconswall');
 
 function initScreenshotsAnimation() {
   var index = 0;
@@ -22,9 +22,8 @@ function initScreenshotsAnimation() {
   }
 
   setTimeout(function () {
-    setInterval(switchNext, 2000);  
+    setInterval(switchNext, 2000);
   }, 2000);
-  
 }
 
 function initLogoAnimation() {

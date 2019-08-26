@@ -1,19 +1,18 @@
+import Vue from 'vue/dist/vue.common';
+import timeago from 'timeago.js';
+import UserEvents from './componets/user-events.vue';
+import UserFollowers from './componets/user-followers.vue';
 
-var timeago = require("timeago.js");
-var UserEvents = require('./componets/userevents.vue');
-var UserFollowers = require('./componets/userfollowers.vue');
+window.$ = window.jQuery = require('jquery/dist/jquery');
+require('bootstrap/js/tooltip');
 
 Vue.filter('reltime', function (timestr) {
   var date = new timeago();
   return date.format(timestr, 'zh_CN');
 });
+Vue.component('user-events', UserEvents);
+Vue.component('user-followers', UserFollowers);
 
-Vue.component('userevents', UserEvents);
-Vue.component('userfollowers', UserFollowers);
+new Vue({ el: '#app' });
 
-new Vue({
-  el: 'body'
-});
-
-$('.user-profile .links a[data-toggle="tooltip"]').tooltip();
-$('.github-achievements a[data-toggle="tooltip"]').tooltip();
+$('.user-profile a[data-toggle="tooltip"]').tooltip();

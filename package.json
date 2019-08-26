@@ -10,20 +10,20 @@
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-stage-0": "^6.5.0",
     "babel-runtime": "^6.9.2",
+    "bootstrap": "^3.4.1",
     "css-loader": "^0.23.1",
     "file-loader": "^0.8.5",
     "jade": "^1.11.0",
-    "node-sass": "^3.8.0",
-    "sass-loader": "^4.0.0",
+    "jquery": "^3.4.1",
     "style-loader": "^0.13.1",
     "stylus-loader": "^1.6.1",
     "template-html-loader": "^0.0.3",
     "timeago.js": "^2.0.3",
-    "vue": "^1.0.26",
+    "vue": "^2.6.10",
     "vue-hot-reload-api": "^1.3.3",
     "vue-html-loader": "^1.2.3",
-    "vue-loader": "^7.5.3",
-    "webpack": "^1.13.1",
+    "vue-loader": "^15.7.1",
+    "vue-template-compiler": "^2.6.10",
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
@@ -45,6 +45,9 @@
   },
   "homepage": "https://github.com/lc-soft/lc-soft.io#readme",
   "devDependencies": {
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.3.1",
+    "webpack": "^4.39.2",
     "webpack-cli": "^3.1.2"
   }
 }
