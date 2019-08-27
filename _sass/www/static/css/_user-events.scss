@@ -1,0 +1,38 @@
+.user-events {
+  padding: 0;
+  min-height: 128px;
+  position: relative;
+  transition: height, .5s;
+  list-style-type: none;
+
+  li {
+    margin-bottom: 10px;
+  }
+  .body {
+    border-left: 2px solid #eee;
+    padding-left: 8px;
+    margin-top: 4px;
+  }
+  .header, .commit-message, .issue-comment, .pull-request-title {
+    margin: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .commit-url {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;;
+  }
+  .pull-request-stats {
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin: 5px 0 2px 0;
+    display: inline-block;
+    color: rgba(0,0,0,0.5);
+    background-color: #f0f0f0;
+
+    em {
+      font-style: normal;
+      font-weight: bold;
+    }
+  }
+}

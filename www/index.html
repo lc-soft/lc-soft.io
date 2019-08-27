@@ -45,74 +45,18 @@ projects:
   <div class="row">
     <div class="col-md-4 col-sm-6 col-xs-12">
       <div class="user-profile">
-        <img class="avatar img-circle" src="{{ page.profile.avatar_url }}" alt="avatar">
-        <h2 class="name">{{ page.profile.name }}</h2>
-        <p class="bio text-muted">{{ page.profile.bio }}</p>
-        <p class="job">
+        <img class="user-profile__avatar img-circle" src="{{ page.profile.avatar_url }}" alt="avatar">
+        <h2 class="user-profile__name">{{ page.profile.name }}</h2>
+        <p class="user-profile__bio text-muted">{{ page.profile.bio }}</p>
+        <p class="user-profile__job">
           <i class="icon-briefcase"></i> {{ page.profile.job }}
         </p>
-        <p class="skills">
+        <p class="user-profile__skills">
           {% for skill in page.profile.skills %}
-            <span class="skill">{{ skill }}</span>
+            <span class="user-profile__skill">{{ skill }}</span>
           {% endfor %}
         </p>
-        <div class="github-achievements">
-          <div class="achievement">
-            <div class="achievement-title">
-                {% octicon star %}
-              获得
-              <a href="{{ site.data.awards.c.repos.url }}" title="C 编程语言项目获得的总星数" data-toggle="tooltip" target="_blank">
-                {{ site.data.awards.c.stars.value }}
-              </a>
-              颗星
-            </div>
-            <div class="achievement-text">
-              全国排名第
-              <a href="{{ site.data.awards.c.china.url }}" title="数据来源于 git-awards.com" target="_blank" data-toggle="tooltip">
-                {{ site.data.awards.c.china.value }}
-              </a>
-              名，世界排名第
-              <a href="{{ site.data.awards.c.worldwide.url }}" title="数据来源于 git-awards.com" target="_blank" data-toggle="tooltip">
-                {{ site.data.awards.c.worldwide.value }}
-              </a>
-              名
-            </div>
-          </div>
-          <div class="achievement">
-            <div class="achievement-title">
-              <i class="icon icon-comment-discussion"></i>
-              参与
-              <a href="{{ site.data.github.involves_url }}" target="_blank">
-                {{ site.data.github.involves_count }}
-              </a>
-              次社区交流
-            </div>
-            <div class="achievement-text">
-              反馈
-              <a href="{{ site.data.github.issues_url }}" target="_blank" title="向开源项目提交的 Issue 数" data-toggle="tooltip">{{ site.data.github.issues_count }}</a> 个问题，贡献 <a href="{{ site.data.github.pulls_url }}" target="_blank" title="向开源项目提交的 Pull Request 数" data-toggle="tooltip">
-                {{ site.data.github.pulls_count }}
-              </a>
-              次代码
-            </div>
-          </div>
-          <div class="achievement">
-            <div class="achievement-title">
-              {% octicon pencil %}
-              产出
-              <a href="https://blog.lc-soft.io" target="_blank">
-                {{ site.posts.size }}
-              </a>
-              篇文章
-            </div>
-            <div class="achievement-text">
-                写了 {{ count_of_words }} 字，总访客数
-                <span id="busuanzi_value_site_uv">0</span>
-                人次
-            </div>
-          </div>
-        </div>
-        <user-followers></user-followers>
-        <div class="links">
+        <p class="user-profile__social-links">
           <a class="email" href="mailto:{{ page.profile.email }}" data-title="Email" data-toggle="tooltip" data-placement="bottom">
             <i class="icon-envelope-o"></i>
           </a>
@@ -122,8 +66,64 @@ projects:
           <a class="steam" href="{{ page.profile.steam }}" data-title="Steam" data-toggle="tooltip" data-placement="bottom">
             <i class="icon-steam-square"></i>
           </a>
+        </p>
+      </div>
+      <div class="user-stats">
+        <div class="user-stats__item">
+          <div class="user-stats__title">
+            {% octicon star %}
+            获得
+            <a href="{{ site.data.awards.c.repos.url }}" title="C 编程语言项目获得的总星数" data-toggle="tooltip" target="_blank">
+              {{ site.data.awards.c.stars.value }}
+            </a>
+            颗星
+          </div>
+          <div class="user-stats__text">
+            全国排名第
+            <a href="{{ site.data.awards.c.china.url }}" title="数据来源于 git-awards.com" target="_blank" data-toggle="tooltip">
+              {{ site.data.awards.c.china.value }}
+            </a>
+            名，世界排名第
+            <a href="{{ site.data.awards.c.worldwide.url }}" title="数据来源于 git-awards.com" target="_blank" data-toggle="tooltip">
+              {{ site.data.awards.c.worldwide.value }}
+            </a>
+            名
+          </div>
+        </div>
+        <div class="user-stats__item">
+          <div class="user-stats__title">
+            <i class="icon icon-comment-discussion"></i>
+            参与
+            <a href="{{ site.data.github.involves_url }}" target="_blank">
+              {{ site.data.github.involves_count }}
+            </a>
+            次社区交流
+          </div>
+          <div class="user-stats__text">
+            反馈
+            <a href="{{ site.data.github.issues_url }}" target="_blank" title="向开源项目提交的 Issue 数" data-toggle="tooltip">{{ site.data.github.issues_count }}</a> 个问题，贡献 <a href="{{ site.data.github.pulls_url }}" target="_blank" title="向开源项目提交的 Pull Request 数" data-toggle="tooltip">
+              {{ site.data.github.pulls_count }}
+            </a>
+            次代码
+          </div>
+        </div>
+        <div class="user-stats__item">
+          <div class="user-stats__title">
+            {% octicon pencil %}
+            发布
+            <a href="https://blog.lc-soft.io" target="_blank">
+              {{ site.posts.size }}
+            </a>
+            篇文章
+          </div>
+          <div class="user-stats__text">
+              写了 {{ count_of_words }} 字，总访客数
+              <span id="busuanzi_value_site_uv">0</span>
+              人次
+          </div>
         </div>
       </div>
+      <user-followers></user-followers>
     </div>
     <div class="col-md-8 col-sm-6 col-xs-12">
       <h3 class="section-title">

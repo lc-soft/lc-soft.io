@@ -1,0 +1,75 @@
+.navbar-custom {
+  background-color: #fff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  transition: background-color .3s ease-in-out, border .3s ease-in-out;
+  -moz-transition: background-color .3s ease-in-out, border .3s ease-in-out;
+  -webkit-transition: background-color .3s ease-in-out, border .3s ease-in-out;
+  -o-transition: background-color .3s ease-in-out, border .3s ease-in-out;
+
+  .nav>li>a, .nav .open>a {
+    color: #333;
+    &:active, &:hover, &:focus {
+      color: $brandColorLight;
+      background-color: #fafafa;
+    }
+  }
+  .navbar-brand {
+    color: $brandColor;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .icon-bar {
+    background-color: #333;
+  }
+  .navbar-toggle {
+    &:hover {
+      background-color: #fafafa;
+    }
+    &:active, &:focus {
+      background-color: #f0f0f0;
+    }
+  }
+}
+.navbar-custom.navbar-fixed-top {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  border-bottom: 0;
+}
+.navbar-on-top {
+  color: #aaa;
+  box-shadow: none;
+  background: #333;
+  z-index: 1000;
+  background: rgba(47,47,47,0.98);
+  .navbar-nav >li >a {
+    color: #aaa;
+    &:hover {
+      color: #ddd;
+    }
+    &:active, &:focus {
+      color: #fff;
+    }
+  }
+  .nav>li>a, .nav .open>a {
+    background-color: transparent;
+    &:hover, &:active, &:focus {
+      background-color: rgba(255,255,255,0.1);
+    }
+    @media (min-width: 768px) {
+      &:hover, &:active, &:focus {
+        background-color: transparent;
+      }
+    }
+  }
+  .navbar-brand {
+    color: #fff;
+    font-weight: normal;
+  }
+  .icon-bar {
+    background-color: #eee;
+  }
+  .navbar-toggle{
+    &:hover, &:active, &:focus  {
+      background-color: #666;
+    }
+  }
+}

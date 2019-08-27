@@ -1,397 +1,90 @@
-﻿$brandColor: #3498db;
-$brandColorLight: #44ABF1;
-$brandColorDark: #2980b9;
+﻿@import "variables";
+@import "navbar";
+@import "animation";
+@import "user-profile";
+@import "user-stats";
+@import "user-events";
+@import "user-followers";
 
 body {
-	background: #fff;
+  background: #fff;
 }
-.navbar-custom {
-	background-color: #fff;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
-    transition: background-color .3s ease-in-out, border .3s ease-in-out;
-    -moz-transition: background-color .3s ease-in-out, border .3s ease-in-out;
-    -webkit-transition: background-color .3s ease-in-out, border .3s ease-in-out;
-    -o-transition: background-color .3s ease-in-out, border .3s ease-in-out;
 
-	.nav>li>a, .nav .open>a {
-	    color: #333;
-		&:active, &:hover, &:focus {
-		    color: $brandColorLight;
-	        background-color: #fafafa;
-		}
-	}
-	.navbar-brand {
-		color: $brandColor;
-		font-size: 24px;
-		font-weight: bold;
-	}
-	.icon-bar {
-	    background-color: #333;
-	}
-	.navbar-toggle {
-		&:hover {
-	        background-color: #fafafa;
-		}
-		&:active, &:focus {
-	        background-color: #f0f0f0;
-		}
-	}
-}
-.navbar-custom.navbar-fixed-top {
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
-    border-bottom: 0;
-}
-.navbar-on-top {
-	color: #aaa;
-	box-shadow: none;
-    background: #333;
-    z-index: 1000;
-    background: rgba(47,47,47,0.98);
-	.navbar-nav >li >a {
-		color: #aaa;
-		&:hover {
-			color: #ddd;
-		}
-		&:active, &:focus {
-			color: #fff;
-		}
-	}
-	.nav>li>a, .nav .open>a {
-	    background-color: transparent;
-		&:hover, &:active, &:focus {
-	    	background-color: rgba(255,255,255,0.1);
-		}
-		@media (min-width: 768px) {
-			&:hover, &:active, &:focus {
-		    	background-color: transparent;
-			}
-		}
-	}
-	.navbar-brand {
-		color: #fff;
-		font-weight: normal;
-	}
-	.icon-bar {
-		background-color: #eee;
-	}
-	.navbar-toggle{
-		&:hover, &:active, &:focus  {
-			background-color: #666;
-		}
-	}
-}
-.home-jumbotron {
-    color: #aaa;
-	margin: 0;
-	background: #444;
-	border-bottom: 1px solid #eee;
-	position: relative;
-	padding-top: 100px;
-	overflow: hidden;
-    h1 {
-    	color: #fff;
-    	font-size: 48px;
-	}
-    p {
-		font-size: 16px;
-	    margin-top: 10px;
-	    margin-bottom: 30px;
-	    line-height: 24px;
-        font-weight: normal;
-    }
-}
-.btn-outline-inverse {
-    color: #fff;
-    background-color: transparent;
-    border-color: #E5FFD8;
-	&:focus, &:hover {
-		color: #7cb75e;
-	    text-shadow: none;
-	    background-color: #fff;
-	    border-color: #fff;
-    }
-}
 #footer {
-    padding: 12px 0;
-	border-top: 1px solid #eee;
-    line-height: 16px;
-    font-size: 12px;
-}
-.article-content img {
-	max-width: 100%;
-}
-.text-ellipsis {
-	text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-}
-.jumbotron-particles {
-    width: 100%;
-    height: 285px;
-    position: absolute;
-    top: 0;
+  padding: 12px 0;
+  border-top: 1px solid #eee;
+  line-height: 16px;
+  font-size: 12px;
 }
 
-.card {
-	padding: 10px;
-	margin-bottom: 20px;
-    background: #fff;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-
-	.card-title {
-		font-size: 16px;
-	    padding: 2px 0 10px 0;
-	    margin: 0 0 8px 0;
-		border-bottom: 1px dashed #eee;
-
-		.icon {
-			margin-right: 8px;
-		}
-	}
-}
 .user-activity {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
+
 .section-title {
-	font-size: 16px;
-	margin: 0 0 12px 0;
+  font-size: 16px;
+  margin: 0 0 12px 0;
 
-	.octicon {
-    	top: 2px;
-		position: relative;
-	}
-}
-.user-profile {
+  .octicon {
+    top: 2px;
     position: relative;
-	text-align: center;
-    padding: 40px 20px 0 20px;
-
-	.name {
-	    font-size: 24px;
-	}
-	.job {
-		color: #21d571;
-	}
-	> .avatar {
-	    width: 80px;
-	    height: 80px;
-        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-	}
-	.links {
-		padding: 20px 0;
-    	margin: 0 -20px;
-		border-top: 1px solid #eee;
-
-		a {
-			color: #888;
-			font-size: 24px;
-			margin: 5px;
-			text-decoration: none;
-
-			svg {
-				fill: #888;
-				width: 24px;
-				height: 24px;
-			}
-		}
-		a.email:hover, a.github:hover {
-			color: #333;
-
-			svg {
-				fill: #333;
-			}
-		}
-		a.steam:hover {
-			color: #116594;
-		}
-	}
-	.skills {
-		.skill {
-			border: 1px solid #ddd;
-		    border-radius: 20px;
-		    padding: 5px 10px;
-		    display: inline-block;
-		}
-	}
-}
-.horiz-divider {
-    height: 1px;
-    background-color: #eee;
-    margin: 0 0 20px 0;
-}
-@keyframes bounceIn {
-  from, 20%, 40%, 60%, 80%, to {
-    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  }
-
-  0% {
-    opacity: 0;
-    transform: scale3d(.3, .3, .3);
-  }
-
-  20% {
-    transform: scale3d(1.1, 1.1, 1.1);
-  }
-
-  40% {
-    transform: scale3d(.9, .9, .9);
-  }
-
-  60% {
-    opacity: 1;
-    transform: scale3d(1.03, 1.03, 1.03);
-  }
-
-  80% {
-    transform: scale3d(.97, .97, .97);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale3d(1, 1, 1);
   }
 }
 
-.bounceIn {
-  animation-name: bounceIn;
-}
-@keyframes bounceOut {
-  20% {
-    transform: scale3d(.9, .9, .9);
-  }
-
-  50%, 55% {
-    opacity: 1;
-    transform: scale3d(1.1, 1.1, 1.1);
-  }
-
-  to {
-    opacity: 0;
-    transform: scale3d(.3, .3, .3);
-  }
-}
-
-.bounceOut {
-  animation-name: bounceOut;
-}
-.animated {
-  animation-duration: 1s;
-  animation-fill-mode: both;
-}
-
-.animated.infinite {
-  animation-iteration-count: infinite;
-}
-
-.animated.hinge {
-  animation-duration: 2s;
-}
-
-.animated.flipOutX,
-.animated.flipOutY,
-.animated.bounceIn,
-.animated.bounceOut {
-  animation-duration: .75s;
-}
-@keyframes spin {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(359deg);
-	}
-}
-.spin {
-	animation: spin 2s infinite linear;
-	display: inline-block;
-}
 .project-list {
-	padding: 0 10px;
-    margin-bottom: 20px;
+  padding: 0 10px;
+  margin-bottom: 20px;
 }
+
 .project-list-item {
-	padding: 5px;
+  padding: 5px;
 }
+
 .project-list-item-link {
-    display: block;
-    position: relative;
-    padding-top: 20px;
-    border-radius: 4px;
-    border: 1px solid #ededed;
-    -webkit-transition: border-color 0.15s ease 0s, -webkit-transform 0.15s ease 0s, box-shadow 0.15s ease 0s, color 0.15s ease 0s;
-	transition: border-color 0.15s ease 0s, transform 0.15s ease 0s, box-shadow 0.15s ease 0s, color 0.15s ease 0s;
+  display: block;
+  position: relative;
+  padding-top: 20px;
+  border-radius: 4px;
+  border: 1px solid #ededed;
+  -webkit-transition: border-color 0.15s ease 0s, -webkit-transform 0.15s ease 0s, box-shadow 0.15s ease 0s, color 0.15s ease 0s;
+  transition: border-color 0.15s ease 0s, transform 0.15s ease 0s, box-shadow 0.15s ease 0s, color 0.15s ease 0s;
 
-    &:hover {
-	    border-color: #51a7e8;
-	    box-shadow: 0 0 5px rgba(81,167,232,0.5);
-	    -webkit-transform: scale(1.05);
-	    transform: scale(1.05);
-    }
-	&:hover, &:active, &:focus {
-	    text-decoration: none;
-	}
+  &:hover {
+    border-color: #51a7e8;
+    box-shadow: 0 0 5px rgba(81,167,232,0.5);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  &:hover, &:active, &:focus {
+    text-decoration: none;
+  }
 }
+
 .project-list-item-logo {
-    fill: #999;
-	width: 48px;
-	height: 48px;
-    display: block;
-    margin: 0 auto;
+  fill: #999;
+  width: 48px;
+  height: 48px;
+  display: block;
+  margin: 0 auto;
 }
+
 .project-list-item-header {
-    margin: 15px 10px 0;
-    font-size: 14px;
-    font-weight: bold;
-    color: #333;
+  margin: 15px 10px 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
 }
+
 .project-list-item-link:hover .project-list-item-header {
-    color: #4078c0;
+  color: #4078c0;
 }
+
 .project-list-item-description {
-    position: relative;
-    height: 2.8em;
-    padding: 0 10px;
-    margin-top: 5px;
-    overflow: hidden;
-    font-size: 13px;
-    color: #767676;
-}
-.github-achievements {
-	text-align: left;
-    max-width: 340px;
-    margin: 20px auto;
-    padding: 5px 15px;
-    border-radius: 2px;
-    border: 1px solid #e7eaf1;
-
-	.achievement {
-	   padding: 10px 0;
-	}
-    .achievement-title {
-    	font-size: 15px;
-    	line-height: 20px;
-    	margin-bottom: 5px;
-
-		.octicon {
-			fill: #bdcadb;
-		}
-		.octicon,
-		.icon {
-			width: 25px;
-		    color: #bdcadb;
-		    font-size: 18px;
-			text-align: center;
-		    display: inline-block;
-			vertical-align: top;
-    	}
-    }
-    .achievement-text {
-    	padding-left: 30px;
-    	color: #8590a6;
-    }
+  position: relative;
+  height: 2.8em;
+  padding: 0 10px;
+  margin-top: 5px;
+  overflow: hidden;
+  font-size: 13px;
+  color: #767676;
 }

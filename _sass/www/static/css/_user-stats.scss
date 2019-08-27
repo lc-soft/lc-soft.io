@@ -1,0 +1,35 @@
+.user-stats {
+  text-align: left;
+  max-width: 340px;
+  margin: 20px auto;
+  padding: 5px 15px;
+  border-radius: 2px;
+  border: 1px solid $borderColor;
+}
+
+.user-stats__item {
+  padding: 10px 0;
+}
+
+.user-stats__title {
+  font-size: 15px;
+  line-height: 20px;
+  margin-bottom: 5px;
+
+  .octicon {
+    fill: #bdcadb;
+  }
+  .octicon,
+  .icon {
+    width: 25px;
+    color: #bdcadb;
+    font-size: 18px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+.user-stats__text {
+  padding-left: 30px;
+  color: #8590a6;
+}

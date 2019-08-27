@@ -1,0 +1,47 @@
+.user-profile {
+  position: relative;
+  text-align: center;
+  padding: map-get($spacers, 5) $spacer 0 $spacer;
+}
+
+.user-profile__name {
+  font-size: 24px;
+}
+.user-profile__job {
+  color: #21d571;
+}
+
+.user-profile__avatar {
+  width: 80px;
+  height: 80px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.user-profile__social-links {
+  a {
+    color: #888;
+    font-size: 24px;
+    margin: 5px;
+    text-decoration: none;
+
+    svg {
+      fill: #888;
+      width: 24px;
+      height: 24px;
+    }
+  }
+  a.email:hover,
+  a.github:hover {
+    color: #333;
+  }
+  a.steam:hover {
+    color: #116594;
+  }
+}
+
+.user-profile__skill {
+  border: 1px solid $borderColor;
+  border-radius: 20px;
+  padding: map-get($spacers, 1) map-get($spacers, 2);
+  display: inline-block;
+}

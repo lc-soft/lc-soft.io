@@ -1,0 +1,13 @@
+$brandColor: #3498db;
+$brandColorLight: #44ABF1;
+$brandColorDark: #2980b9;
+$borderColor: #e7eaf1;
+$spacer: 1em;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
