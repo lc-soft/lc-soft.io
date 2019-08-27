@@ -1,10 +1,12 @@
-import Vue from 'vue/dist/vue.common';
+import Vue from 'vue';
 import timeago from 'timeago.js';
 import UserEvents from './componets/user-events.vue';
 import UserFollowers from './componets/user-followers.vue';
 
 window.$ = window.jQuery = require('jquery/dist/jquery');
+require('bootstrap/js/transition');
 require('bootstrap/js/tooltip');
+require('bootstrap/js/collapse');
 
 Vue.filter('reltime', function (timestr) {
   var date = new timeago();

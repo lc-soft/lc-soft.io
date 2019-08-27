@@ -31,6 +31,9 @@ const wwwConfig = {
       }
     ]
   },
+  externals: {
+    vue: 'Vue'
+  },
   plugins: [
     new VueLoaderPlugin()
   ]
