@@ -5,6 +5,7 @@
 @import "user-stats";
 @import "user-events";
 @import "user-followers";
+@import "user-repos";
 
 body {
   background: #fff;
@@ -29,62 +30,4 @@ body {
     top: 2px;
     position: relative;
   }
-}
-
-.project-list {
-  padding: 0 10px;
-  margin-bottom: 20px;
-}
-
-.project-list-item {
-  padding: 5px;
-}
-
-.project-list-item-link {
-  display: block;
-  position: relative;
-  padding-top: 20px;
-  border-radius: 4px;
-  border: 1px solid #ededed;
-  -webkit-transition: border-color 0.15s ease 0s, -webkit-transform 0.15s ease 0s, box-shadow 0.15s ease 0s, color 0.15s ease 0s;
-  transition: border-color 0.15s ease 0s, transform 0.15s ease 0s, box-shadow 0.15s ease 0s, color 0.15s ease 0s;
-
-  &:hover {
-    border-color: #51a7e8;
-    box-shadow: 0 0 5px rgba(81,167,232,0.5);
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
-  }
-  &:hover, &:active, &:focus {
-    text-decoration: none;
-  }
-}
-
-.project-list-item-logo {
-  fill: #999;
-  width: 48px;
-  height: 48px;
-  display: block;
-  margin: 0 auto;
-}
-
-.project-list-item-header {
-  margin: 15px 10px 0;
-  font-size: 14px;
-  font-weight: bold;
-  color: #333;
-}
-
-.project-list-item-link:hover .project-list-item-header {
-  color: #4078c0;
-}
-
-.project-list-item-description {
-  position: relative;
-  height: 2.8em;
-  padding: 0 10px;
-  margin-top: 5px;
-  overflow: hidden;
-  font-size: 13px;
-  color: #767676;
 }
