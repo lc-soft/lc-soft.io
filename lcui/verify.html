@@ -248,19 +248,37 @@ ds_thread_key: lcui-donate
           <p>
             <label>
               <input type="radio" name="8" value="A">
-              提交一个标题为“有BUG啊”的 issue，等作者亲自来问清楚，省得自己浪费时间写一堆没用的内容。
+              在与编程相关的贴吧内新建个帖子来反馈问题，顺便和其他吧友聊天灌水斗图，等作者哪天逛贴吧时发现这个帖子。
             </label>
           </p>
           <p>
             <label>
               <input type="radio" name="8" value="B">
-              新建一个标题为“我需要 XXXX 功能” 的 issue，然后简单写下要求，等作者接任务。毕竟做开源项目的人就应该放低姿态好好接受用户意见，用户用你项目是看得起你，要好好珍惜用户。
+              在与编程相关 QQ 群里与其他成员讨论问题，等作者哪天碰巧加入了这个群然后在翻群聊天记录时看到。
             </label>
           </p>
           <p>
             <label>
               <input type="radio" name="8" value="C">
-              新建一个 issue，标题简短描述主要问题，然后在描述里提供问题的详细现象、重现步骤、相关动图或截图，如果可行的话，再提供一个能够重现问题的最小示例。
+              在某些社区里的 LCUI 相关资讯里发表“要是有 XXX 就好了”之类的评论，等作者哪天碰巧看到。
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="8" value="D">
+              在 GitHub 上的 LCUI 仓库页里，提交一个标题为“有BUG啊”的 issue，等作者亲自来问清楚，省得自己浪费时间写一堆没用的内容。
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="8" value="E">
+              在 GitHub 上的 LCUI 仓库页里，新建一个标题为“我需要 XXXX 功能” 的 issue，然后简单写下要求，等作者接任务。毕竟做开源项目的人就应该放低姿态好好接受用户意见，用户用你项目是看得起你，要好好珍惜用户。
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="8" value="F">
+              在 GitHub 上的 LCUI 仓库页里，新建一个 issue，标题简短描述主要问题，然后在描述中提供问题的详细现象、重现步骤、相关动图或截图，如果可行的话，再提供一个能够重现问题的最小示例，方便作者或其他潜在的贡献者解决此问题。
             </label>
           </p>
         </li>
@@ -314,7 +332,61 @@ ds_thread_key: lcui-donate
           <p>
             <label>
               <input type="radio" name="10" value="E">
-              在发现该项目中存在 BUG 或改进之处的时候，可以用它创建一个自己的分支，这样在以后可以方便的向主干分支提交自己的改进方案。
+              在发现该项目中存在 BUG 或可改进之处的时候，可以用它创建一个自己的分支，这样在以后可以方便的向主干分支提交自己的改进方案。
+            </label>
+          </p>
+        </li>
+        <li>
+          <p><b>LCUI 的部件（Widget）数据结构中，子部件列表是用什么数据结构存储的？</b></p>
+          <p>
+            <label>
+              <input type="radio" name="11" value="A">
+              数组
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="11" value="B">
+              链表
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="11" value="C">
+              哈希表
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="11" value="D">
+              二叉树
+            </label>
+          </p>
+        </li>
+        <li>
+          <p><b>LCUI 的部件属性（Attributes）是用什么数据结构存储的？</b></p>
+          <p>
+            <label>
+              <input type="radio" name="12" value="A">
+              数组
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="12" value="B">
+              链表
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="12" value="C">
+              哈希表
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="12" value="D">
+              二叉树
             </label>
           </p>
         </li>
@@ -322,52 +394,106 @@ ds_thread_key: lcui-donate
           <p><b>rgb(255,255,255) 表示的是哪种颜色？</b></p>
           <p>
             <label>
-              <input type="radio" name="11" value="A">
+              <input type="radio" name="13" value="A">
               黑色
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="11" value="B">
+              <input type="radio" name="13" value="B">
               白色
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="11" value="C">
+              <input type="radio" name="13" value="C">
               红色
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="11" value="D">
+              <input type="radio" name="13" value="D">
               绿色
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="11" value="E">
+              <input type="radio" name="13" value="E">
               蓝色
             </label>
           </p>
         </li>
         <li>
-          <p><b>以下对 sizeof 的解释中，哪一条是正确的？</b></p>
+          <p><b>假设一个像素点占 4 个字节内存，现在要将 320x240 分辨率的位图的像素数据存储到一个数组中，那么这个数组需要占多大空间？</b></p>
           <p>
             <label>
-              <input type="radio" name="12" value="A">
+              <input type="radio" name="14" value="A">
+              76800 字节
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="14" value="B">
+              307200 字节
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="14" value="C">
+              614400 字节
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="14" value="D">
+              409600 字节
+            </label>
+          </p>
+        </li>
+        <li>
+          <p><b>一个数组中存储了 800x600 分辨率的位图的像素数据，已知位于 600 行 10 列坐标的像素点的数组下标是 480010，那么位于 150 行 450 列坐标的像素点的数组下标是？</b></p>
+          <p>
+            <label>
+              <input type="radio" name="15" value="A">
+              90450
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="15" value="B">
+              360150
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="15" value="C">
+              120450
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="radio" name="15" value="D">
+              390000
+            </label>
+          </p>
+        </li>
+        <li>
+          <p><b>以下对 sizeof 的解释中，哪一条是最为正确的？</b></p>
+          <p>
+            <label>
+              <input type="radio" name="16" value="A">
               sizeof 是个函数，能够在运行时得到表达式或类型的大小，返回值类型是 long int。
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="12" value="B">
-              sizeof 是个运算符，能够在编译时得到表达式或类型的大小，返回值类型是 size_t。
+              <input type="radio" name="16" value="B">
+              sizeof 是个运算符，能够在编译时得到表达式或类型的大小，返回值是无符号整数类型，通常用 size_t 表示。
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="12" value="C">
+              <input type="radio" name="16" value="C">
               sizeof 是个函数式宏，能够在编译时将代码块替换为传入表达式或类型的大小。
             </label>
           </p>
@@ -389,10 +515,11 @@ ds_thread_key: lcui-donate
 
 $('#btn-submit').on('click', function () {
   var list = [];
+
   $.each($('#form-verify').serializeArray(), function(i, data) {
     list.push(data.value);
   });
-  if (list.length < 12) {
+  if (list.length < 16) {
     return alert('请先完成全部问题的答案');
   }
   $('#txt-result').text('验证码：' + list.join(''));

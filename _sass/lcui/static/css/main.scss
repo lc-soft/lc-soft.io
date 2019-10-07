@@ -8,10 +8,10 @@
     -o-transition: background-color .3s ease-in-out, border .3s ease-in-out;
 
   .nav>li>a, .nav .open>a {
-      color: #333;
+    color: #333;
     &:active, &:hover, &:focus {
         color: #6ba84b;
-          background-color: #fafafa;
+        background-color: #fafafa;
     }
   }
   .navbar-brand {
@@ -24,8 +24,8 @@
   }
   .navbar-toggle {
     &:focus, &:hover {
-        background-color: #f9f9f9;
-        border-color: #f9f9f9;
+      background-color: #f9f9f9;
+      border-color: #f9f9f9;
     }
   }
 }
@@ -660,6 +660,16 @@
 
 @import "horiz-split-box";
 @import "syntax";
+
+.bash-code-block {
+  border: 0;
+  color: #fff;
+  background: #333;
+
+  .pl-c {
+    opacity: .6;
+  }
+}
 
 #lcui-example {
   width: 100%;

@@ -12,8 +12,12 @@ is_home: true
     <h1>LCUI</h1>
     <p>使用 C、XML 和 CSS 构建简单的跨平台桌面应用</p>
     <p class="jumbotron-button-group">
-		<a class="btn btn-outline-inverse btn-lg" href="https://docs.lcui.lc-soft.io/zh-cn/getting_started/"><span class="fa fa-book"></span> 快速上手</a>
-      <a class="btn btn-outline-inverse btn-lg" href="https://github.com/lc-soft/LCUI/releases"><span class="fa fa-download"></span> 下载</a>
+      <a class="btn btn-outline-inverse btn-lg" href="#get-started">
+        <span class="fa fa-book"></span> 快速上手
+      </a>
+      <a class="btn btn-outline-inverse btn-lg" href="https://github.com/lc-soft/LCUI/releases">
+        <span class="fa fa-download"></span> 下载
+      </a>
     </p>
     <div class="shameless-self-promotion">
       当前版本：1.1.0 Beta &nbsp;&nbsp;·&nbsp;&nbsp;
@@ -37,7 +41,7 @@ is_home: true
           本月累计推送 <strong class="commits"></strong> 次提交，代码共增加 <strong class="addtions"></strong> 行，删除 <strong class="deletions"></strong> 行
         </p>
       </div>
-      <a id="btn-contribute" class="btn btn-primary btn-lg" href="#contribute"><span class="fa fa-bolt"></span> 充电</a>
+      <a id="btn-contribute" class="btn btn-primary btn-lg" href="#contribute"><span class="fa fa-bolt"></span> 加速</a>
     </div>
   </div>
 </div>
@@ -112,6 +116,42 @@ is_home: true
     </div>
   </div>
 </section>
+<section id="get-started" class="section project-get-started">
+  <div class="container">
+    <div class="section-header">
+      <h2>快速上手</h2>
+    </div>
+    <div class="row">
+      <div class="col col-md-6">
+        <p>
+          最简单方式是使用
+          <a href="https://github.com/lc-ui/lcui-cli">lcui-cli</a>
+          命令行工具创建一个 LCUI 项目，然后试着编译和运行它，看看 LCUI 是怎样运转的，但在使用 lcui-cli 之前你需要在计算机上安装以下工具：
+        </p>
+        <ul>
+            <li><a href="https://git-scm.com/downloads">Git</a></li>
+          <li><a href="https://nodejs.org/">Node.js</a></li>
+          <li><a href="https://github.com/lc-soft/lcpkg">LCPkg</a></li>
+          <li><a href="https://cmake.org/" rel="nofollow">CMake</a> 或 <a href="https://xmake.io/" rel="nofollow">XMake</a></li>
+        </ul>
+        仅仅一个示例应用还不够？可以试试专为 LCUI 打造的 <a href="https://github.com/lc-ui/lc-design">LC Design</a> 组件库。
+      </div>
+      <div class="col col-md-6">
+<pre class="bash-code-block"><code><span class="pl-c"><span class="pl-c">#</span> 安装 lcui-cli</span>
+npm install -g @lcui/cli
+
+<span class="pl-c"><span class="pl-c">#</span> 创建一个名为 myapp 的 LCUI 项目</span>
+lcui create myapp
+
+<span class="pl-c"><span class="pl-c">#</span> 进入项目目录</span>
+cd myapp
+
+<span class="pl-c"><span class="pl-c">#</span> 运行这个项目</span>
+npm run start</code></pre>
+  </div>
+      </div>
+    </div>
+</section>
 <section id="demo-screenshorts" class="section project-screenshorts">
   <div class="container">
     <div class="section-header">
@@ -125,8 +165,13 @@ is_home: true
         </a>
       </div>
       <div class="col-xs-6 col-md-3">
-        <a class="thumbnail" href="/static/images/screenshot-lcui-css.gif">
-          <img src="/static/images/screenshot-lcui-css.gif" alt="LCUI.css 组件库"/>
+        <a class="thumbnail" href="/static/images/showcase/lc-design-docs-preview.gif">
+          <img src="/static/images/showcase/lc-design-docs-preview.gif" alt="LC Design 组件库"/>
+        </a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <a class="thumbnail" href="/static/images/showcase/lc-design-example-preview.png">
+          <img src="/static/images/showcase/lc-design-example-preview.png" alt="LC Design 组件库示例程序"/>
         </a>
       </div>
       <div class="col-xs-6 col-md-3">
@@ -134,13 +179,13 @@ is_home: true
           <img src="/static/images/showcase/lcfinder-001.jpg" alt="LC-Finder 效果图-001"/>
         </a>
       </div>
+    </div>
+    <div class="row">
       <div class="col-xs-6 col-md-3">
         <a class="thumbnail" href="/static/images/showcase/lcfinder-002.jpg">
           <img src="/static/images/showcase/lcfinder-002.jpg" alt="LC-Finder 效果图-002" />
         </a>
       </div>
-    </div>
-    <div class="row">
       <div class="col-xs-6 col-md-3">
         <a class="thumbnail" href="/static/images/showcase/lcfinder-003.jpg">
           <img src="/static/images/showcase/lcfinder-003.jpg" alt="LC-Finder 效果图-003"/>
@@ -154,11 +199,6 @@ is_home: true
       <div class="col-xs-6 col-md-3">
         <a class="thumbnail" href="/static/images/showcase/lcfinder-005.jpg">
           <img src="/static/images/showcase/lcfinder-005.jpg" alt="LC-Finder 效果图-005"/>
-        </a>
-      </div>
-      <div class="col-xs-6 col-md-3">
-        <a class="thumbnail" href="/static/images/showcase/lcfinder-006.jpg">
-          <img src="/static/images/showcase/lcfinder-006.jpg" alt="LC-Finder 效果图-006"/>
         </a>
       </div>
     </div>
@@ -227,8 +267,8 @@ is_home: true
       </div>
       <div class="card card-donate">
         <span class="icon fa fa-yen"></span>
-        <h3><a href="https://beerpay.io/lc-soft/LCUI">经济支持</a></h3>
-        <p>如果你有一些开发需求并愿意支付一定报酬，可以选择在 <a href="https://beerpay.io/lc-soft/LCUI">Beerpay</a> 或 <a href="https://www.bountysource.com/teams/lc-soft/issues">Bountysource</a> 上为其设置悬赏，这样既能够吸引更多的贡献者，也能提高项目的活跃度。</p>
+        <h3><a href="https://beerpay.io/lc-soft/LCUI">资金支持</a></h3>
+        <p>如果你有一些开发需求并愿意支付一定报酬，可以选择在 <a href="https://beerpay.io/lc-soft/LCUI">Beerpay</a> 或 <a href="https://issuehunt.io/r/lc-soft/LCUI">IssueHunt</a> 上为其设置悬赏，这样能够吸引更多的贡献者参与进来，以提高项目的活跃度。</p>
       </div>
     </div>
   </div>
@@ -252,7 +292,7 @@ is_home: true
                 <b class="price-text-focus">免费</b>
               </p>
               <p class="text-muted">适用于普通小项目</p>
-              <a href="https://github.com/lc-soft/LCUI/blob/develop/LICENSE" target="_blank" class="btn btn-outline">查看许可协议</a>
+              <a href="https://github.com/lc-soft/LCUI/blob/develop/LICENSE.TXT" target="_blank" class="btn btn-outline">查看许可协议</a>
             </div>
             <hr />
             <ul class="list-unstyled">
@@ -272,7 +312,7 @@ is_home: true
             <h4 class="panel-title text-center">商业版</h4>
           </div>
           <div class="panel-body">
-            <div class="text-center">  
+            <div class="text-center">
               <i class="panel-logo fa fa-rocket"></i>
               <p class="price-text">
                 &emsp;&emsp;&emsp;<span class="price-text-focus">￥<b>2,560</b></span>
@@ -295,63 +335,6 @@ is_home: true
       </div>
     </div>
     <p class="text-muted text-center">* 在合理努力的情况下，并不是每个 BUG 都可以作为技术支持中的一部分来解决</p>
-  </div>
-</section>
-<section id="faq" class="section project-faq-list">
-  <div class="container">
-    <div class="section-header">
-      <h2>常见问题</h2>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-6 project-faq">
-        <h3>诞生目的是什么？</h3>
-        <p>主要为作者以后编写的程序提供图形界面支持，也就是用于作者的个人用途。</p>
-      </div>
-      <div class="col-xs-12 col-md-6 project-faq">
-        <h3>为何要重复造轮子？</h3>
-        <p>因为那是别人的轮子，用别人的东西做自己的作品感觉没多大意思，而且那个时候也懒得浪费时间去学乱七八糟的东西，所以就自己造轮子，运用所学的东西去解决各种问题，毕竟比起当个螺丝钉，还是独立开发一个完整项目更有意思些。</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-6 project-faq">
-        <h3>我可以使用它么？</h3>
-        <p>可以，但没多大用途，由于 LCUI 是作者的个人作品，因此请不要指望 LCUI 符合你的习惯和要求，如果要正式应用至你的软件，或着有很多其它需求，请选择主流GUI引擎/函数库，例如：<a href="https://electronjs.org/" target="_blank">Electron</a>、<a href="https://www.qt.io/" target="_blank"></a>Qt</a>。</p>
-      </div>
-      <div class="col-xs-12 col-md-6 project-faq">
-        <h3>我能用它做什么？</h3>
-        <p>LCUI 支持 GNU/Linux 和 Windows 平台，你可以参考相关文档及样例截图来了解 LCUI 能够实现的功能。由于现在还不成熟，只能实现一些低级简单的效果。</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-6 project-faq">
-        <h3>与其它同类软件项目相比，有什么优势？</h3>
-        <p>没有明显优势，LCUI的诞生并不是为了与其它GUI引擎/函数库竞争，也不是为了超越或取代某GUI引擎/函数库。</p>
-      </div>
-      <div class="col-xs-12 col-md-6 project-faq">
-        <h3>支持哪些编程语言？</h3>
-        <p>LCUI 是 C 语言编写的，因此，可以在 C 语言或 C++ 语言中使用 LCUI。考虑到现阶段的情况，为了减少项目维护的工作量，暂不考虑提供其它语言的支持。</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-6 project-faq">
-        <h3>为何要选择用 C 语言开发 LCUI？</h3>
-        <p>作者在开发 LCUI 前能正常应用于开发的编程语言只有 C，再加上其它一些因素的影响，例如：移植到硬件条件有限且对运行效率有要求的设备环境下（如：树莓派）、推翻某些人对C语言的肤浅认知，等等。因此，LCUI 在较长的时间内会使用C作为主要开发语言。</p>
-      </div>
-      <div class="col-xs-12 col-md-6 project-faq">
-        <h3>有丰富的文档吗？</h3>
-        <p>没有，目前只有一小部分<a href="https://docs.lcui.lc-soft.io" target="_blank">教程</a>，写文档是一件很麻烦的事情，写完后还需要保持更新，每当项目内部功能有所改动时都需要更新文档。如果你需要更多文档的话，可以在 <a href="https://www.patreon.com/lcsoft">Patreon</a> 上捐赠支持作者达成 512美元/月 的小目标，这样作者就会花大部分时间在文档编写工作上。</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-6 project-faq">
-        <h3>为什么要开放源代码？</h3>
-        <p>因为现在作者对项目有绝对的主导权，不用担心有人会创建一个能抢占主导权且更具影响力的衍生版本，也不用担心有人会擅自将源代码应用到商业用途的闭源软件中，毕竟有时间、有能力且对这个项目有兴趣的人不多，再加上一些有意或无意留下的功能缺陷，能有时间折腾的人就更少了。开放源代码也可以满足作者的展现欲，刷点知名度和存在感，对职业生涯也是个加分项，所以是利大于弊的。</p>
-      </div>
-      <div class="col-xs-12 col-md-6 project-faq">
-        <h3>是否有可视化界面设计工具或编辑器插件？</h3>
-        <p>没有，将来也不会打算开发，现阶段开发这种工具只是在浪费时间，除了被一些人感谢外没有任何意义。你可以自己尝试开发，或者等其他人开发。</p>
-      </div>
-    </div>
   </div>
 </section>
 <script src="/static/js/abigimage.jquery.min.js"></script>
