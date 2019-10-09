@@ -12,12 +12,12 @@ is_home: true
     <h1>LCUI</h1>
     <p>Build simple desktop apps with C, XML and CSS</p>
     <p class="jumbotron-button-group">
-		<a class="btn btn-outline-inverse btn-lg" href="https://docs.lcui.lc-soft.io/en-us/"><span class="fa fa-book"></span> Getting started</a>
+		<a class="btn btn-outline-inverse btn-lg" href="#get-started"><span class="fa fa-book"></span> Get Started</a>
       <a class="btn btn-outline-inverse btn-lg" href="https://github.com/lc-soft/LCUI/releases"><span class="fa fa-download"></span> Download</a>
     </p>
     <div class="shameless-self-promotion">
-      Version：1.1.0 Beta &nbsp;&nbsp;·&nbsp;&nbsp;
-      Date：2019-03-10 &nbsp;&nbsp;·&nbsp;&nbsp;
+      Version：1.3.0 &nbsp;&nbsp;·&nbsp;&nbsp;
+      Date：2019-10-08 &nbsp;&nbsp;·&nbsp;&nbsp;
       <a href="https://github.com/lc-soft/LCUI">
         GitHub</a> &nbsp;&nbsp;·&nbsp;&nbsp;
       Creator：<a href="http://github.com/lc-soft">lc-soft</a>
@@ -89,12 +89,47 @@ is_home: true
         <p class="text-muted">Support the use of XML and CSS to describe the GUI layout and style, saving interface development time and maintenance costs.</p>
       </div>
       <div class="project-feature col-xs-12 col-sm-4">
-        <span class="fa fa-cogs project-feature-icon"></span> 
+        <span class="fa fa-cogs project-feature-icon"></span>
         <h3><span class="fa fa-cogs project-feature-icon"></span> Cross platform</h3>
         <p class="text-muted">Support for Windows and Linux, you can write Windows Desktop apps and Universal Windows Platform apps, as well as Linux Desktop apps.</p>
       </div>
     </div>
   </div>
+</section>
+<section id="get-started" class="section project-get-started">
+  <div class="container">
+    <div class="section-header">
+      <h2>Get Started</h2>
+    </div>
+    <div class="row">
+      <div class="col col-md-6">
+        <p>
+            To get started with LCUI, you can using <a href="https://github.com/lc-ui/lcui-cli">lcui-cli</a> to create an LCUI project, then compile and run it.
+            But before using lcui-cli you need to install the following tools on your computer:
+        </p>
+        <ul>
+            <li><a href="https://git-scm.com/downloads">Git</a></li>
+          <li><a href="https://nodejs.org/">Node.js</a></li>
+          <li><a href="https://github.com/lc-soft/lcpkg">LCPkg</a></li>
+          <li><a href="https://cmake.org/" rel="nofollow">CMake</a> Or <a href="https://xmake.io/" rel="nofollow">XMake</a></li>
+        </ul>
+        Just one sample application is not enough? You can try <a href="https://github.com/lc-ui/lc-design">LC Design</a>, a component library designed and developed specifically for LCUI.
+      </div>
+      <div class="col col-md-6">
+<pre class="bash-code-block"><code><span class="pl-c"><span class="pl-c">#</span> Install lcui-cli</span>
+npm install -g @lcui/cli
+
+<span class="pl-c"><span class="pl-c">#</span> Create an LCUI project named myapp</span>
+lcui create myapp
+
+<span class="pl-c"><span class="pl-c">#</span> Go into project directory</span>
+cd myapp
+
+<span class="pl-c"><span class="pl-c">#</span> Run it</span>
+npm run start</code></pre>
+  </div>
+      </div>
+    </div>
 </section>
 <section id="demo-screenshorts" class="section project-screenshorts">
   <div class="container">
@@ -104,45 +139,45 @@ is_home: true
     </div>
     <div class="row">
       <div class="col-xs-6 col-md-3">
-        <a class="thumbnail" href="/static/images/screenshot-lcui-hello.png">
-          <img src="/static/images/screenshot-lcui-hello.png" alt="Hello, World!"/>
+        <a class="thumbnail" href="/static/images/showcase/screenshot-lcui-hello.png">
+          <img src="/static/images/showcase/screenshot-lcui-hello.png" alt="Hello, World!"/>
         </a>
       </div>
       <div class="col-xs-6 col-md-3">
-        <a class="thumbnail" href="/static/images/screenshot-lcui-css.png">
-          <img src="/static/images/screenshot-lcui-css.png" alt="LCUI.css framework"/>
+        <a class="thumbnail" href="/static/images/showcase/lc-design-docs-preview.gif">
+          <img src="/static/images/showcase/lc-design-docs-preview.gif" alt="LC Design Component Library"/>
+        </a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <a class="thumbnail" href="/static/images/showcase/lc-design-example-preview.png">
+          <img src="/static/images/showcase/lc-design-example-preview.png" alt="LC Design Example"/>
         </a>
       </div>
       <div class="col-xs-6 col-md-3">
         <a class="thumbnail" href="/static/images/showcase/lcfinder-001.jpg">
-          <img src="/static/images/showcase/lcfinder-001.jpg" alt="LC-Finder screenshot-001"/>
-        </a>
-      </div>
-      <div class="col-xs-6 col-md-3">
-        <a class="thumbnail" href="/static/images/showcase/lcfinder-002.jpg">
-          <img src="/static/images/showcase/lcfinder-002.jpg" alt="LC-Finder screenshot-002" />
+          <img src="/static/images/showcase/lcfinder-001.jpg" alt="LC-Finder"/>
         </a>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-6 col-md-3">
+        <a class="thumbnail" href="/static/images/showcase/lcfinder-002.jpg">
+          <img src="/static/images/showcase/lcfinder-002.jpg" alt="LC-Finder" />
+        </a>
+      </div>
+      <div class="col-xs-6 col-md-3">
         <a class="thumbnail" href="/static/images/showcase/lcfinder-003.jpg">
-          <img src="/static/images/showcase/lcfinder-003.jpg" alt="LC-Finder screenshot-003"/>
+          <img src="/static/images/showcase/lcfinder-003.jpg" alt="LC-Finder"/>
         </a>
       </div>
       <div class="col-xs-6 col-md-3">
         <a class="thumbnail" href="/static/images/showcase/lcfinder-004.jpg">
-          <img src="/static/images/showcase/lcfinder-004.jpg" alt="LC-Finder screenshot-004"/>
+          <img src="/static/images/showcase/lcfinder-004.jpg" alt="LC-Finder"/>
         </a>
       </div>
       <div class="col-xs-6 col-md-3">
         <a class="thumbnail" href="/static/images/showcase/lcfinder-005.jpg">
-          <img src="/static/images/showcase/lcfinder-005.jpg" alt="LC-Finder screenshot-005"/>
-        </a>
-      </div>
-      <div class="col-xs-6 col-md-3">
-        <a class="thumbnail" href="/static/images/showcase/lcfinder-006.jpg">
-          <img src="/static/images/showcase/lcfinder-006.jpg" alt="LC-Finder screenshot-006"/>
+          <img src="/static/images/showcase/lcfinder-005.jpg" alt="LC-Finder"/>
         </a>
       </div>
     </div>
@@ -169,10 +204,6 @@ is_home: true
           <strong>Liu Chao</strong>
           <span class="text-muted">Creator of <a href="https://lcfinder.lc-soft.io">LC's Finder</a></span>
         </div>
-      </li>
-      <li class="unknown">
-        <i class="fa fa-question"></i>
-        &emsp;<span class="text-muted">The next one ...</span>
       </li>
     </ul>
   </div>
