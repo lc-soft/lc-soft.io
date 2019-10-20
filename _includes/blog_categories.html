@@ -21,7 +21,7 @@
     {% endif %}
     <li class="nav-item">
       <a
-        href="{{ site.baseurl }}/category/{{ items[1] }}"
+        href="{{ site.baseurl }}/category/{{ items[1] | downcase }}"
         class="nav-link {{ nav_class }}"
       >
         {{ items[1] }}
