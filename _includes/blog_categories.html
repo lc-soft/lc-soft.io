@@ -1,0 +1,31 @@
+{% capture categories %}
+{% for tag in site.categories %}
+  {{ tag[1].size | plus: 1000 }}#{{ tag[0] }}#{{ tag[1].size }}
+{% endfor %}
+{% endcapture %}
+
+<ul class="nav nav-pills mb-4">
+  {% assign nav_class="" %}
+  {% if page.type != 'category' %}
+  {% assign nav_class="active" %}
+  {% endif %}
+  <li class="nav-item">
+    <a class="nav-link {{ nav_class }}" href="/">全部</a>
+  </li>
+  {% assign categories = categories | split:' ' | sort %}
+  {% for cate in categories reversed %}
+    {% assign items = cate | split: '#' %}
+    {% assign nav_class="" %}
+    {% if page.type == 'category' and page.title == items[1] %}
+    {% assign nav_class="active" %}
+    {% endif %}
+    <li class="nav-item">
+      <a
+        href="{{ site.baseurl }}/category/{{ items[1] }}"
+        class="nav-link {{ nav_class }}"
+      >
+        {{ items[1] }}
+      </a>
+    </li>
+  {% endfor %}
+  </ul>

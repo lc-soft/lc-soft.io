@@ -1,0 +1,102 @@
+@import "./syntax";
+@import "./bootstrap";
+
+.main {
+  padding: 1rem 0;
+}
+
+.blog-nav {
+  margin: 0 0 1rem 0;
+}
+
+.blog-nav-link {
+  color: $gray-600;
+  margin-right: 1.5rem;
+
+  &.active {
+    color: $dark;
+  }
+}
+
+.blog-post {
+  margin-bottom: 2rem;
+}
+
+.blog-post-title {
+  font-size: 1.5rem;
+}
+
+.blog-post-excerpt {
+  h1, h2, h3, h4, img {
+    display: none;
+  }
+}
+
+.blog-post-images {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.blog-post-image-wrapper {
+  padding: 2px;
+  width: 100%;
+  display: inline-block;
+}
+
+.blog-post-image {
+  width: 100%;
+  height: 128px;
+  border: 1px solid #eee;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #fbfbfb;
+  display: block;
+
+  &:hover {
+    border-color: #ccc;
+  }
+}
+
+.blog-post-main {
+  img {
+    @extend .img-thumbnail;
+  }
+}
+
+.blog-post-toc {
+  .section-nav {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+}
+
+.blog-post-issues {
+  margin: 1.5rem 0;
+}
+
+.blog-post-issue {
+  margin: 0;
+  padding: 8px;
+  border: 1px solid #eee;
+  border-top-width: 0;
+
+  h4 {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+  .comments {
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+  &:first-child {
+    border-top-width: 1px;
+  }
+  .media-body {
+    vertical-align: middle;
+  }
+}
+
+#busuanzi_container_page_pv {
+  display: none;
+}

@@ -1,6 +1,6 @@
 ---
-title: 我的C语言学习历程
-ds_thread_key: article-my-c-lang-learning
+title: C语言学习历程
+toc: true
 ---
 
 ## 起步篇

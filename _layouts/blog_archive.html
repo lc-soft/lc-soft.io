@@ -1,0 +1,16 @@
+---
+layout: blog_default
+---
+<div class="container">
+  {% include blog_categories.html %}
+  <div class="row">
+    <div class="col-md-9">
+      {% assign posts=page.posts %}
+      {% include posts.html %}
+    </div>
+    <div class="col-md-3">
+      {% include blog_years.html %}
+      {% include vultr_link.html %}
+    </div>
+  </div>
+</div>

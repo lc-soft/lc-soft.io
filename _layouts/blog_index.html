@@ -1,0 +1,17 @@
+---
+layout: blog_default
+title: Blog | LC's Software
+---
+<div class="container">
+  {% include blog_categories.html %}
+  <div class="row">
+    <div class="col-md-9">
+      {% assign posts=paginator.posts %}
+      {% include posts.html %}
+    </div>
+    <div class="col-md-3">
+      {% include blog_years.html %}
+      {% include vultr_link.html %}
+    </div>
+  </div>
+</div>

@@ -6,18 +6,29 @@ defaults:
     values:
       layout: "blog_post"
       author: "Liu Chao"
-
 sass:
-  style: :compressed
+  sass_dir: _sass
+  style: compact
+jekyll-archives:
+  enabled:
+    - categories
+    - year
+  layout: blog_archive
+  permalinks:
+    year: '/blog/year/:year/'
+    category: '/blog/category/:name/'
 plugins:
+  - jekyll-toc
   - jekyll-octicons
   - jekyll-paginate
+  - jekyll-archives
   - jekyll-last-modified-at
-permalink: /blog/posts/:categories/:title.html
+permalink: /blog/posts/:title.html
 paginate: 8
 paginate_path: "blog/page/:num"
+category_path: "blog/category"
 exclude: [".git",".sass-cache", "sass", "*.scss", "*.rb", "node_modules",
-          "src", "webpack.config.js", "package.json"]
+          "src", "app", "webpack.config.js", "package.json"]
 encoding: "utf-8"
 highlighter: rouge
 markdown: redcarpet

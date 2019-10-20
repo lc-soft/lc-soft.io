@@ -1,5 +1,8 @@
 ---
 title: LCUI Router 0.1.0 开发日志
+categories:
+  - 开发日志
+  - LCUIRouter
 ---
 
 一个应用的图形界面通常会包含很多个视图，视图切换和导航是很常用的功能，然而在 LCUI 中实现这些功能却非常麻烦，考虑到这些问题，需要一个像 [Vue Router](https://router.vuejs.org/zh/) 的路由解决方案，主要功能下：

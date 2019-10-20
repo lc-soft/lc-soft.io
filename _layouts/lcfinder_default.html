@@ -13,13 +13,10 @@
 <link rel="stylesheet" type="text/css" href="/static/css/common.css">
 <link rel="stylesheet" type="text/css" href="/static/css/main.css">
 </head>
-{% if page.navbar_fixed_top %}
-<body class="has-fixed-top-navbar">
-{% else %}
+
 <body>
-{% endif %}
-{% include lcfinder_navbar.ext %}
+{% include lcfinder_navbar.html %}
 {{ content }}
-{% include www_footer.ext %}
+{% include lcfinder_footer.html %}
 </body>
 </html>

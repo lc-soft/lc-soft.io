@@ -1,6 +1,9 @@
 ---
 title: GitDigger 设计文档
 repo: lc-soft/GitDigger
+toc: true
+categories:
+  - 开发日志
 ---
 
 此文档主要记录了 GitDigger 的页面及功能的设计方案，内容较为零散，有待继续组织并完善。

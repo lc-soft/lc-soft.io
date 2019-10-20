@@ -1,6 +1,9 @@
 ---
 title: LCUI 初始版本开发日志
-ds_thread_key: devlog-lcui-origin
+toc: true
+categories:
+  - 开发日志
+  - LCUI
 ---
 
 ## LCUI 0.10.0 至 0.12.0

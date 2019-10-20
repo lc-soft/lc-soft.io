@@ -1,0 +1,16 @@
+<section class="bg-light rounded p-4 mb-4">
+  <h4>归档</h4>
+  <ul class="nav flex-column">
+    {% for archive in site.archives reversed  %}
+      {% if archive.type == 'year' %}
+      <li>
+        {% assign year = archive.posts[0].date | date: '%Y' %}
+          <a href="{{ site.baseurl }}/year/{{ year }}">
+          {{ year }} 年
+        </a>
+        <span class="text-muted ml-2">{{ archive.posts | size }} 篇</span>
+      </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</section>

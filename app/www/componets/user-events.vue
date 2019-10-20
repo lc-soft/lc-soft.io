@@ -152,23 +152,20 @@ export default {
     }
   },
   created () {
-    var ctx = this;
-    var url = 'https://api.github.com/users/';
-    $.ajax({
-      type: 'GET',
-      url: url + ctx.username +'/events/public',
-      success: function (list) {
-        var events = [];
-        var count = Math.min(list.length, ctx.maxnum);
-        for( var i = 0; i < list.length && count > 0; ++i ) {
-          var e = list[i];
-          switch(e.type) {
+    fetch(`https://api.github.com/users/${this.username}/events/public`)
+      .then(res => res.json())
+      .then((list) => {
+        const events = []
+        let count = Math.min(list.length, this.maxnum)
+
+        for (let i = 0; i < list.length && count > 0; ++i) {
+          switch(list[i].type) {
           case 'PullRequestEvent':
           case 'IssueCommentEvent':
           case 'CreateEvent':
           case 'PushEvent':
           case 'IssuesEvent':
-            events.push(e);
+            events.push(list[i]);
             --count;
             break;
           case 'CommitCommentEvent':
@@ -194,10 +191,9 @@ export default {
           default: continue;
           }
         }
-        ctx.events = events;
-        ctx.loaded = true;
-      }
-    });
+        this.events = events
+        this.loaded = true
+      })
   }
 }
 </script>
