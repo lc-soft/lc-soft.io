@@ -40,7 +40,7 @@
         {% if paginator.previous_page == 1 %}
           <a href="/" class="btn btn-outline-primary">上一页</a>
         {% else %}
-          <a href="/page/{{ paginator.previous_page }}" class="btn btn-outline-primary">Previous</a>
+          <a href="/page/{{ paginator.previous_page }}" class="btn btn-outline-primary">上一页</a>
         {% endif %}
       {% endif %}
       <span class="text-muted d-inline-flex align-items-center ml-4 mr-4">{{ paginator.page }} / {{ paginator.total_pages }}</span>
