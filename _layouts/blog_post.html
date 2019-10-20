@@ -2,23 +2,23 @@
 layout: blog_default
 ---
 <div class="container">
-  <h1>{{ page.title }}</h1>
-  <p class="text-muted">
-    <span class="date">
-      {{ page.date | date: "%Y年%m月%d日" }}
-    </span>
-    &nbsp;·&nbsp;
-    <span class="words">
-      {{ content | strip_html | strip_newlines | remove: " " | size }} 字
-    </span>
-    <span id="busuanzi_container_page_pv">
-      &nbsp;·&nbsp;
-      <span id="busuanzi_value_page_pv"></span> 阅读
-    </span>
-  </p>
   <div class="row">
     <div class="col-md-9">
-      <article class="blog-post-main">
+      <article class="blog-post-main markdown-body">
+        <h1>{{ page.title }}</h1>
+        <p class="text-muted">
+          <span class="date">
+            {{ page.date | date: "%Y年%m月%d日" }}
+          </span>
+          &nbsp;·&nbsp;
+          <span class="words">
+            {{ content | strip_html | strip_newlines | remove: " " | size }} 字
+          </span>
+          <span id="busuanzi_container_page_pv">
+            &nbsp;·&nbsp;
+            <span id="busuanzi_value_page_pv"></span> 阅读
+          </span>
+        </p>
         {{ content }}
       </article>
       {% include comment.html %}

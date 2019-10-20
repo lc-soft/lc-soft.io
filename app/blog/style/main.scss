@@ -1,5 +1,6 @@
 @import "./syntax";
 @import "./bootstrap";
+@import "./markdown";
 
 .main {
   padding: 1rem 0;
@@ -62,11 +63,15 @@
   img {
     @extend .img-thumbnail;
   }
+  pre {
+    padding: 1rem;
+    background: $gray-100;
+  }
 }
 
 .blog-post-toc {
   .section-nav {
-    max-height: 80vh;
+    max-height: 70vh;
     overflow-y: auto;
   }
 }
