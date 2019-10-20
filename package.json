@@ -31,7 +31,7 @@
   "scripts": {
     "build-css": "sass app/blog/style/main.scss:blog/static/css/main.css app/www/style/main.scss:www/static/css/main.css app/www/style/vendor.scss:www/static/css/vendor.css",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "build-css && webpack"
+    "build": "npm run build-css && webpack"
   },
   "repository": {
     "type": "git",
