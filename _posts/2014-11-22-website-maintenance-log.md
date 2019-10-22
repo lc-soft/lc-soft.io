@@ -32,10 +32,6 @@ toc: true
 
 之前多说发通知说将要关闭评论服务，嘛，懒得改用其它评论系统，反正大部分日志都是与项目相关的，访客的评论内容也都是项目相关的问题，那么就用项目 issues 列表作为文章评论列表，有什么问题可以直接提交 issue。
 
-花了点时间，已经将评论改为 issues 列表，效果如下：
-
-[![](/static/images/article/201704302152.png "Issue 列表")](/static/images/article/201704302152.png)
-
 ## 2017-04-09
 
 新增了 LC's Finder 项目主页，最近也对 LCUI 主页的内容做了些补充，这两个页面的内容及样式主要参考了 [stripe.com](stripe.com)、[ionicframework.com](http://ionicframework.com/) 以及 [atom.io](https://atom.io)。
