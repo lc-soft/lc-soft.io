@@ -7,7 +7,7 @@
       <h3 class="blog-post-title">
       <a href="{{ post_url }}" class="text-dark">{{ post.title }}</a>
       </h3>
-      <p class="blog-post-info text-muted">
+      <p class="blog-post-info text-muted small">
         <span class="date">
           {{ post.date | date: '%Y年%m月%d日' }}
         </span>
@@ -35,7 +35,7 @@
     </div>
   {% endfor %}
   {% if paginator.previous_page or paginator.next_page %}
-    <div class="pagination d-flex justify-content-center">
+    <div class="pagination d-flex justify-content-center mb-4">
       {% if paginator.previous_page %}
         {% if paginator.previous_page == 1 %}
           <a href="/" class="btn btn-outline-primary">上一页</a>

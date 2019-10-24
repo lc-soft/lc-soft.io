@@ -2,6 +2,14 @@
 @import "bootstrap";
 @import "markdown";
 
+@mixin card {
+  padding: map-get($spacers, 4);
+  margin-bottom: map-get($spacers, 3);
+  background: $white;
+  border: $border-width solid $border-color;
+  @include border-radius($border-radius);
+}
+
 .main {
   padding: 1rem 0;
 }
@@ -20,7 +28,7 @@
 }
 
 .blog-post {
-  margin-bottom: 2rem;
+  @include card;
 }
 
 .blog-post-title {
@@ -60,6 +68,8 @@
 }
 
 .blog-post-main {
+  @include card;
+
   img {
     @extend .img-thumbnail;
   }
@@ -76,15 +86,8 @@
   }
 }
 
-.blog-post-issues {
-  margin: 1.5rem 0;
-}
-
 .blog-post-issue {
-  margin: 0;
-  padding: 8px;
-  border: 1px solid #eee;
-  border-top-width: 0;
+  padding: map-get($spacers, 1) 0;
 
   h4 {
     font-size: 1.25rem;

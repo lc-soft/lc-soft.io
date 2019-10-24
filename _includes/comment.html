@@ -3,14 +3,12 @@
 {% assign repo = page.repo %}
 {% endif %}
 <div id="issues" class="blog-post-issues"></div>
-<div id="comment-box" class="text-center">
-  <p>
-    对此文章有疑问？你可以点击
-    <a href="https://github.com/{{ repo }}/issues/new" target="_blank">
-      此链接
-    </a>
-    反馈你的问题
-  </p>
+<div id="comment-box" class="bg-light mt-3 p-3 rounded text-center">
+  对此文章有疑问？你可以点击
+  <a href="https://github.com/{{ repo }}/issues/new" target="_blank">
+    此链接
+  </a>
+  进行反馈
 </div>
 <script>
 window.page = {

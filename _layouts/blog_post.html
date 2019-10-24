@@ -6,7 +6,7 @@ layout: blog_default
     <div class="col-md-9">
       <article class="blog-post-main markdown-body">
         <h1>{{ page.title }}</h1>
-        <p class="text-muted">
+        <p class="small text-muted">
           <span class="date">
             {{ page.date | date: "%Y年%m月%d日" }}
           </span>
@@ -20,12 +20,13 @@ layout: blog_default
           </span>
         </p>
         {{ content }}
+        <h2>问题反馈</h2>
+        {% include comment.html %}
       </article>
-      {% include comment.html %}
     </div>
     <div class="col-md-3">
       <div class="sticky-top pt-2 pb-2">
-        <div class="blog-post-toc bg-light p-4">
+        <div class="blog-post-toc">
           <p><strong>目录</strong></p>
           {% toc %}
           <hr />
