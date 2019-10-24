@@ -3,7 +3,12 @@
 <head>
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>{{ page.title }} | LC's Software</title>
+<title>
+{% if page.title %}
+{{ page.title }}
+{% else %}
+博客
+{% endif %} | LC's Software</title>
 <link rel="shortcut icon" href="/favicon.png" type="image/png">
 <meta name="keywords" content="blog,lc-soft,liuchao,lc,刘超,开发日志">
 <meta name="description" content="这是超哥的博客，记录着一些开发动态和想法。">
