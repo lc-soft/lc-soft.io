@@ -2,20 +2,30 @@
 @import "bootstrap";
 @import "markdown";
 
-@mixin card {
-  padding: map-get($spacers, 4);
-  margin-bottom: map-get($spacers, 3);
-  background: $white;
-  border: $border-width solid $border-color;
-  @include border-radius($border-radius);
-}
-
-.main {
-  padding: 1rem 0;
-}
-
 .blog-nav {
   margin: 0 0 1rem 0;
+}
+
+.blog-archive {
+  h1 {
+    font-size: 1.75rem;
+  }
+  .container {
+    max-width: 760px;
+  }
+}
+
+.blog-categories {
+  .nav-link {
+    color: $text-muted;
+
+    &.active {
+      color: $link-color;
+    }
+    &:hover {
+      color: $link-hover-color;
+    }
+  }
 }
 
 .blog-nav-link {
@@ -28,7 +38,44 @@
 }
 
 .blog-post {
-  @include card;
+  position: relative;
+  padding: map-get($spacers, 4);
+  margin: 0 -#{map-get($spacers, 4)};
+  transition: background-color .3s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: map-get($spacers, 4);
+    right: map-get($spacers, 4);
+    bottom: 0;
+    border-bottom: 1px solid #f0f1f3;
+  }
+
+  &:last-child::after {
+    display: none;
+  }
+
+  &:hover {
+    background-color: $light;
+  }
+}
+
+.blog-post-categories {
+  .octicon {
+    fill: $primary;
+  }
+}
+
+.blog-post-category {
+  &::after {
+    content: "\B7";
+    padding: 0 0.5em;
+  }
+
+  &:last-child::after {
+    display: none;
+  }
 }
 
 .blog-post-title {
@@ -44,6 +91,10 @@
 .blog-post-images {
   display: flex;
   margin-bottom: 10px;
+
+  &:empty {
+    display: none;
+  }
 }
 
 .blog-post-image-wrapper {
@@ -67,15 +118,21 @@
   }
 }
 
-.blog-post-main {
-  @include card;
-
+.blog-post.markdown {
   img {
     @extend .img-thumbnail;
   }
   pre {
     padding: 1rem;
     background: $gray-100;
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  $spacing: #{$grid-gutter-width / 2};
+
+  .blog-post-image-wrapper:nth-child(4) {
+    display: none;
   }
 }
 

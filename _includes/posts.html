@@ -1,41 +1,44 @@
 <div class="blog-main">
-  {% for post in posts %}
-    {% assign images_count = 0 %}
-    {% assign images = post.content | split: "<img " %}
-    {% assign post_url = post.url | remove: '/blog' %}
-    <div class="blog-post">
-      <h3 class="blog-post-title">
-      <a href="{{ post_url }}" class="text-dark">{{ post.title }}</a>
-      </h3>
-      <p class="blog-post-info text-muted small">
-        <span class="date">
-          {{ post.date | date: '%Y年%m月%d日' }}
-        </span>
-        &nbsp;·&nbsp;
-        <span class="words">
-          {{ post.content | strip_html | strip_newlines | remove: " " | size }} 字
-        </span>
-      </p>
-      <div class="blog-post-body">
-        <div class="blog-post-excerpt">{{ post.excerpt }}</div>
-        <div class="blog-post-images">
-          {% for image in images %}
-            {% if image contains 'src="' %}
-            {% if images_count < 4 %}
-                {% assign image_url = image | split: 'src="' | last | split: '"' | first  %}
-                {% assign images_count = images_count | plus: 1 %}
-                <div class="blog-post-image-wrapper">
-                  <a class="blog-post-image" style="background-image: url({{ image_url }})" href="{{ image_url }}" target="_blank"></a>
-                </div>
-            {% endif %}
-            {% endif %}
-          {% endfor %}
+  <div class="blog-posts">
+    {% for post in posts %}
+      {% assign images_count = 0 %}
+      {% assign images = post.content | split: "<img " %}
+      {% assign post_url = post.url | remove: '/blog' %}
+      <div class="blog-post">
+        <h3 class="blog-post-title">
+        <a href="{{ post_url }}" class="text-dark">{{ post.title }}</a>
+        </h3>
+        <p class="blog-post-info text-muted small">
+          <span class="date">
+            {{ post.date | date: '%Y年%m月%d日' }}
+          </span>
+          &nbsp;·&nbsp;
+          <span class="words">
+            {{ post.content | strip_html | strip_newlines | remove: " " | size }} 字
+          </span>
+        </p>
+        <div class="blog-post-body">
+          <div class="blog-post-excerpt">{{ post.excerpt }}</div>
+          <div class="blog-post-images">
+            {% for image in images %}
+              {% if image contains 'src="' %}
+              {% if images_count < 4 %}
+                  {% assign image_url = image | split: 'src="' | last | split: '"' | first  %}
+                  {% assign images_count = images_count | plus: 1 %}
+                  <div class="blog-post-image-wrapper">
+                    <a class="blog-post-image" style="background-image: url({{ image_url }})" href="{{ image_url }}" target="_blank"></a>
+                  </div>
+              {% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+          {% include blog_post_categoires.html %}
         </div>
       </div>
-    </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
   {% if paginator.previous_page or paginator.next_page %}
-    <div class="pagination d-flex justify-content-center mb-4">
+    <div class="pagination d-flex justify-content-center mb-4 mt-4">
       {% if paginator.previous_page %}
         {% if paginator.previous_page == 1 %}
           <a href="/" class="btn btn-outline-primary">上一页</a>

@@ -1,0 +1,16 @@
+---
+layout: blog_default
+---
+{% include blog_categories.html %}
+<div class="blog-main blog-archive">
+  <div class="container">
+    <h1>{{ page.date | date: "%Y" }} 年</h1>
+    <P class="text-muted">共有 {{ page.posts | size }} 篇文章</P>
+  </div>
+  <hr />
+  <div class="container">
+      {% assign posts=page.posts %}
+      {% include posts.html %}
+    </div>
+  </div>
+</div>

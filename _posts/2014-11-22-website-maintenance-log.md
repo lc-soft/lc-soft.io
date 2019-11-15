@@ -2,8 +2,13 @@
 title: 网站维护日志
 repo: lc-soft/lc-soft.io
 toc: true
+categories: 开发日志
 ---
+## 2019-11-15
+参考 InfoQ 的页面风格对博客页面样式做了些调整。
+
 ## 2019-10-22
+
 更新了网站：
 
 - 移除无用 css

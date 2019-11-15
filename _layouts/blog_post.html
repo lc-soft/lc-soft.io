@@ -1,6 +1,7 @@
 ---
 layout: blog_default
 ---
+{% include blog_categories.html %}
 <div class="container">
   <div class="row">
     <div class="col-md-9">
@@ -20,14 +21,17 @@ layout: blog_default
           </span>
         </p>
         {{ content }}
+        <p class="text-muted small">文章版权归作者所有，未经许可不得转载。</p>
+        {% assign post = page %}
+        {% include blog_post_categoires.html %}
         <h2>问题反馈</h2>
         {% include comment.html %}
       </article>
     </div>
     <div class="col-md-3">
       <div class="sticky-top pt-2 pb-2">
-        <div class="blog-post-toc">
-          <p><strong>目录</strong></p>
+        <div class="blog-post-toc rounded border p-3">
+          <h4>目录</h4>
           {% toc %}
           <hr />
           <a href="#issues" class="href">问题反馈</a>

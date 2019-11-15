@@ -13,7 +13,9 @@ jekyll-archives:
   enabled:
     - categories
     - year
-  layout: blog_archive
+  layouts:
+    year: blog_year
+    category: blog_category
   permalinks:
     year: '/blog/year/:year/'
     category: '/blog/category/:name/'
@@ -23,6 +25,16 @@ plugins:
   - jekyll-paginate
   - jekyll-archives
   - jekyll-last-modified-at
+categories_description:
+  LCUI: 一个用 C 语言编写的跨平台图形界面开发库，主要用于探索和实验新的 UI 开发方式。
+  LCFinder: 图片管理工具，侧重于图片的分类和检索，界面设计参考自 Windows 自带的“照片”应用。
+  LCDesign: 专为 LCUI 而设计的组件库，样式基于 Bootstrap 定制，组件设计参考自前端主流组件库。
+  LCUIRouter: LCUI 应用程序的路由解决方案，设计参考自 Vue Router。
+  LCPkg: Windows C/C++ 项目的包管理工具，主要用于简化 LCUI 及相关库的下载安装流程，顺便为以后开发 Trad 语言的包管理器积累经验。
+  Trad: 基于 JavaScript 语法的编程语言，提供类似于 React 的声明式 UI 开发体验，能够编译为 C 代码。目前编译器仅实现了编译 LCUI 最小示例代码所需的功能，有待继续完善。
+  GitDigger: 一个开源社区，提供了新的途径帮助开发者去发现和参与开源项目。
+  开发日志: 记录一些在开发过程中遇到的问题及其解决方法。
+  图形渲染: 不借助第三方图形库，用纯 C 代码渲染图形。
 permalink: /blog/posts/:title.html
 paginate: 8
 paginate_path: "blog/page/:num"

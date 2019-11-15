@@ -1,0 +1,12 @@
+{% if (post.categories != empty %}
+  <div class="blog-post-categories">
+    {% octicon tag class: "color-primary mr-1" %}
+    {% for cate in post.categories %}
+      <span class="blog-post-category small">
+        <a href="{{ site.baseurl }}/category/{{ cate | downcase }}">
+          {{ cate }}
+        </a>
+      </span>
+    {% endfor %}
+  </div>
+{% endif %}
