@@ -36,3 +36,12 @@ Vue Router 的初始化流程如下：
   - 解析 params、query 和 hash
 - 如果有指定路由名称，则直接从 nameMap 中获取路由记录，然后补全 location 中的 params 和 path 属性并交给 _createRoute() 函数来创建 Route 类型对象
 - 如果有指定路径，则遍历 pathList 列表查找匹配的路由记录
+
+## 2019-12-07
+
+Vue Router 的 router-link 组件的 to 参数可以传字符串和对象，例如：`"path/to/file"` 和 `{ name: 'users', params: { id: 123 } }`，在 LCUI Router 要支持这种传参方式的话得实现一个解析器，从目前的情况看来还没必要浪费时间去做，所以 router-link 组件只支持字符串参数够了。
+
+path 和 name 是常用的参数，有点纠结参数命名，目前决定采用以下命名：
+
+- to -> path
+- route-name -> name
