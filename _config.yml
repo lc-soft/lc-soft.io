@@ -43,12 +43,6 @@ exclude: [".git",".sass-cache", "sass", "*.scss", "*.rb", "node_modules",
           "src", "app", "webpack.config.js", "package.json"]
 encoding: "utf-8"
 highlighter: rouge
-markdown: redcarpet
-redcarpet:
-  extensions:
-    - hard_wrap
-    - no_intra_emphasis
-    - autolink
-    - strikethrough
-    - fenced_code_blocks
-    - with_toc_data
+markdown: kramdown
+kramdown:
+  input: GFM
