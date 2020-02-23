@@ -37,6 +37,16 @@ Vue Router 的初始化流程如下：
 - 如果有指定路由名称，则直接从 nameMap 中获取路由记录，然后补全 location 中的 params 和 path 属性并交给 _createRoute() 函数来创建 Route 类型对象
 - 如果有指定路径，则遍历 pathList 列表查找匹配的路由记录
 
+## 2020-02-23
+
+LCUI Router App 已经完成，包含：
+
+- 基本的导航控制功能
+- 下拉菜单
+- 欢迎页面、新标签页面、文件页面、404 页面、关于页面
+
+[![LCUI Router App](/static/images/devlog/lcui-router-app.gif "LCUI Router App")](/static/images/devlog/lcui-router-app.gif)
+
 ## 2020-01-04
 
 补充了 history 相关接口的单元测试，测试覆盖率提升至 89%。
