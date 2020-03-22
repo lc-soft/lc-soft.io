@@ -6,6 +6,8 @@ categories:
 
 在 LCUI 中想在界面上表示“加载中”状态挺麻烦的，为此准备给 LC Design 组件库添加 Spinner 组件，效果和 Bootstrap 的同名组件一致。
 
+<!-- more -->
+
 [![Border spinner](/static/images/devlog/bootstrap-spinner.gif "Border spinner")](/static/images/devlog/bootstrap-spinner.gif)
 
 从上图可看出 Spinner 只是一个简单的有缺口的圆环，目前能想到的绘制方法有两种：

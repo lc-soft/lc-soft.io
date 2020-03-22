@@ -4,7 +4,10 @@ repo: lc-soft/lc-soft.io
 toc: true
 categories: 开发日志
 ---
+<!-- more -->
+
 ## 2019-11-15
+
 参考 InfoQ 的页面风格对博客页面样式做了些调整。
 
 ## 2019-10-22

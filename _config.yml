@@ -35,6 +35,7 @@ categories_description:
   GitDigger: 一个开源社区，提供了新的途径帮助开发者去发现和参与开源项目。
   开发日志: 记录一些在开发过程中遇到的问题及其解决方法。
   图形渲染: 不借助第三方图形库，用纯 C 代码渲染图形。
+excerpt_separator:  '<!-- more -->'
 permalink: /blog/posts/:title.html
 paginate: 8
 paginate_path: "blog/page/:num"
