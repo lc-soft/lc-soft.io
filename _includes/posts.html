@@ -23,7 +23,8 @@
             {% for image in images %}
               {% if image contains 'src="' %}
               {% if images_count < 4 %}
-                  {% assign image_url = image | split: 'src="' | last | split: '"' | first  %}
+                  {% assign image_url_blocks = image | split: 'src="'  %}
+                  {% assign image_url = image_url_blocks[1] | split: '"' | first  %}
                   {% assign images_count = images_count | plus: 1 %}
                   <div class="blog-post-image-wrapper">
                     <a class="blog-post-image" style="background-image: url({{ image_url }})" href="{{ image_url }}" target="_blank"></a>
