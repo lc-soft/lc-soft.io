@@ -348,7 +348,7 @@ lcui generate widget frame-tab
 ```diff
   <?xml version="1.0" encoding="UTF-8" ?>
   <lcui-app>
-+   <resource type="text/css" src="assets/stylesheets/lc-design.css"/>
+    <resource type="text/css" src="assets/stylesheets/lc-design.css"/>
     <resource type="text/css" src="assets/stylesheets/app.css"/>
     <ui>
 -     <resource type="text/xml" src="assets/views/home.xml"/>
@@ -385,7 +385,7 @@ lcui generate widget frame-tab
   }
 ```
 
-考虑到大量的代码片段会影响文章的阅读体验，从这里开始，我们将尽量只关注功能的大致实现原理，而具体实现代码请查看相关文件。
+考虑到大量的代码片段会影响文章的阅读体验，从这里开始，我们将尽量只关注功能的大致实现原理，具体实现代码请查看相关文件。
 
 主界面有以下功能：
 
@@ -546,7 +546,7 @@ void UI_InitHomeView(void)
 }
 ```
 
-> 注：该页面的代码同样适用于关于页面、欢迎页面、404 页面，下面的开发教程中将不再重复说明，你只需要复制粘贴这段代码到对应的文件然后做点修改即可。
+> 注：该页面的代码同样适用于关于页面、欢迎页面、404 页面，在下面的教程中将不再重复说明，你只需要复制粘贴这段代码到对应的文件然后做点修改即可。
 
 新标签页面由 `home` 组件呈现，与该组件绑定的路径是 `/`，当导航到该路径时 LCUI Router 会将新标签页面挂载到 `router-view` 组件内。
 
@@ -567,7 +567,7 @@ void UI_InitHomeView(void)
 
 ### 实现文件浏览页面
 
-其它示例页面的内容都是静态的，如果我们开发的程序的功能只是在这些页面之间切换的话，那未免有些过于简单，为了进一步展示图形界面编程的例子，并充分利用 LCUI Router 的特性，我们有必要开发一个更为复杂的页面，而文件浏览页面恰好是最为合适的选择。
+其它示例页面的内容都是静态的，如果我们开发的程序的功能只是在这些页面之间切换的话，未免有些过于简单，为了进一步展示图形界面编程的例子，并充分利用 LCUI Router 的特性，我们有必要开发一个更为复杂的页面，而文件浏览页面恰好是最为合适的选择。
 
 以 Chrome 浏览器的文件浏览页面作为参考对象：
 
@@ -604,13 +604,27 @@ Chrome 浏览器的关于页面展示了它的名称、版本号、帮助链接�
 
 ![关于页](/static/images/lcui-router-app-develop/about.png)
 
-lcui-cli 为我们创建的项目已经预置了用于展示程序信息的 about 组件，我们只需要在 help.xml 文件中引入它即可。
+lcui-cli 为我们创建的项目已经预置了用于展示程序信息的 about 组件，我们只需要在 help.xml 文件中引入它即可，代码如下：
+
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<lcui-app>
+  <ui>
+    <w class="container">
+      <text class="v-help__title">About this app</text>
+      <about />
+    </w>
+  </ui>
+</lcui-app>
+```
 
 相关文件：
 
 - [src/ui/views/help.c](https://github.com/lc-ui/lcui-router-app/blob/master/src/ui/views/help.c)
 - [src/ui/views/help.h](https://github.com/lc-ui/lcui-router-app/blob/master/src/ui/views/help.h)
 - [src/ui/stylesheets/views/_help.scss](https://github.com/lc-ui/lcui-router-app/blob/master/src/ui/stylesheets/views/_help.scss)
+- [app/assets/views/help.xml](https://github.com/lc-ui/lcui-router-app/blob/master/app/assets/views/help.xml)
+
 
 ### 实现欢迎页面和 404 页面
 
@@ -618,7 +632,9 @@ lcui-cli 为我们创建的项目已经预置了用于展示程序信息的 abou
 
 ## 完成
 
-至此，你已经完成所有页面的开发，接下来我们运行以下命令来更新构建配置：
+至此，你已经完成了第一个基于 LCUI 的图形界面程序！你已经了解了 LCUI 的基础知识：组件、SCSS 和 XML 语法。你还学习了多个视图如何切换，以及组件如何相互通信。
+
+接下来我们运行以下命令来更新构建配置：
 
 ```bash
 npm run configure
