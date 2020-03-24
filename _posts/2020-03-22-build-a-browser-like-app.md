@@ -17,7 +17,7 @@ categories:
 
 ## 需求分析
 
-相较于其它开发库或框架的示例程序而言，我们开发的程序更加复杂一些，因此，我们有必要在在开发前花点时间思考这个程序具体需要什么功能，又该怎么实现这些功能。
+相较于其它开发库或框架的示例程序而言，我们开发的程序更加复杂一些，因此，我们有必要在开发前花点时间思考这个程序具体需要什么功能，又该怎么实现这些功能。
 
 以 Chrome 浏览器为参考对象，我们需要实现以下功能：
 
@@ -152,7 +152,7 @@ lcui create lcui-router-app
 - 添加最小 LCUI 应用程序的源文件
 - 添加 CMake 和 XMake 的配置文件
 
-注意，受限于国内的网络环境，部分资源下载比较慢，建议先执行以下命令添加国内源：
+注意，受限于国内的网络环境，部分资源下载比较慢，建议先使用以下命令添加国内源：
 
 ```bash
 npm config set registry https://registry.npm.taobao.org
@@ -397,9 +397,9 @@ lcui generate widget frame-tab
 
 为了实现与用户的交互，我们需要添加以下事件处理器：
 
-- PageTabClose: 关闭对应标签页
-- PageLoad: 将标签页的加载中状态更新到对应的选项卡上
-- PageLoaded: 将已加载完毕的页面的标题更新到选项卡上，并取消选项卡的加载中状态
+- PageTabClose: 在点击页面选项卡的关闭按钮时，关闭对应的标签页
+- PageLoad: 在页面加载时，将选项卡的状态切换为加载中
+- PageLoaded: 在页面加载完毕时，将页面的标题更新到选项卡上，并取消选项卡的加载中状态
 - CommandQuit: 关闭主程序
 - CommandOpenNewTab: 创建新的标签页面
 
@@ -417,7 +417,7 @@ lcui generate widget frame-tab
 
 ### 实现选项卡组件
 
-选项卡组件由图标、文字和关闭按钮组成，在标签页处于加载中状态的时候，我们可以用 LC Design 组件库提供的 Spinner 组件代替图标来表示。
+选项卡组件由图标、文字和关闭按钮组成，在标签页处于加载中状态的时候，我们可以用 LC Design 组件库提供的 Spinner 组件来表达。
 
 该组件提供以下方法：
 
@@ -429,7 +429,7 @@ lcui generate widget frame-tab
 
 - 最大宽度为容器内容区宽度的 25%，最小宽度 60px
 - 采用 flex 布局，文字宽度自动占满剩余空间，其它元素宽度固定
-- 如果处于加载中状态，显示 spinner 组件并隐藏图标，否则显示图标，隐藏 spinner 组件并显示图标
+- 如果处于加载中状态，显示 Spinner 组件并隐藏图标，否则显示图标并隐藏 Spinner 组件
 
 相关文件：
 
@@ -439,7 +439,7 @@ lcui generate widget frame-tab
 
 ### 实现标签页
 
-LCUI Router 提供了 `router-view` 组件用于渲染与当前路由匹配的组件，我们可以将它作为标签页的内容区域，这样我们只需要为导航栏添加相应的事件处理器，然后调用 LCUi Router 的接口来实现路由导航功能。
+LCUI Router 提供了 `router-view` 组件用于渲染与当前路由匹配的组件，我们可以将它作为标签页的内容区域，这样我们只需要为导航栏添加相应的事件处理器，然后调用 LCUI Router 的接口来实现路由导航功能。
 
 标签页面的功能有：
 
@@ -450,12 +450,12 @@ LCUI Router 提供了 `router-view` 组件用于渲染与当前路由匹配的�
 
 事件处理器：
 
-- BtnBackClick: 导航至上一个页面
-- BtnForwardClick: 导航至下一个页面
-- BtnRefreshClick: 刷新当前页面
-- BtnHomeClick: 导航至主页
-- InputKeyDown: 如果地址输入框接受的按键是回车键，则导航至该路径
-- RouteUpdate：将当前路由的路径设置为地址输入框的内容，并触发 PageLoad 事件让主界面更新选项卡
+- BtnBackClick: 在后退按钮被点击时导航至上一个页面
+- BtnForwardClick: 在前进按钮被点击时导航至下一个页面
+- BtnRefreshClick: 在刷新按钮被点击时刷新当前页面
+- BtnHomeClick: 在主页按钮被点击时导航至主页
+- InputKeyDown: 在地址输入框接受按键输入时，如果按的是回车键，则导航至该路径
+- RouteUpdate：在当前路由更新时，将路由的路径更新到地址输入框，并触发 PageLoad 事件让主界面更新选项卡
 - CommandOpenNewTab: 通知主界面打开新标签页
 - CommandQuit: 通知主界面退出程序
 - OpenHelp: 导航至关于页面
