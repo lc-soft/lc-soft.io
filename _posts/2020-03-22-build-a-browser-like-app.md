@@ -301,7 +301,7 @@ module.exports = [
 lcui compile router
 ```
 
-该命令会在 `src/lib` 目录中生成 `router.h` 和 `router.h` 文件，并在 `src/ui/components.c` 文件中追加 `router-link` 和 `router-view` 组件的注册代码。
+该命令会在 `src/lib` 目录中生成 `router.c` 和 `router.h` 文件，并在 `src/ui/components.c` 文件中追加 `router-link` 和 `router-view` 组件的注册代码。
 
 ### 添加界面组件
 
@@ -450,10 +450,10 @@ LCUI Router 提供了 `router-view` 组件用于渲染与当前路由匹配的�
 
 事件处理器：
 
-- BtnBackClick: 在后退按钮被点击时导航至上一个页面
-- BtnForwardClick: 在前进按钮被点击时导航至下一个页面
-- BtnRefreshClick: 在刷新按钮被点击时刷新当前页面
-- BtnHomeClick: 在主页按钮被点击时导航至主页
+- BtnBackClick: 在后退按钮被点击时，导航至上一个页面
+- BtnForwardClick: 在前进按钮被点击时，导航至下一个页面
+- BtnRefreshClick: 在刷新按钮被点击时，刷新当前页面
+- BtnHomeClick: 在主页按钮被点击时，导航至主页
 - InputKeyDown: 在地址输入框接受按键输入时，如果按的是回车键，则导航至该路径
 - RouteUpdate：在当前路由更新时，将路由的路径更新到地址输入框，并触发 PageLoad 事件让主界面更新选项卡
 - CommandOpenNewTab: 通知主界面打开新标签页
