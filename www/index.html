@@ -47,7 +47,7 @@ projects:
 {% endfor %}
 <div id="app" class="container">
   <div class="row">
-    <div class="col-md-4 col-sm-6 col-xs-12">
+    <div class="col-md-4 col-12">
       <div class="user-profile">
         <img class="user-profile__avatar rounded-circle mb-3" src="{{ page.profile.avatar_url }}" alt="avatar">
         <h2 class="user-profile__name">{{ page.profile.name }}</h2>
@@ -129,13 +129,13 @@ projects:
       </div>
       <user-followers></user-followers>
     </div>
-    <div class="col-md-8 col-sm-6 col-xs-12">
+    <div class="col-md-8 col-12">
       <h3 class="section-title">
         {% octicon light-bulb %} 作品
       </h3>
       <div class="user-repos row">
           {% for project in page.projects %}
-            <div class="user-repos__item col-lg-4 col-md-6 col-xs-6 text-center">
+            <div class="user-repos__item col-lg-4 col-6 text-center">
               <a class="user-repos__link" target="_blank" href="{{ project.url }}" title="{{ project.title }}">
                 {% if project.logo %}
                   <img alt="{{ project.title }}" src="{{ project.logo }}" class="user-repos__logo">
