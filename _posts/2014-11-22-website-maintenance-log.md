@@ -6,6 +6,10 @@ categories: 开发日志
 ---
 <!-- more -->
 
+## 2020-04-19
+
+看了些前端性能优化相关的文章，于是就测试了下 blog.lc-soft.io 的性能，结果发现页面加载很慢，长时间卡在 main.css 的请求上，这个 main.css 有 139KB 大小，居然没经 gzip 压缩，记得之前看 nginx 配置里有 `gzip on;` 配置项的。在参考了相关文章后，给 nginx 配置加上了 gzip_types 配置项，顺便给 blog.lc-soft.io 开启了 http2 协议。
+
 ## 2019-11-15
 
 参考 InfoQ 的页面风格对博客页面样式做了些调整。
