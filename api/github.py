@@ -3,7 +3,7 @@ import os, sys, urllib2, json
 def get_stats(username):
 	html_url = 'https://github.com/search?q='
 	api_url = 'https://api.github.com/search/issues?q='
-	excludes = '+-repo:lc-soft/LCUI+-repo:lc-soft/LC-Finder'
+	excludes = '+-repo:lc-soft/LCUI+-repo:lc-soft/LC-Finder+-repo:lc-soft/trad+-repo:lc-soft/lcui-router'
 	params = (api_url, username, excludes)
 	involves_url = '%sinvolves:%s%s' % params
 	pulls_url = '%sauthor:%s+type:pr%s' % params
