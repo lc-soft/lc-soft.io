@@ -5,8 +5,8 @@ import timeago from 'timeago.js'
 import UserEvents from './componets/user-events.vue'
 import UserFollowers from './componets/user-followers.vue'
 
-require('bootstrap/js/src/tooltip')
-require('bootstrap/js/src/collapse')
+require('bootstrap/js/dist/tooltip')
+require('bootstrap/js/dist/collapse')
 
 Vue.filter('reltime', function (timestr) {
   return new timeago().format(timestr, 'zh_CN')
