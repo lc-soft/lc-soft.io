@@ -1,5 +1,6 @@
 ---
 title: LCUI Router 0.1.0 开发日志
+toc: true
 categories:
   - 开发日志
   - LCUIRouter
