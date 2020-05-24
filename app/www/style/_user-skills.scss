@@ -1,0 +1,97 @@
+.user-skill-item__name {
+  color: $gray-900;
+  margin-right: auto;
+  border-radius: map-get($spacers, 1);
+  padding: map-get($spacers, 1) map-get($spacers, 2);
+  text-decoration: none !important;
+  background: $gray-200;
+
+  &:hover {
+    background: rgba($link-color, 0.1);
+  }
+}
+
+.user-skill-item__badge {
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 0.4em;
+  margin-right: map-get($spacers, 0);
+  display: inline-block;
+}
+
+.user-skill-item__stats {
+  margin-left: map-get($spacers, 4);
+
+  a:hover {
+    color: $link-hover-color;
+  }
+}
+
+.user-skill-item__stats-label {
+  color: $gray-600;
+  font-size: small;
+  font-weight: bold;
+}
+
+.user-skill-item__stats-value {
+  color: $gray-900;
+  font-weight: bold;
+}
+
+.is-c .user-skill-item__badge {
+  background: #555555;
+}
+
+.is-javascript .user-skill-item__badge {
+  background:#f1e05a;
+}
+
+.is-python .user-skill-item__badge {
+  background: #3572A5;
+}
+
+.user-skill-item {
+  display: flex;
+  padding: map-get($spacers, 2);
+  margin: map-get($spacers, 1);
+  background: $gray-100;
+  flex-basis: 100%;
+  align-items: center;
+
+  &:nth-child(2),
+  &:nth-child(3) {
+    flex: 1;
+
+    .user-skill-item__stats-value {
+      font-weight: normal;
+    }
+
+    .user-skill-item__stats:last-child {
+      display: none;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .user-skill-item {
+    &:nth-child(2),
+    &:nth-child(3) {
+      flex: 1;
+
+      .user-skill-item__stats-value {
+        font-weight: normal;
+      }
+
+      .user-skill-item__stats:last-child {
+        display: none;
+      }
+    }
+  }
+}
+
+.user-skills {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  margin: 0 #{0 - map-get($spacers, 1)} map-get($spacers, 3) #{0 - map-get($spacers, 1)};
+}

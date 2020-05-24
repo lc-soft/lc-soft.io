@@ -38,10 +38,3 @@
     color: #116594;
   }
 }
-
-.user-profile__skill {
-  border: 1px solid $borderColor;
-  border-radius: 20px;
-  padding: map-get($spacers, 1) map-get($spacers, 2);
-  display: inline-block;
-}

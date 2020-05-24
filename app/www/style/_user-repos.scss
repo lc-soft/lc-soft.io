@@ -1,6 +1,6 @@
 .user-repos {
   padding: 0 10px;
-  margin-bottom: 20px;
+  margin-bottom: map-get($spacers, 4);
 }
 
 .user-repos__item {

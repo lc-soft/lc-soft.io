@@ -9,10 +9,13 @@ profile:
   github: https://github.com/lc-soft
   steam: http://steamcommunity.com/id/lcsoft
   email: i@lc-soft.io
-  skills:
-    - C
-    - JavaScript
-    - Python
+skills:
+- name: C
+  key: c
+- name: JavaScript
+  key: javascript
+- name: Python
+  key: python
 projects:
 - title: LCUI
   url: https://lcui.lc-soft.io
@@ -47,18 +50,13 @@ projects:
 {% endfor %}
 <div id="app" class="container">
   <div class="row">
-    <div class="col-md-4 col-12">
+    <div class="col-lg-4 col-12">
       <div class="user-profile">
         <img class="user-profile__avatar rounded-circle mb-3" src="{{ page.profile.avatar_url }}" alt="avatar">
         <h2 class="user-profile__name">{{ page.profile.name }}</h2>
         <p class="user-profile__bio text-muted">{{ page.profile.bio }}</p>
         <p class="user-profile__job">
           <i class="icon-briefcase"></i> {{ page.profile.job }}
-        </p>
-        <p class="user-profile__skills">
-          {% for skill in page.profile.skills %}
-            <span class="user-profile__skill">{{ skill }}</span>
-          {% endfor %}
         </p>
         <p class="user-profile__social-links">
           <a class="email" href="mailto:{{ page.profile.email }}" data-title="Email" data-toggle="tooltip" data-placement="bottom">
@@ -129,24 +127,54 @@ projects:
       </div>
       <user-followers></user-followers>
     </div>
-    <div class="col-md-8 col-12">
+    <div class="col-lg-8 col-12">
       <h3 class="section-title">
         {% octicon light-bulb %} 作品
       </h3>
       <div class="user-repos row">
-          {% for project in page.projects %}
-            <div class="user-repos__item col-lg-4 col-6 text-center">
-              <a class="user-repos__link" target="_blank" href="{{ project.url }}" title="{{ project.title }}">
-                {% if project.logo %}
-                  <img alt="{{ project.title }}" src="{{ project.logo }}" class="user-repos__logo">
-                {% else %}
-                  {% octicon {{ project.icon }} class: "user-repos__logo" %}
-                {% endif %}
-                <h4 class="user-repos__header">{{ project.title }}</h4>
-                <p class="user-repos__description">{{ project.text }}</p>
+        {% for project in page.projects %}
+          <div class="user-repos__item col-lg-4 col-6 text-center">
+            <a class="user-repos__link" target="_blank" href="{{ project.url }}" title="{{ project.title }}">
+              {% if project.logo %}
+                <img alt="{{ project.title }}" src="{{ project.logo }}" class="user-repos__logo">
+              {% else %}
+                {% octicon {{ project.icon }} class: "user-repos__logo" %}
+              {% endif %}
+              <h4 class="user-repos__header">{{ project.title }}</h4>
+              <p class="user-repos__description">{{ project.text }}</p>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+      <h3 class="section-title">
+        {% octicon tools %} 技能
+      </h3>
+      <div class="user-skills">
+        {% for skill in page.skills %}
+          {% assign skill_data = site.data.awards[skill.key] %}
+          <div class="user-skill-item is-{{ skill.key }}">
+            <a class="user-skill-item__name" href="{{ skill_data.repos.url }}">
+              <span class="user-skill-item__badge"></span>
+              {{ skill.name }}
+            </a>
+            <span class="user-skill-item__stats">
+              <span class="user-skill-item__stats-label">标星</span>
+              <span class="user-skill-item__stats-value">{{ skill_data.stars.value }}</span>
+            </span>
+            <span class="user-skill-item__stats">
+              <span class="user-skill-item__stats-label">代码库</span>
+              <a class="user-skill-item__stats-value" href="{{ skill_data.repos.url }}">
+                {{ skill_data.repos.value }}
               </a>
-            </div>
-          {% endfor %}
+            </span>
+            <span class="user-skill-item__stats">
+              <span class="user-skill-item__stats-label">排名</span>
+              <a class="user-skill-item__stats-value" href="{{ skill_data.china.url }}">
+                {{ skill_data.china.value }}
+              </a>
+            </span>
+          </div>
+        {% endfor %}
       </div>
       <div class="user-activity">
         <h3 class="section-title">
