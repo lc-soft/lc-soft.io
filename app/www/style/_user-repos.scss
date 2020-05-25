@@ -3,55 +3,25 @@
   margin-bottom: map-get($spacers, 4);
 }
 
-.user-repos__item {
-  padding: 5px;
+.user-repo-card-wrapper {
+  padding: map-get($spacers, 2);
 }
 
-.user-repos__link {
-  display: block;
-  position: relative;
-  padding-top: 20px;
-  border-radius: 4px;
-  border: 1px solid #ededed;
-  -webkit-transition: border-color 0.15s ease 0s, -webkit-transform 0.15s ease 0s, box-shadow 0.15s ease 0s, color 0.15s ease 0s;
-  transition: border-color 0.15s ease 0s, transform 0.15s ease 0s, box-shadow 0.15s ease 0s, color 0.15s ease 0s;
-
-  &:hover {
-    border-color: #51a7e8;
-    box-shadow: 0 0 5px rgba(81,167,232,0.5);
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
-  }
-  &:hover, &:active, &:focus {
-    text-decoration: none;
-  }
+.user-repo-card {
+  padding: map-get($spacers, 3);
+  border-radius: $border-radius;
+  border: 1px solid $border-color;
 }
 
-.user-repos__logo {
+.user-repo-card__logo {
   fill: #999;
-  width: 48px;
-  height: 48px;
-  display: block;
-  margin: 0 auto;
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin: map-get($spacers, 1) map-get($spacers, 3) map-get($spacers, 1) 0;
 }
 
-.user-repos__header {
-  margin: 15px 10px 0;
-  font-size: 14px;
+.user-repo-card__header {
+  font-size: $font-size-base;
   font-weight: bold;
-  color: #333;
-}
-
-.user-repos__link:hover .user-repos__header {
-  color: #4078c0;
-}
-
-.user-repos__description {
-  position: relative;
-  height: 2.8em;
-  padding: 0 10px;
-  margin-top: 5px;
-  overflow: hidden;
-  font-size: 13px;
-  color: #767676;
 }

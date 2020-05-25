@@ -133,16 +133,20 @@ projects:
       </h3>
       <div class="user-repos row">
         {% for project in page.projects %}
-          <div class="user-repos__item col-lg-4 col-6 text-center">
-            <a class="user-repos__link" target="_blank" href="{{ project.url }}" title="{{ project.title }}">
+          <div class="user-repo-card-wrapper col-lg-4 col-6">
+            <div class="user-repo-card">
               {% if project.logo %}
-                <img alt="{{ project.title }}" src="{{ project.logo }}" class="user-repos__logo">
+                <img alt="{{ project.title }}" src="{{ project.logo }}" class="user-repo-card__logo">
               {% else %}
-                {% octicon {{ project.icon }} class: "user-repos__logo" %}
+                {% octicon {{ project.icon }} class: "user-repo-card__logo" %}
               {% endif %}
-              <h4 class="user-repos__header">{{ project.title }}</h4>
-              <p class="user-repos__description">{{ project.text }}</p>
-            </a>
+              <div class="user-repo-card__info">
+                <h4 class="user-repo-card__header">
+                  <a target="_blank" href="{{ project.url }}">{{ project.title }}</a>
+                </h4>
+                <small class="user-repo-card__description text-muted">{{ project.text }}</small>
+              </div>
+            </div>
           </div>
         {% endfor %}
       </div>
