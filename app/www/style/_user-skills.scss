@@ -55,6 +55,7 @@
   padding: map-get($spacers, 2);
   margin: map-get($spacers, 1);
   background: $gray-100;
+  border-radius: $border-radius;
   flex-basis: 100%;
   align-items: center;
 
@@ -72,19 +73,11 @@
   }
 }
 
-@include media-breakpoint-up(md) {
+@include media-breakpoint-down(md) {
   .user-skill-item {
     &:nth-child(2),
     &:nth-child(3) {
-      flex: 1;
-
-      .user-skill-item__stats-value {
-        font-weight: normal;
-      }
-
-      .user-skill-item__stats:last-child {
-        display: none;
-      }
+      flex: auto;
     }
   }
 }
