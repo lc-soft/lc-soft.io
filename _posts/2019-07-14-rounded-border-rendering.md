@@ -2,6 +2,7 @@
 title: 圆角边框的绘制方法
 toc: true
 categories:
+  - 技术文章
   - 图形渲染
 ---
 ## 需求

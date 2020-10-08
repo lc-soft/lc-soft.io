@@ -1,6 +1,7 @@
 ---
 title: Spinner 动画的绘制方法
 categories:
+  - 技术文章
   - 图形渲染
 ---
 

@@ -37,7 +37,7 @@ categories_description:
   图形渲染: 不借助第三方图形库，用纯 C 代码渲染图形。
 excerpt_separator:  '<!-- more -->'
 permalink: /blog/posts/:title.html
-paginate: 8
+paginate: 10
 paginate_path: "blog/page/:num"
 category_path: "blog/category"
 exclude: [".git",".sass-cache", "sass", "*.scss", "*.rb", "node_modules",

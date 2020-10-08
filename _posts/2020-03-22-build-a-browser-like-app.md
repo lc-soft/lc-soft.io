@@ -3,7 +3,7 @@ title: 造一个简单的浏览器
 repo: lc-ui/lcui-router-app
 toc: true
 categories:
-  - 开发教程
+  - 技术文章
   - LCUI
   - LCDesign
   - LCUIRouter

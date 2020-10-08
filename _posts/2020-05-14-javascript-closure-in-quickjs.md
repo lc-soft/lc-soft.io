@@ -2,7 +2,7 @@
 title: 从 QuickJS 源码理解 JavaScript 的闭包
 toc: true
 categories:
-  - 源码刨析
+  - 技术文章
 ---
 
 ## 摘要
