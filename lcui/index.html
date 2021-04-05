@@ -2,6 +2,87 @@
 layout: lcui_default
 title: LCUI - 使用 C、XML 和 CSS 构建简单的跨平台桌面应用
 is_home: true
+task_types:
+  project:
+    name: 项目
+    color: blue
+    description: 这是一个独立项目开发计划
+  issue:
+    name: 问题
+    color: green
+    description: 这是一个需要解决的问题
+task_levels:
+  easy:
+    name: 简单
+    color: green
+  medium:
+    name: 中等
+    color: orange
+  hard:
+    name: 困难
+    color: red
+rewards:
+- title: LCUI 3.x 版本更新计划
+  description: 该计划的目标是通过重新设计接口、统一代码风格、拆分子项目等手段来提高 LCUI 的质量和使用体验。其中子项目是结合历史遗留问题和新功能需求而采用最新开发技术开发的现代化项目，能被作为独立的函数库应用于其它项目之中，其提供的功能至少覆盖 LCUI 的全部使用场景。
+  todos:
+  - title: 重构
+    description: 参考主流开源项目，重新制定 LCUI 的编码风格、源码目录结构、API 设计风格。
+    bounty: 500
+    type: issue
+    level: easy
+  - title: 基础工具库
+    description: 参考 glib、tboox 等库，设计一个工具库，提供常用数据结构的操作函数、字符串处理函数。
+    bounty: 500
+    type: project
+    level: easy
+  - title: 布局引擎
+    description: 参考 yoga 等布局引擎的设计，结合 LCUI 现有的布局需求，重构 LCUI 的布局引擎，使其变得更简单易用。
+    bounty: 2000
+    type: project
+    level: hard
+  - title: 文本排版引擎
+    description: 重新设计文本层（TextLayer）模块，使其更简单易用高效，其中文本排版功能最好是基于布局引擎实现。
+    bounty: 500
+    type: project
+    level: medium
+  - title: 2D 图形库
+    description: 参考 cario、skia 等图形库的设计，设计一套简单易用的图形接口并重构 LCUI 现有的图形处理模块。
+    bounty: 500
+    type: project
+    level: easy
+  - title: 字体库
+    description: 重构字体模块，使其具备更低的内存占用和更高的性能。
+    bounty: 500
+    type: project
+    level: easy
+- title: 其它待办任务
+  description: 一些优先级不高的任务
+  todos:
+  - title: 重构定时器模块
+    description: 改用面向对象模式代替单例模式，不再全局共用同一个定时器列表，允许开发者基于定时器接口实现一个定时器线程，以此摆脱 LCUI 主循环对定时器精度的影响。
+    bounty: 100
+    type: project
+    level: easy
+  - title: 改进组件增量更新机制
+    description: 为了应对数十万量级的组件更新，保证界面的流畅度，现有的做法是统计组件的更新耗时然后为每帧更新的组件总量设置一个合适的限制，这种做法并不是最优的，可参考 React 的 Fiber reconciler 的架构，重新设计 LCUI 的组件增量更新机制。
+    bounty: 1000
+    type: issue
+    level: medium
+  - title: Android 平台适配
+    description: 为 LCUI 添加适用于 Android 的驱动代码和编译构建脚本。
+    bounty: 3000
+    type: issue
+    level: medium
+  - title: 重写 Trad 编译器
+    description: 采用 JavaScript 编写，参考 babel、llvm 等同类项目来设计 Trad 编译器的架构。
+    bounty: 2000
+    type: project
+    level: hard
+  - title: CSS 引擎
+    description: 参考主流的 CSS 库的设计，采用更严谨的标识符命名、更健壮可靠的架构，重构 LCUI 的 CSS 数据库和解析器。
+    bounty: 2000
+    type: project
+    level: hard
 ---
 <div class="jumbotron home-jumbotron">
   <div class="container">
@@ -233,13 +314,13 @@ npm run start</code></pre>
   <div class="container">
     <div class="section-header">
       <h2>参与贡献</h2>
-      <p class="text-muted">在这技术日新月异的时代，发展缓慢的项目在迟早会迎来终结，开源项目的可持续发展仅靠作者是远远不够的，如果你有意向，可以通过以下几种方式参与本项目</p>
+      <p class="text-muted">开源的意义在于大家都可以以各种形式帮助项目发展</p>
     </div>
     <div class="card-container">
       <div class="card card-star">
         <span class="icon fa fa-thumbs-o-up"><span class="count"></span></span>
         <h3><a href="https://github.com/lc-soft/LCUI/stargazers">默默点赞</a></h3>
-        <p>访问 GitHub 上的 LCUI 代码库主页并为 LCUI 贡献一颗星星，虽然这样做看上去没多大作用，但或许在以后能够为作者的职业生涯和 LCUI 的发展提供无形的帮助。</p>
+        <p>访问 GitHub 上的 LCUI 代码库主页并为 LCUI 贡献一颗星，虽然这样做看上去没多大作用，但或许在以后能够为作者的职业生涯和 LCUI 的发展提供无形的帮助。</p>
       </div>
       <div class="card card-bug">
         <span class="icon fa fa-bug"><span class="count"></span></span>
@@ -337,6 +418,55 @@ npm run start</code></pre>
     <p class="text-muted text-center">* 在合理努力的情况下，并不是每个 BUG 都可以作为技术支持中的一部分来解决</p>
   </div>
 </section>
+<section id="joinus">
+  <div class="container">
+    <div class="section-header">
+      <h2>贡献者激励计划</h2>
+      <p>本计划旨在为 LCUI 中的一些待办任务提供初始赏金来吸引志同道合的开发者成为贡献者以加快 LCUI 的更新速度。有些任务会带有“项目”标签，这意味着贡献者可以将用于完成该悬赏任务的代码作为他的个人开源项目来维护，这样在帮助他们打造一个靠谱的开源项目的同时也顺便解决了 LCUI 新版本中的功能需求，以此实现双赢。</p>
+    </div>
+    <div class="row">
+      {% for group in page.rewards %}
+        <div class="col-md-6 col-sm-12">
+          <div class="reward-board">
+            <div class="reward-board-header">
+              <div class="reward-board-title">{{ group.title }}</div>
+              <div class="reward-board-count">{{ group.todos | size }}</div>
+            </div>
+            <div class="reward-board-body">
+              {% for task in group.todos %}
+                <div class="reward-task">
+                  <div class="reawrd-task-header">
+                    <div class="reward-task-title">
+                      {{ task.title }}
+                    </div>
+                  </div>
+                  <div class="reward-task-description text-muted">
+                    {{ task.description }}
+                  </div>
+                  <div class="reward-task-meta">
+                    <div class="reward-task-labels">
+                      {% assign label = page.task_types[task.type] %}
+                      <span class="reward-task-label {{ label.color }}" title="{{label.description}}">
+                        {% if task.type == 'project' %}
+                          {% octicon repo %}
+                        {% else %}
+                          {% octicon issue-opened :height => 14 %}
+                        {% endif %}
+                        {{ label.name }}</span>
+                      {% assign label = page.task_levels[task.level] %}
+                      <span class="reward-task-label {{ label.color }}" title="难度：{{label.name}}">{{ label.name }}</span>
+                    </div>
+                    <strong class="reward-task-bounty">{{ task.bounty }}</strong>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 <script src="/static/js/abigimage.jquery.min.js"></script>
 <script src="/static/js/circle-progress.min.js"></script>
 <script src="/static/js/horiz-split-box.js"></script>
@@ -346,7 +476,7 @@ function kFormatter(num) {
 }
 
 function updateNavbarStyle() {
-  if( $(document).scrollTop() > 0 ) {
+  if ($(document).scrollTop() > 0) {
     $('.navbar').removeClass('navbar-on-top');
   } else {
     $('.navbar').addClass('navbar-on-top');
@@ -365,7 +495,7 @@ $('.thumbnail').abigimage({
 $.getJSON('https://api.github.com/repos/lc-soft/LCUI', function (data) {
   $('.card.card-star .count').text(kFormatter(data.stargazers_count)).css('opacity', 1);
   $('.card.card-watch .count').text(kFormatter(data.subscribers_count)).css('opacity', 1);
-  if( data.open_issues_count > 0 ) {
+  if (data.open_issues_count > 0) {
     $('.card.card-bug .count').text(kFormatter(data.open_issues_count)).css('opacity', 1);
   }
 });
@@ -378,7 +508,7 @@ $.when(
   $.getJSON('https://api.github.com/repos/lc-soft/LCUI/milestones'),
   $.getJSON('https://api.github.com/repos/lc-soft/LCUI/stats/contributors')
 ).done(function (data1, data2) {
-  if( data2[1] !== 'success' || data1[0].length == 0 ) {
+  if (data2[1] !== 'success' || data1[0].length == 0) {
     return;
   }
   var milestone = data1[0][0];
@@ -387,15 +517,15 @@ $.when(
   var completion = 1.0 - milestone.open_issues / total_issues;
   var commits = 0, addtions = 0, deletions = 0;
 
-  if( data2[1] === 'success' ) {
+  if (data2[1] === 'success') {
     var contributors = data2[0];
-    for( var i = 0; i < contributors.length; ++i ) {
+    for (var i = 0; i < contributors.length; ++i) {
       var weeks = contributors[i].weeks;
       var curtime = new Date(weeks[weeks.length - 1].w * 1000);
-      for( var j = weeks.length - 1; j >= weeks.length - 5; --j ) {
+      for (var j = weeks.length - 1; j >= weeks.length - 5; --j) {
         var week = weeks[j];
         var time = new Date(week.w * 1000);
-        if( time.getMonth() < curtime.getMonth() ) {
+        if (time.getMonth() < curtime.getMonth()) {
           break;
         }
         addtions += week.a;

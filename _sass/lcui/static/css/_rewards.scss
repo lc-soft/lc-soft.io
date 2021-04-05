@@ -1,0 +1,118 @@
+.reward-board {
+  background: rgba($BrandColor, 0.05);
+  border: 1px solid #eee;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.reward-board-count {
+  color: $BrandColor;
+  background: rgba($BrandColor, 0.1);
+  padding: 0.25rem 0.5rem;
+  min-width: 2.5rem;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.reward-board-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem 0;
+}
+
+.reward-board-body {
+  padding: 1rem;
+}
+
+.reward-task {
+  background: #fff;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.reward-task-title {
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 1rem;
+}
+
+.reward-task-description {
+  margin-bottom: 1rem;
+}
+
+.reward-task-meta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reward-task-label {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  margin-right: 1rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  svg {
+    vertical-align: middle;
+  }
+
+  &.blue {
+    color: #2f54eb;
+    background: #f0f5ff;
+
+    svg {
+      fill: #2f54eb;
+    }
+  }
+
+  &.golden {
+    color: #faad14;
+    background: #fffbe6;
+
+    svg {
+      fill: #faad14;
+    }
+  }
+
+  &.orange {
+    color: #fa8c16;
+    background: #fff7e6;
+
+    svg {
+      fill: #fa8c16;
+    }
+  }
+
+  &.red {
+    color: #f5222d;
+    background: #fff1f0;
+
+    svg {
+      fill: #f5222d;
+    }
+  }
+
+  &.green {
+    color: #52c41a;
+    background: #f6ffed;
+
+    svg {
+      fill: #52c41a;
+    }
+  }
+}
+
+.reward-task-bounty {
+  &::before {
+    content: '￥';
+  }
+}

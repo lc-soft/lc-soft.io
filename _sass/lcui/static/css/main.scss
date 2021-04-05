@@ -1,17 +1,21 @@
-﻿$BrandColor:#7cb75e;
+﻿$BrandColor: #7cb75e;
+
 .navbar-custom {
   background-color: #fff;
-    border-bottom: 1px solid #eee;
-    transition: background-color .3s ease-in-out, border .3s ease-in-out;
-    -moz-transition: background-color .3s ease-in-out, border .3s ease-in-out;
-    -webkit-transition: background-color .3s ease-in-out, border .3s ease-in-out;
-    -o-transition: background-color .3s ease-in-out, border .3s ease-in-out;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+  -moz-transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
 
-  .nav>li>a, .nav .open>a {
+  .nav > li > a,
+  .nav .open > a {
     color: #333;
-    &:active, &:hover, &:focus {
-        color: #6ba84b;
-        background-color: #fafafa;
+    &:active,
+    &:hover,
+    &:focus {
+      color: #6ba84b;
+      background-color: #fafafa;
     }
   }
   .navbar-brand {
@@ -20,95 +24,105 @@
     font-weight: bold;
   }
   .icon-bar {
-      background-color: #333;
+    background-color: #333;
   }
   .navbar-toggle {
-    &:focus, &:hover {
+    &:focus,
+    &:hover {
       background-color: #f9f9f9;
       border-color: #f9f9f9;
     }
   }
 }
 .navbar-custom.navbar-fixed-top {
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
-    border-bottom: 0;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  border-bottom: 0;
 }
 .navbar-on-top {
   color: #fff;
   box-shadow: none;
-  background-color: rgba(0,0,0,0.1);
-  .navbar-nav >li >a {
-      color: #E5FFD8;
+  background-color: rgba(0, 0, 0, 0.1);
+  .navbar-nav > li > a {
+    color: #e5ffd8;
   }
   @media (max-width: 768px) {
-    .dropdown-menu>li>a {
-      color: rgba(255,255,255,0.8);
-        background-color: transparent;
-      &:active, &:hover, &:focus {
-          color: #fff;
+    .dropdown-menu > li > a {
+      color: rgba(255, 255, 255, 0.8);
+      background-color: transparent;
+      &:active,
+      &:hover,
+      &:focus {
+        color: #fff;
       }
       &:hover {
-          background-color: rgba(0,0,0,0.1);
+        background-color: rgba(0, 0, 0, 0.1);
       }
-      &:active, &:focus {
-          background-color: rgba(0,0,0,0.2);
+      &:active,
+      &:focus {
+        background-color: rgba(0, 0, 0, 0.2);
       }
     }
   }
-  .nav>li>a, .nav .open>a {
-    color: rgba(255,255,255,0.8);
-      background-color: transparent;
-    &:active, &:hover, &:focus {
-        color: #fff;
+  .nav > li > a,
+  .nav .open > a {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: transparent;
+    &:active,
+    &:hover,
+    &:focus {
+      color: #fff;
     }
     &:hover {
-          background-color: rgba(0,0,0,0.1);
+      background-color: rgba(0, 0, 0, 0.1);
     }
-    &:active, &:focus {
-          background-color: rgba(0,0,0,0.2);
+    &:active,
+    &:focus {
+      background-color: rgba(0, 0, 0, 0.2);
     }
   }
   .navbar-brand {
     color: #fff;
   }
   .icon-bar {
-      background-color: #fff;
+    background-color: #fff;
   }
   .navbar-toggle {
-    &:focus, &:hover {
-        background-color: rgba(138,197,107,0.3);
-        border-color: #4e7b37;
+    &:focus,
+    &:hover {
+      background-color: rgba(138, 197, 107, 0.3);
+      border-color: #4e7b37;
     }
   }
 }
 .home-jumbotron {
-    color: #fff;
+  color: #fff;
   background-color: #282e28;
   background-image: url("/static/images/pattern.png");
   padding-top: 128px;
   margin-bottom: 0;
-    .logo {
-      width: 182px;
-      height: 182px;
-      margin: 10px auto;
-      background-size: auto 100%;
-      background-repeat: no-repeat;
-      background-image: url('/static/images/lcui-logo-lg.png');
-        font-weight: normal;
-    }
-    h1, h2 {
-      color: #fff;
-      text-shadow: 4px 3px 0px #2b3b2b, 9px 8px 0px rgba(0, 0, 0, 0.15);
-    }
+  .logo {
+    width: 182px;
+    height: 182px;
+    margin: 10px auto;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-image: url("/static/images/lcui-logo-lg.png");
+    font-weight: normal;
+  }
+  h1,
+  h2 {
+    color: #fff;
+    text-shadow: 4px 3px 0px #2b3b2b, 9px 8px 0px rgba(0, 0, 0, 0.15);
+  }
   .jumbotron-button-group {
     margin-top: 60px;
   }
 }
 .subtron {
   overflow: hidden;
-    background-color: #f6f8f8;
-    padding: 20px 0;
-    text-align: center;
+  background-color: #f6f8f8;
+  padding: 20px 0;
+  text-align: center;
 }
 .lcui-milestone {
   display: flex;
@@ -119,7 +133,7 @@
     display: inline-flex;
     flex-basis: 48px;
     background: #fff;
-      border-radius: 50%;
+    border-radius: 50%;
 
     .percent {
       top: 0;
@@ -131,41 +145,42 @@
       line-height: 48px;
     }
   }
-    .lcui-milestone-main {
-      text-align: left;
-      padding: 0 20px;
-      p {
-        margin: 0;
-      }
-      .link {
-        font-size: 18px;
-      }
+  .lcui-milestone-main {
+    text-align: left;
+    padding: 0 20px;
+    p {
+      margin: 0;
     }
-    .btn {
-      border-radius: 4px;
+    .link {
+      font-size: 18px;
     }
+  }
+  .btn {
+    border-radius: 4px;
+  }
 }
 .btn-outline-inverse {
-    color: #fff;
-    background-color: transparent;
+  color: #fff;
+  background-color: transparent;
   border-radius: 2px;
-    border-color: #fff;
-  &:focus, &:hover {
+  border-color: #fff;
+  &:focus,
+  &:hover {
     color: #333;
-      text-shadow: none;
-      background-color: #fff;
-      border-color: #fff;
-    }
+    text-shadow: none;
+    background-color: #fff;
+    border-color: #fff;
+  }
 }
 .shameless-self-promotion {
-    margin-top: 22px;
-    font-size: 14px;
+  margin-top: 22px;
+  font-size: 14px;
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+  a {
     color: #fff;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
-    a {
-        color: #fff;
     opacity: 0.8;
-    }
+  }
 }
 
 .project-features {
@@ -177,11 +192,11 @@
     margin-bottom: 20px;
     > .project-feature-icon {
       color: $BrandColor;
-        height: 48px;
+      height: 48px;
       display: block;
-        font-size: 40px;
-        line-height: 48px;
-          margin-top: 20px;
+      font-size: 40px;
+      line-height: 48px;
+      margin-top: 20px;
     }
     h3 .project-feature-icon {
       display: none;
@@ -191,14 +206,14 @@
 }
 .flex-items-center {
   -webkit-box-align: center;
-    -webkit-align-items: center;
-    align-items: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 .project-overview {
   font-size: 15px;
   line-height: 1.8;
   p {
-      margin: 0 0 1em 0;
+    margin: 0 0 1em 0;
   }
 }
 .proejct-overview-box {
@@ -209,76 +224,78 @@
   text-align: center;
 
   .fa.fa-heart {
-      color: #e25950;
-      display: block;
-      font-size: 34px;
-      padding-bottom: 24px;
-        text-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+    color: #e25950;
+    display: block;
+    font-size: 34px;
+    padding-bottom: 24px;
+    text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
   }
   h3 {
     margin-top: 125px;
-      margin-bottom: 67px;
+    margin-bottom: 67px;
   }
   .quote {
     margin: 0 auto;
-      max-width: 800px;
-      line-height: 2.2;
-      position: relative;
+    max-width: 800px;
+    line-height: 2.2;
+    position: relative;
 
-      .fa-quote-left {
-        top: 0;
-        left: -40px;
-      }
-      .fa-quote-right {
-        bottom: 0;
-        right: -40px;
-      }
-      .fa-quote-left, .fa-quote-right {
+    .fa-quote-left {
+      top: 0;
+      left: -40px;
+    }
+    .fa-quote-right {
+      bottom: 0;
+      right: -40px;
+    }
+    .fa-quote-left,
+    .fa-quote-right {
       display: none;
-        color: #d8d8d8;
-        font-size: 34px;
-        position: absolute;
-      }
-      &.active {
-        .fa-quote-left, .fa-quote-right {
+      color: #d8d8d8;
+      font-size: 34px;
+      position: absolute;
+    }
+    &.active {
+      .fa-quote-left,
+      .fa-quote-right {
         display: inline;
       }
-      }
+    }
   }
   .quotees {
-      list-style: none;
-      padding: 44px 0 34px 0;
-      margin: 0;
+    list-style: none;
+    padding: 44px 0 34px 0;
+    margin: 0;
 
-      li {
-        margin: 15px 54px 15px 0;
-        display: inline-block;
+    li {
+      margin: 15px 54px 15px 0;
+      display: inline-block;
 
-        &.unknown {
-          padding: 20px 25px;
-          border-radius: 4px;
-          border: 4px dotted #eee;
+      &.unknown {
+        padding: 20px 25px;
+        border-radius: 4px;
+        border: 4px dotted #eee;
 
-          .fa {
-              color: #ddd;
-            font-size: 34px;
-            vertical-align: middle;
-          }
-          &:hover {
-            border-color: #ccc;
-          }
+        .fa {
+          color: #ddd;
+          font-size: 34px;
+          vertical-align: middle;
         }
-        &:last-child {
-          margin-right: 0;
+        &:hover {
+          border-color: #ccc;
         }
       }
-      .avatar-box {
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .avatar-box {
       position: relative;
       display: inline-block;
 
       .logo {
-          top: -12px;
-          right: -14px;
+        top: -12px;
+        right: -14px;
         position: absolute;
 
         img {
@@ -286,31 +303,31 @@
           height: 34px;
         }
       }
-        .avatar {
-          width: 64px;
-          height: 64px;
-          border-radius: 50%;
-          border: 1px solid #eee;
-        }
+      .avatar {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        border: 1px solid #eee;
       }
-      .content {
-        margin-left: 24px;
-        text-align: left;
-        display: inline-block;
-        vertical-align: middle;
+    }
+    .content {
+      margin-left: 24px;
+      text-align: left;
+      display: inline-block;
+      vertical-align: middle;
 
-        strong {
-          display: block;
+      strong {
+        display: block;
         font-size: 16px;
-        }
       }
+    }
   }
 }
 .project-contribute {
   .card-container {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 0 5px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 5px;
   }
   .card {
     flex: 1;
@@ -330,7 +347,7 @@
       text-decoration: none;
     }
     a:hover {
-      border-bottom: .1em solid;
+      border-bottom: 0.1em solid;
     }
     .icon {
       left: 0;
@@ -355,7 +372,7 @@
         border-radius: 4px;
         position: absolute;
         background: #fff;
-        transition: opacity .5s;
+        transition: opacity 0.5s;
       }
     }
     p {
@@ -368,13 +385,13 @@
       top: 0;
       right: 0;
       bottom: 0;
-      content: '';
+      content: "";
       opacity: 0;
       position: absolute;
       background: #aab7c4;
       pointer-events: none;
-      -webkit-transition: opacity .15s;
-      transition: opacity .15s
+      -webkit-transition: opacity 0.15s;
+      transition: opacity 0.15s;
     }
   }
   .card-star {
@@ -433,7 +450,7 @@
   }
 }
 .section {
-    padding: 40px 0;
+  padding: 40px 0;
 }
 .thumbnail-empty {
   text-align: center;
@@ -458,58 +475,52 @@
 }
 
 @media screen and (max-width: 992px) {
-
-.project-contribute {
-  .card-container {
-    display: block;
-    .card {
+  .project-contribute {
+    .card-container {
       display: block;
-      padding-right: 0;
-      margin-left: 0;
-      margin-right: 0;
+      .card {
+        display: block;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
   }
-}
-
 }
 
 @media screen and (max-width: 768px) {
-
-.lcui-milestone .lcui-milestore-progress {
-  display: none;
-}
-.project-features {
-  .project-feature {
-    text-align: left;
-    .project-feature-icon {
-      display: none;
-    }
-    h3 .project-feature-icon {
-      display: inline;
-    }
+  .lcui-milestone .lcui-milestore-progress {
+    display: none;
   }
-}
-.loved-by {
-  .quotees li {
-    margin-right: 0;
-
-    &.unknown {
-      display: none;
+  .project-features {
+    .project-feature {
+      text-align: left;
+      .project-feature-icon {
+        display: none;
+      }
+      h3 .project-feature-icon {
+        display: inline;
+      }
     }
   }
-  h4.quote {
-    font-size: 16px;
-  }
-}
+  .loved-by {
+    .quotees li {
+      margin-right: 0;
 
+      &.unknown {
+        display: none;
+      }
+    }
+    h4.quote {
+      font-size: 16px;
+    }
+  }
 }
 
 @media screen and (min-width: 768px) {
-
-.md-flex {
-  display: flex;
-}
-
+  .md-flex {
+    display: flex;
+  }
 }
 
 .section-header {
@@ -528,29 +539,29 @@
     .icon {
       font-size: 64px;
     }
-      color: #e25950;
+    color: #e25950;
   }
   a.donate-button {
     background-color: white;
     background-repeat: repeat-x;
     border-radius: 4px;
-    box-shadow: rgba(0, 0, 0, .4) 0 0 2px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 0 2px;
     color: #999;
     display: inline-block;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-      padding: 12px 15px;
+    padding: 12px 15px;
     text-shadow: none;
     text-decoration: none;
   }
   a.donate-button:hover {
-      box-shadow: rgba(0, 0, 0, 0.3) 0 2px 3px;
-      color: #777;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 2px 3px;
+    color: #777;
   }
   a.donate-button:active {
-      box-shadow: inset rgba(0, 0, 0, 0.3) 0 0 3px;
-      background: #f5f5f5;
+    box-shadow: inset rgba(0, 0, 0, 0.3) 0 0 3px;
+    background: #f5f5f5;
   }
   .donate-button-logo {
     background-size: cover;
@@ -568,16 +579,17 @@
   }
   a.patreon-donate-button {
     padding-top: 10px;
-      border-top: 2px solid #e6461a;
+    border-top: 2px solid #e6461a;
     .donate-button-logo {
       background-image: url("/static/images/patreon-button-logo.png");
     }
   }
   a.paypal-donate-button {
     padding-top: 10px;
-      border-top: 2px solid #199ddb;
-      &:hover, &:active {
-        border-top-color: #042467;
+    border-top: 2px solid #199ddb;
+    &:hover,
+    &:active {
+      border-top-color: #042467;
     }
   }
 }
@@ -596,7 +608,7 @@
       color: #28a745;
       content: "\f046";
       font: normal normal normal 14px/1 FontAwesome;
-      margin-right: .5em;
+      margin-right: 0.5em;
       margin-left: -20px;
     }
     &.disabled {
@@ -616,7 +628,7 @@
   .panel-logo {
     top: 0;
     right: 20px;
-    opacity: .04;
+    opacity: 0.04;
     font-size: 128px;
     position: absolute;
   }
@@ -633,19 +645,23 @@
   }
 }
 @mixin pricing-panel($color) {
-  &:hover, &.active, .btn-outline {
+  &:hover,
+  &.active,
+  .btn-outline {
     border-color: $color;
   }
-  .btn-outline, .price-text-focus {
+  .btn-outline,
+  .price-text-focus {
     color: $color;
   }
   .btn-outline {
     min-width: 128px;
 
     &:hover {
-      background: rgba($color, .1);
+      background: rgba($color, 0.1);
     }
-    &:active, &:active:hover {
+    &:active,
+    &:active:hover {
       background: $color;
       color: #fff;
     }
@@ -660,6 +676,7 @@
 
 @import "horiz-split-box";
 @import "syntax";
+@import "rewards";
 
 .bash-code-block {
   border: 0;
@@ -667,7 +684,7 @@
   background: #333;
 
   .pl-c {
-    opacity: .6;
+    opacity: 0.6;
   }
 }
 
@@ -680,7 +697,7 @@
   .content {
     width: 100%;
     height: initial;
-      overflow-y: hidden;
+    overflow-y: hidden;
   }
   .cover {
     background: #fff;
@@ -689,15 +706,16 @@
       padding-bottom: 10px;
     }
   }
-  button, input {
+  button,
+  input {
     border-radius: 0;
-      box-shadow: none;
+    box-shadow: none;
   }
   input {
     width: 200px;
   }
   input:focus {
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
   }
   #text-hello {
     color: #8cc63f;
@@ -706,7 +724,8 @@
     border: 1px solid #000;
     background-color: #fafafa;
   }
-  #input-hello, #btn-hello {
+  #input-hello,
+  #btn-hello {
     margin: 0 0 0 25px;
     display: inline-block;
     vertical-align: top;
