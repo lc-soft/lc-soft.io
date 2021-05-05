@@ -41,7 +41,7 @@ rewards:
     type: project
     level: hard
   - title: 文本排版引擎
-    description: 重新设计文本层（TextLayer）模块，使其更简单易用高效，其中文本排版功能最好是基于布局引擎实现。
+    description: 重新设计文本层（TextLayer）模块，基于新的布局引擎实现文本排版，使其更简单易用高效。
     bounty: 500
     type: project
     level: medium
@@ -63,6 +63,11 @@ rewards:
     bounty: 100
     type: project
     level: easy
+  - title: 支持编译为 WebAssembly 在浏览器中运行
+    description: 参考 Qt、ImGui 等同类项目的 WebAssembly 支持方案，为 LCUI 添加相关的构建配置和支持模块，使得 LCUI 应用程序能够编译编译为 WebAssembly 在浏览器中运行。
+    type: issue
+    level: medium
+    bounty: 1000
   - title: 改进组件增量更新机制
     description: 为了应对数十万量级的组件更新，保证界面的流畅度，现有的做法是统计组件的更新耗时然后为每帧更新的组件总量设置一个合适的限制，这种做法并不是最优的，可参考 React 的 Fiber reconciler 的架构，重新设计 LCUI 的组件增量更新机制。
     bounty: 1000
@@ -73,6 +78,21 @@ rewards:
     bounty: 3000
     type: issue
     level: medium
+  - title: 为 LCUI CLI 添加 XML 编译器
+    description: LCUI 的 xml 文件解析功能是由 libxml 库提供支持的，为了缩减 LCUI 的库文件体积、提升用户界面的加载速度，我们可以在编译阶段将 xml 文件预先转换为 C 代码来使用。
+    bounty: 200
+    type: issue
+    level: easy
+  - title: 为 LCUI CLI 添加 CSS 编译器
+    description: 集成 SASS 预处理器，支持对多个 scss 或 css 文件进行处理、合并和编译，其中的编译只是简单的将处理后的结果转换成 C 中的字符串代码，无需生成 LCUI_StyleSheet 对象的构造代码。
+    bounty: 200
+    type: issue
+    level: easy
+  - title: 添加表格布局支持
+    description: 基于新的布局引擎添加表格布局支持，每列单元格等宽，每行单元格等高。
+    bounty: 500
+    type: issue
+    level: easy
   - title: 重写 Trad 编译器
     description: 采用 JavaScript 编写，参考 babel、llvm 等同类项目来设计 Trad 编译器的架构。
     bounty: 2000
@@ -422,7 +442,7 @@ npm run start</code></pre>
   <div class="container">
     <div class="section-header">
       <h2>贡献者激励计划</h2>
-      <p>本计划旨在为 LCUI 中的一些待办任务提供初始赏金来吸引志同道合的开发者成为贡献者以加快 LCUI 的更新速度。有些任务会带有“项目”标签，这意味着贡献者可以将用于完成该悬赏任务的代码作为他的个人开源项目来维护，这样在帮助他们打造一个靠谱的开源项目的同时也顺便解决了 LCUI 新版本中的功能需求，以此实现双赢。</p>
+      <p class="text-muted">本计划旨在为 LCUI 中的一些待办任务提供初始赏金来吸引志同道合的开发者成为贡献者以加快 LCUI 的更新速度</p>
     </div>
     <div class="row">
       {% for group in page.rewards %}
@@ -465,8 +485,10 @@ npm run start</code></pre>
         </div>
       {% endfor %}
     </div>
+    {% include lcui_reward_faq.html %}
   </div>
 </section>
+
 <script src="/static/js/abigimage.jquery.min.js"></script>
 <script src="/static/js/circle-progress.min.js"></script>
 <script src="/static/js/horiz-split-box.js"></script>
@@ -475,17 +497,6 @@ function kFormatter(num) {
   return num > 999 ? parseFloat((num/1000).toFixed(1)) + 'k' : num;
 }
 
-function updateNavbarStyle() {
-  if ($(document).scrollTop() > 0) {
-    $('.navbar').removeClass('navbar-on-top');
-  } else {
-    $('.navbar').addClass('navbar-on-top');
-  }
-}
-
-updateNavbarStyle();
-
-$(document).on('scroll', updateNavbarStyle);
 $('.thumbnail').abigimage({
   onopen: function(target) {
     this.bottom.html($('img', target).attr('alt'));
@@ -553,16 +564,6 @@ $.when(
 });
 
 $(document).ready(function() {
-  $('#btn-contribute').click(function() {
-    $('html, body').animate({
-      scrollTop: $($(this).attr('href')).offset().top + 'px'
-    }, {
-      duration: 500,
-      easing: 'swing'
-    });
-    window.location.hash = $(this).attr('href');
-    return false;
-  });
   $('#lcui-example').horizSplitBox();
   $('#btn-hello').on('click', function () {
     $('#text-hello').text($('#input-hello').val());

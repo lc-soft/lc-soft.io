@@ -1,8 +1,40 @@
-﻿$BrandColor: #7cb75e;
+﻿$primary: #389e0d;
+$primary: $primary;
+
+// scss-docs-start color-functions
+// Tint a color: mix a color with white
+@function tint-color($color, $weight) {
+  @return mix(white, $color, $weight);
+}
+
+// Shade a color: mix a color with black
+@function shade-color($color, $weight) {
+  @return mix(black, $color, $weight);
+}
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+@import "accordion";
+
+@import "horiz-split-box";
+@import "syntax";
+@import "rewards";
+
+html {
+  font-size: 14px;
+}
+
+body {
+  font-size: 14px;
+}
 
 .navbar-custom {
+  left: 0;
+  right: 0;
+  position: absolute;
   background-color: #fff;
-  border-bottom: 1px solid #eee;
   transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
   -moz-transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
   -webkit-transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
@@ -191,7 +223,7 @@
     text-align: center;
     margin-bottom: 20px;
     > .project-feature-icon {
-      color: $BrandColor;
+      color: $primary;
       height: 48px;
       display: block;
       font-size: 40px;
@@ -200,7 +232,7 @@
     }
     h3 .project-feature-icon {
       display: none;
-      color: $BrandColor;
+      color: $primary;
     }
   }
 }
@@ -674,9 +706,6 @@
   @include pricing-panel(#28a745);
 }
 
-@import "horiz-split-box";
-@import "syntax";
-@import "rewards";
 
 .bash-code-block {
   border: 0;
