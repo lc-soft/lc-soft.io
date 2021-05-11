@@ -2,6 +2,7 @@ _site/
 _data/
 .sass-cache/
 .jekyll-metadata
+.jekyll-cache/
 node_modules
 www/static/css
 www/static/js
