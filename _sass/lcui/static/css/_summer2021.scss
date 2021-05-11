@@ -1,6 +1,4 @@
 .summer2021 {
-  font-size: 16px;
-  line-height: 1.6;
   padding: 3rem 0;
 
   .btn {
@@ -19,12 +17,17 @@
   }
 }
 
+.summer2021-overview {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
 .summer2021-img {
   width: 100%
 }
 
-.summer2021-task-title {
-  font-size: 16px;
+.summer2021-task-description {
+  line-height: 1.6;
 }
 
 .methor-card {
@@ -50,6 +53,7 @@
   font-size: 1.5em;
   font-weight: bold;
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 .methor-card-info {
