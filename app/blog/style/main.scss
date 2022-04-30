@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import "syntax";
 @import "bootstrap";
 @import "markdown";
@@ -129,7 +131,7 @@
 }
 
 @include media-breakpoint-down(xs) {
-  $spacing: #{$grid-gutter-width / 2};
+  $spacing: math.div($grid-gutter-width, 2);
 
   .blog-post-image-wrapper:nth-child(4) {
     display: none;
