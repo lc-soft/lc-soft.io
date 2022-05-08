@@ -1,0 +1,77 @@
+<div id="summer-ospp" class="summer-ospp">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 summer-ospp-overview">
+      <h2>开源之夏</h2>
+      <p>开源之夏是由“开源软件供应链点亮计划”发起并长期支持的一项暑期开源活动，旨在鼓励在校学生积极参与开源软件的开发维护，促进优秀开源软件社区的蓬勃发展，培养和发掘更多优秀的开发者。</p>
+      <a class="btn btn-primary btn-lg" href="https://summer.iscas.ac.cn/help/student/">
+        报名申请项目
+        {% octicon arrow-right height:20 %}
+      </a>
+    </div>
+    <div class="col-xs-12 col-md-6 text-center">
+      <img src="/static/images/summer2022.png" alt="summer-ospp" class="summer-ospp-img">
+    </div>
+  </div>
+  <h3 class="mt-5 mb-4">项目列表</h3>
+  <div class="accordion" id="summer-ospp-accordion" role="tablist" aria-multiselectable="true">
+    {% for task in page.summer2022_tasks %}
+    <div class="accordion-item summer-ospp-task">
+      <div class="accordion-header" role="tab" id="summer-ospp_heading{{forloop.index}}">
+        <button class="accordion-button collapsed" data-toggle="collapse" data-parent="#accordion" href="#summer-ospp_collapse{{forloop.index}}" aria-expanded="true" aria-controls="summer-ospp_collapse{{forloop.index}}">
+          <span class="summer-ospp-task-title">{{ task.title }}</span>
+        </button>
+      </div>
+      <div id="summer-ospp_collapse{{forloop.index}}" class="accordion-collapse collapse" role="tabpanel" aria-labelledby="summer-ospp_heading{{forloop.index}}">
+        <div class="accordion-body">
+          <div class="summer-ospp-task-description">{{ task.description }}</div>
+          <hr />
+          <p><strong>难度：</strong>{{ task.level }}</p>
+          <p><strong>导师：</strong>{{ task.mentor }}</p>
+          <p><strong>产出要求：</strong></p>
+          <ul>
+            {% for item in task.requirements %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+          <p><strong>技术要求：</strong></p>
+          <ul>
+            {% for item in task.skills %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+          <p><strong>参考资料：</strong></p>
+          <ul>
+            {% for item in task.references %}
+            <li><a href="{{ item.href }}">{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <h3 class="mt-5 mb-4">导师联系方式</h3>
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-lg-4">
+      <div class="methor-card">
+        <div class="methor-card-avatar">
+          <img alt="Liu" src="https://avatars0.githubusercontent.com/u/1730073?v=3&s=128">
+        </div>
+        <div class="methor-card-body">
+          <div class="methor-card-name">
+            刘超
+          </div>
+          <div class="methor-card-bio text-center text-muted">
+            LCUI 项目核心开发者、Web 前端开发工程师、业余 C 编程爱好者
+          </div>
+          <div class="methor-card-info">
+            <p><span class="methor-card-info-label">邮箱：</span><a href="mailto:lc-soft@live.cn">lc-soft@live.cn</a></p>
+            <p><span class="methor-card-info-label">GitHub：</span><a href="https://github.com/lc-soft">https://github.com/lc-soft</a></p>
+            <p><span class="methor-card-info-label">Gitee：</span><a href="https://gitee.com/lc-soft">https://gitee.com/lc-soft</a></p>
+            <p><span class="methor-card-info-label">备注：</span>你也可以在 LCUI 代码库的 <a href="https://github.com/lc-soft/LCUI/issues">Issues 页面</a>中沟通</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

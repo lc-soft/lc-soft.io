@@ -78,6 +78,25 @@ rewards:
     bounty: 5000
     type: project
     level: hard
+summer2022_tasks:
+- title: 为 LCUI 增加支持编译为 WebAssembly
+  description: WebAssembly (wasm) 是一种新的编码方式，可以在现代的网络浏览器中运行。让 LCUI 支持编译为 wasm 的目的主要有两个：一个是降低 LCUI 的体验成本，只需用浏览器打开网页即可快速体验 LCUI 示例程序的运行效果。另一个是便于以后添加 JavaScript 和 TypeScript 语言绑定。
+  level: 进阶
+  mentor: 刘超
+  requirements:
+  - 研究 WebAssembly 相关资料以及 Qt、ImGui 等同类项目的 wasm 支持方案，完成技术文档。
+  - 为 LCUI 添加相关的构建配置，使之能够成功编译为 wasm。
+  - 添加 wasm 相关支持代码，使得 LCUI 的示例程序能够在浏览器中响应用户鼠标、键盘的输入并输出图形界面。
+  skills:
+  - 熟悉 C 或 C++ 编程语言
+  - 了解 JavaScript 语言
+  - 了解 CMake、XMake 等任意构建工具的基本用法
+  - 了解 Git 的基本用法
+  references:
+  - title: 编译 C/C++ 为 WebAssembly - WebAssembly | MDN
+    href: https://developer.mozilla.org/zh-CN/docs/WebAssembly/C_to_wasm
+  - title: Emscripten 文档
+    href: https://emscripten.org/
 ---
 
 <div class="jumbotron home-jumbotron">
@@ -462,6 +481,7 @@ npm run start</code></pre>
       {% endfor %}
     </div>
     {% include lcui_reward_faq.html %}
+    {% include lcui_summer_ospp.html %}
   </div>
 </section>
 
